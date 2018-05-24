@@ -59,4 +59,40 @@ contract("DappToken", accounts => {
     const allowance = await tokenInstance.allowance(accounts[0], accounts[1]);
     assert.equal(allowance.toNumber(), 100, "stores the allowance for delegated transfer")
   })
+
+  it("handles delegated token transfers", async () => {
+    const fromAccount = accounts[2]
+    const toAccount = accounts[3]
+    const spendingAccount = accounts[4]
+    await tokenInstance.transfer(fromAccount, 100, { from: accounts[0] })
+    await tokenInstance.approve(spendingAccount, 10, { from: fromAccount })
+    try {
+      await tokenInstance.transferFrom(fromAccount, toAccount, 9999, { from: spendingAccount })
+      assert(false, "transfer larger than balance should fail")
+    } catch (error) {
+      assert.equal(error.message, "VM Exception while processing transaction: revert", "cannot transfer value larger than balance")
+    }
+    try {
+      await tokenInstance.transferFrom(fromAccount, toAccount, 15, { from: spendingAccount })
+      assert(false, "transfer larger than approved balance should fail")
+    } catch (error) {
+      assert.equal(error.message, "VM Exception while processing transaction: revert", "cannot transfer more than approved value")
+    }
+    const isValidTransferFrom = await tokenInstance.transferFrom.call(fromAccount, toAccount, 10, { from: spendingAccount })
+    assert(isValidTransferFrom, "an approved account can transfer the approved ammount")
+
+    const txReceipt = await tokenInstance.transferFrom(fromAccount, toAccount, 10, { from: spendingAccount })
+    assert.equal(txReceipt.logs.length, 1, "triggers one event")
+    assert.equal(txReceipt.logs[0].event, "Transfer", `should be the "Transfer" event`)
+    assert.equal(txReceipt.logs[0].args._from, fromAccount, "logs the account tokens are transferred from")
+    assert.equal(txReceipt.logs[0].args._to, toAccount, "logs the account tokens are transferred to")
+    assert.equal(txReceipt.logs[0].args._value, 10, "logs the transfer amount")
+
+    const balanceFrom = await tokenInstance.balanceOf(fromAccount)
+    assert.equal(balanceFrom.toNumber(), 90, "deducts the amount from the sending account")
+    const balanceTo = await tokenInstance.balanceOf(toAccount)
+    assert.equal(balanceTo.toNumber(), 10, "credits the amount to the recieving account")
+    const updatedAllowance = await tokenInstance.allowance(fromAccount, spendingAccount)
+    assert.equal(updatedAllowance.toNumber(), 0, "allowance is updated after successful transfer")
+  })
 })

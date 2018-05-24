@@ -37,14 +37,18 @@ contract DappToken {
         return true;
     }
     function approve(address _spender, uint256 _value) public returns (bool success) {
-        require(balanceOf[msg.sender] >= _value && _value > 0);
         allowance[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
         return true;
     }
-    // Delegated Transfer
-    // approval
-    // transferFrom
 
-
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value && _value > 0);
+        require(allowance[_from][msg.sender] >= _value);
+        balanceOf[_from] -= _value;
+        balanceOf[_to] += _value;
+        allowance[_from][msg.sender] -= _value;
+        emit Transfer(_from, _to, _value);
+        return true;
+    }
 }

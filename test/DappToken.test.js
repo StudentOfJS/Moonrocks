@@ -1,9 +1,12 @@
 const DappToken = artifacts.require("./DappToken.sol");
 
+let tokenInstance;
+beforeEach(async () => {
+  tokenInstance = await DappToken.deployed()
+})
 
 contract("DappToken", accounts => {
   it("initializes the contract with the correct values", async () => {
-    const tokenInstance = await DappToken.deployed()
     const tokenName = await tokenInstance.name()
     const tokenSymbol = await tokenInstance.symbol()
     const tokenStandard = await tokenInstance.standard()
@@ -13,7 +16,6 @@ contract("DappToken", accounts => {
   })
 
   it("sets and allocates the initial supply upon deployment", async () => {
-    const tokenInstance = await DappToken.deployed()
     const totalSupply = await tokenInstance.totalSupply()
     const adminBalance = await tokenInstance.balanceOf(accounts[0])
 
@@ -23,8 +25,6 @@ contract("DappToken", accounts => {
   })
 
   it("transfers token ownership", async () => {
-    const tokenInstance = await DappToken.deployed()
-
     try {
       const assertMessage = await tokenInstance.transfer.call(accounts[1], 9999999999)
       assert(false, "error message must contain revert")
@@ -45,5 +45,18 @@ contract("DappToken", accounts => {
     assert.equal(txReceipt.logs[0].args._to, accounts[1], "logs account tokens transfered to")
     assert.equal(txReceipt.logs[0].args._value, 25000, "logs the transfer amount")
     assert(transferCall, "transfer returns true")
+  })
+
+  it("approves tokens for delegated transfer", async () => {
+    const approvedTransfer = await tokenInstance.approve.call(accounts[1], 100)
+    assert(approvedTransfer, "it returns true")
+    const txReceipt = await tokenInstance.approve(accounts[1], 100, { from: accounts[0] })
+    assert.equal(txReceipt.logs.length, 1, "triggers one event")
+    assert.equal(txReceipt.logs[0].event, "Approval", `should be the "Approval" event`)
+    assert.equal(txReceipt.logs[0].args._owner, accounts[0], "logs the authorized by account")
+    assert.equal(txReceipt.logs[0].args._spender, accounts[1], "logs the authorized account")
+    assert.equal(txReceipt.logs[0].args._value, 100, "logs the transfer amount")
+    const allowance = await tokenInstance.allowance(accounts[0], accounts[1]);
+    assert.equal(allowance.toNumber(), 100, "stores the allowance for delegated transfer")
   })
 })

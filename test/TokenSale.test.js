@@ -65,5 +65,13 @@ contract("TokenSale", (accounts) => {
     } catch (error) {
       assert.equal(error.message, "VM Exception while processing transaction: revert", "only admin can end token sale")
     }
+
+    // try to end sale with admin account
+    try {
+      await tokenSaleInstance.endSale({ from: admin })
+      assert(true, "admin can end token sale")
+    } catch (error) {
+      assert.equal(error.message, "VM Exception while processing transaction: revert", "admin should be able to end token sale")
+    }
   })
 })

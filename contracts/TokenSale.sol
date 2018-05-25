@@ -26,6 +26,6 @@ contract TokenSale {
 
     function endSale() public {
         require(msg.sender == admin);
-        
+
     }
 }

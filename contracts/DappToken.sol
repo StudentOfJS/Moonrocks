@@ -1,5 +1,5 @@
 pragma solidity ^0.4.23;
-
+import "./SafeMath.sol";
 contract DappToken {
 
     string public name = "dApp Token";
@@ -31,8 +31,8 @@ contract DappToken {
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
         require(balanceOf[msg.sender] >= _value && _value > 0);
-        balanceOf[msg.sender] -= _value;
-        balanceOf[_to] += _value;
+        balanceOf[msg.sender] = SafeMath.sub(balanceOf[msg.sender], _value);
+        balanceOf[_to] = SafeMath.add(balanceOf[_to], _value);
         emit Transfer(msg.sender, _to, _value);
         return true;
     }
@@ -45,9 +45,10 @@ contract DappToken {
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         require(balanceOf[_from] >= _value && _value > 0);
         require(allowance[_from][msg.sender] >= _value);
-        balanceOf[_from] -= _value;
-        balanceOf[_to] += _value;
-        allowance[_from][msg.sender] -= _value;
+
+        balanceOf[_from] = SafeMath.sub(balanceOf[_from], _value);
+        balanceOf[_to] = SafeMath.add(balanceOf[_to], _value);
+        allowance[_from][msg.sender] = SafeMath.sub(allowance[_from][msg.sender], _value);
         emit Transfer(_from, _to, _value);
         return true;
     }

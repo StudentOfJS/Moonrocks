@@ -18,6 +18,8 @@ contract TokenSale {
 
     function buyTokens(uint256 _numberOfTokens) public payable {
         require(msg.value == SafeMath.mul(_numberOfTokens, tokenPrice));
+        require(tokenContract.balanceOf(this) >= _numberOfTokens);
+        require(tokenContract.transfer(msg.sender, _numberOfTokens));
         tokensSold = SafeMath.add(tokensSold, _numberOfTokens);
         emit Sell(msg.sender, _numberOfTokens);
     }

@@ -76,5 +76,12 @@ contract("TokenSale", (accounts) => {
       assert.equal(error.message, "VM Exception while processing transaction: revert", "admin should be able to end token sale")
     }
 
+    // check that price was reset when selfDestruct was called
+    try {
+      await tokenSaleInstance.tokenPrice()
+      assert(false, "shouldn't be able to call token sale contract")
+    } catch (error) {
+      assert(true, "token was destroyed")
+    }
   })
 })

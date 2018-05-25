@@ -69,9 +69,12 @@ contract("TokenSale", (accounts) => {
     // try to end sale with admin account
     try {
       await tokenSaleInstance.endSale({ from: admin })
+      const adminBalance = await dappTokenInstance.balanceOf(admin)
       assert(true, "admin can end token sale")
+      assert.equal(adminBalance.toNumber(), 999990, "returns unsold tokens to admin")
     } catch (error) {
       assert.equal(error.message, "VM Exception while processing transaction: revert", "admin should be able to end token sale")
     }
+
   })
 })

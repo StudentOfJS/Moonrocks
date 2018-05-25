@@ -26,6 +26,7 @@ contract TokenSale {
 
     function endSale() public {
         require(msg.sender == admin);
+        require(tokenContract.transfer(admin, tokenContract.balanceOf(this)));
 
     }
 }

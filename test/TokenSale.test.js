@@ -56,4 +56,14 @@ contract("TokenSale", (accounts) => {
     assert.equal(contractBalanceAfterPurchase.toNumber(), TOKEN_SALE_TOKENS_AVAILABLE - numberOfTokens, "token balance of sales address is decremented after sale")
     assert.equal(balanceOfBuyer.toNumber(), numberOfTokens, "buyer recieves correct amount of tokens")
   })
+
+  it("ends token sale", async () => {
+    // try to end sale by account other than admin
+    try {
+      await tokenSaleInstance.endSale({ from: buyer })
+      assert(false, "only admin should be able to end token sale")
+    } catch (error) {
+      assert.equal(error.message, "VM Exception while processing transaction: revert", "only admin can end token sale")
+    }
+  })
 })

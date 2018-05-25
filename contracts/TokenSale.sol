@@ -23,4 +23,9 @@ contract TokenSale {
         tokensSold = SafeMath.add(tokensSold, _numberOfTokens);
         emit Sell(msg.sender, _numberOfTokens);
     }
+
+    function endSale() public {
+        require(msg.sender == admin);
+        
+    }
 }

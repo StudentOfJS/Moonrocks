@@ -6,7 +6,7 @@
     "target": "es5",
     "lib": [
       "es6",
-      "dom"
+      "dom",
     ],
     "sourceMap": true,
     "allowJs": true,
@@ -25,7 +25,7 @@
     "./node_modules/web3-typescript-typings/index.d.ts"
   ],
   "exclude": [
-    "node_modules",
+    // "node_modules",
     "build",
     "scripts",
     "acceptance-tests",

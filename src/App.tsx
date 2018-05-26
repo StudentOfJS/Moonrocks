@@ -1,14 +1,14 @@
-import * as React from 'react';
+import * as React from 'react'
 import { theme, ThemeProvider } from './theme'
 
 class App extends React.Component {
   public render() {
     return (
       <ThemeProvider theme={theme}>
-        <div>Start token sale site</div>
+        <h1>test</h1>
       </ThemeProvider>
-    );
+    )
   }
 }
 
-export default App;
+export default App

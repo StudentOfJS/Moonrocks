@@ -1,11 +1,18 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "dappu",
+  "version": "1.0.0",
+  "main": "truffle.js",
+  "description": "token sale ICO",
+  "repository": "https://github.com/StudentOfJS/dappu.git",
+  "author": "StudentOfJS <rodlewis45@gmail.com>",
+  "license": "ISC",
   "private": true,
   "dependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "react-scripts-ts": "2.16.0"
+    "react-scripts-ts": "2.16.0",
+    "styled-components": "^3.3.0",
+    "web3": "^1.0.0-beta.34"
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -18,6 +25,7 @@
     "@types/node": "^10.1.2",
     "@types/react": "^16.3.14",
     "@types/react-dom": "^16.0.5",
-    "typescript": "^2.8.3"
+    "typescript": "^2.8.3",
+    "web3-typescript-typings": "^0.10.2"
   }
 }

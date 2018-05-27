@@ -20,8 +20,8 @@ export interface IThemeInterface {
 export const theme = {
   gradient: `linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12)`,
   logo: `url("http://source.unsplash.com/random/50x50")`,
-  primaryColor: "#4B4453",
-  secondaryColor: "#FEFEDF"
+  primaryColor: "white",
+  secondaryColor: "	#7070db"
 }
 
 export default styled

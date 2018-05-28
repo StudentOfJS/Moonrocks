@@ -24,10 +24,11 @@ export default styled(Button) `
   border: none;
   margin-right: 10px;
   margin-top 5px;
-  transition: 300ms ease-in;
+  transition: 200ms ease-in-out;
   &:hover {
-    transition: 300ms ease-out;
+    transition: 200ms ease-out-in;
     cursor: pointer;
+    opacity: 0.8;
     box-shadow: 0 4px ${props => props.theme.secondaryColor} inset;
   }
 `

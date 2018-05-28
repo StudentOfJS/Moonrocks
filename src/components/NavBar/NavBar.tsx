@@ -1,6 +1,7 @@
 import * as React from "react"
 import styled from "../../theme"
 import { MinorTitle } from "../Text"
+import Logo from "./Logo"
 import NavButton from "./NavButton"
 import { Locked, UnLocked } from "./NavIcons"
 
@@ -29,6 +30,7 @@ class NavBar extends React.Component {
     return (
       <Wrapper>
         <StartWrapper>
+          <Logo>ICO dAPP</Logo>
           <Locked size={32} title="Unlock account" />
           <UnLocked size={32} title="Unlock account" />
         </StartWrapper>

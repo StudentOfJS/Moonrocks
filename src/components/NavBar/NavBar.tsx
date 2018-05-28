@@ -27,7 +27,6 @@ const EndWrapper = styled.div`
   justify-content: flex-end;
 `
 
-
 class NavBar extends React.Component {
   public render() {
     return (

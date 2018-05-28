@@ -1,16 +1,13 @@
 import * as React from "react"
 import styled from "../../theme"
 import { MinorTitle } from "../Text"
+import NavButton from "./NavButton"
 import { Locked, UnLocked } from "./NavIcons"
 
 const Wrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  top: 0;
-  box-sizing: border-box;
-  z-index: 500;
   width: 100%;
 `
 
@@ -35,7 +32,20 @@ class NavBar extends React.Component {
           <Locked size={32} title="Unlock account" />
           <UnLocked size={32} title="Unlock account" />
         </StartWrapper>
-        <EndWrapper><MinorTitle> test end</MinorTitle></EndWrapper>
+        <EndWrapper>
+          <NavButton>
+            <MinorTitle> test end</MinorTitle>
+          </NavButton>
+          <NavButton>
+            <MinorTitle> test end</MinorTitle>
+          </NavButton>
+          <NavButton>
+            <MinorTitle> test end</MinorTitle>
+          </NavButton>
+          <NavButton>
+            <MinorTitle> test end</MinorTitle>
+          </NavButton>
+        </EndWrapper>
       </Wrapper>
     )
   }

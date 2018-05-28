@@ -15,20 +15,19 @@ const Button: React.StatelessComponent<IButtonProps> = props => (
 
 
 export default styled(Button) `
+  display: inline-flex;
   background: ${props => props.theme.transparent ? props.theme.secondaryColor : props.theme.primaryColor};
   color: ${props => props.theme.transparent ? props.theme.primaryColor : props.theme.secondaryColor};
   max-width: 160px;
   font-size: 1.1em;
   font-family: ${props => props.theme.fontFamily};
-  padding: 0.4em 1em;
-  border: 2px solid ${props => props.theme.transparent ? props.theme.primaryColor : props.theme.secondaryColor};
-  border-radius: 5px;
-  transition: transform 800ms ease-in-out;
+  border: none;
+  margin-right: 10px;
+  margin-top 5px;
+  transition: 300ms ease-in;
   &:hover {
-    transition: transform 800ms ease-in-out;
+    transition: 300ms ease-out;
     cursor: pointer;
-    background: ${props => props.theme.transparent ? props.theme.primaryColor : props.theme.secondaryColor};
-    color: ${props => props.theme.transparent ? props.theme.secondaryColor : props.theme.primaryColor};
-    border: 2px solid ${props => props.theme.transparent ? props.theme.secondaryColor : props.theme.primaryColor};
+    box-shadow: 0 4px ${props => props.theme.secondaryColor} inset;
   }
 `

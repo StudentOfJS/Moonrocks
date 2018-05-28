@@ -12,8 +12,8 @@ const SubTitle = styled.h2`
   font-style: oblique;
 `;
 const MinorTitle = styled.h3`
-  font-size: 1.2em;
-  font-weight: 600;
+  font-size: 1.1em;
+  font-weight: 550;
   text-align: center;
 `;
 const Paragraph = styled.p`

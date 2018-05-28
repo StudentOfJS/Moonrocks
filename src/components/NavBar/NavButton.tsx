@@ -16,7 +16,7 @@ const Button: React.StatelessComponent<IButtonProps> = props => (
 
 export default styled(Button) `
   display: inline-flex;
-  background: ${props => props.theme.transparent ? props.theme.secondaryColor : props.theme.primaryColor};
+  background: transparent;
   color: ${props => props.theme.transparent ? props.theme.primaryColor : props.theme.secondaryColor};
   max-width: 160px;
   font-size: 1.1em;

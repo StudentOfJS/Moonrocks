@@ -20,7 +20,7 @@ export default styled(Nav) `
   overflow: hidden;
   z-index: 500;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   color: ${props => props.theme.transparent ? props.theme.primaryColor : props.theme.secondaryColor};
   font-family: ${props => props.theme.fontFamily};
   background: ${props => props.theme.transparent ? props.theme.secondaryColor : 'transparent'};

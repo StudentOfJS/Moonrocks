@@ -36,16 +36,13 @@ class NavBar extends React.Component {
         </StartWrapper>
         <EndWrapper>
           <NavButton>
-            <MinorTitle> test end</MinorTitle>
+            <MinorTitle>team</MinorTitle>
           </NavButton>
           <NavButton>
-            <MinorTitle> test end</MinorTitle>
+            <MinorTitle>token sale</MinorTitle>
           </NavButton>
           <NavButton>
-            <MinorTitle> test end</MinorTitle>
-          </NavButton>
-          <NavButton>
-            <MinorTitle> test end</MinorTitle>
+            <MinorTitle>whitepaper</MinorTitle>
           </NavButton>
         </EndWrapper>
       </Wrapper>

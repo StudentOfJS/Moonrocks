@@ -50,7 +50,7 @@ export default styled(Box) `
   color: ${props => props.theme.secondaryColor};
   border: solid 3px ${props => props.theme.transparent ? props.theme.primaryColor : props.theme.secondaryColor};;
   font-family: ${props => props.theme.fontFamily};
-  background: ${props => props.theme.transparent ? props.theme.secondaryColor : props.theme.primaryColor};
+  background: transparent;
   &:hover {
     animation: ${tada} 1s;
   }

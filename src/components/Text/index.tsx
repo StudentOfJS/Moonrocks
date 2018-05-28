@@ -13,7 +13,7 @@ const SubTitle = styled.h2`
 `;
 const MinorTitle = styled.h3`
   font-size: 1.1em;
-  font-weight: 550;
+  font-weight: 500;
   text-align: center;
 `;
 const Paragraph = styled.p`

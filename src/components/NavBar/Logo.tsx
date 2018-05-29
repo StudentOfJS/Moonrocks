@@ -9,7 +9,7 @@ const tada = keyframes`
 
   10%,
   20% {
-    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -2deg);
   }
 
   30%,
@@ -22,7 +22,7 @@ const tada = keyframes`
   40%,
   60%,
   80% {
-    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -2deg);
   }
 
   to {

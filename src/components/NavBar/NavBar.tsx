@@ -3,7 +3,7 @@ import styled from "../../theme"
 import { MinorTitle } from "../Text"
 import Logo from "./Logo"
 import NavButton from "./NavButton"
-import { Locked, UnLocked } from "./NavIcons"
+import { LockIcon } from "./NavIcons"
 
 const Wrapper = styled.nav`
   display: flex;
@@ -24,25 +24,36 @@ const EndWrapper = styled.div`
   align-items: center;
   justify-content: flex-end;
 `
+interface IState {
+  lock: boolean
+}
 
-class NavBar extends React.Component {
+class NavBar extends React.Component<{}, IState> {
+  public state: IState = {
+    lock: true
+  }
   public render() {
     return (
       <Wrapper>
         <StartWrapper>
-          <Logo>ICO dAPP</Logo>
-          <Locked size={32} title="Unlock account" />
-          <UnLocked size={32} title="Unlock account" />
+          <Logo>dAPPur</Logo>
+          <NavButton>
+            <MinorTitle>token sale</MinorTitle>
+          </NavButton>
+          {LockIcon(this.state.lock)}
         </StartWrapper>
         <EndWrapper>
+          <NavButton>
+            <MinorTitle>what is dAPPur?</MinorTitle>
+          </NavButton>
           <NavButton>
             <MinorTitle>team</MinorTitle>
           </NavButton>
           <NavButton>
-            <MinorTitle>token sale</MinorTitle>
+            <MinorTitle>whitepaper</MinorTitle>
           </NavButton>
           <NavButton>
-            <MinorTitle>whitepaper</MinorTitle>
+            <MinorTitle>roadmap</MinorTitle>
           </NavButton>
         </EndWrapper>
       </Wrapper>

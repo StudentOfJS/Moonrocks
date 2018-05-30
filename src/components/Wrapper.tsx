@@ -22,17 +22,9 @@ export default styled.div`
     @media (min-width: 500px) {
       grid-template-columns: 1fr 4fr 1fr;
       grid-template-areas: 
-        "nav    about about"
-        "nav    team  team"
-        "footer footer  footer"
-    }
-    @media (min-width: 300px) {
-      grid-template-columns: 1fr 4fr 1fr;
-      grid-template-areas: 
-        "nav     nav     nav"
-        "header  header  header"
-        "content content content"
-        "ad      ad      ad"
-        "footer  footer  footer"
+        "nav    hero    hero"
+        "nav    about   about"
+        "nav    team    team"
+        "nav    footer  footer"
     }
 `

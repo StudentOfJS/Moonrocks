@@ -15,7 +15,7 @@ const Nav: React.StatelessComponent<INavProps> = props => (
 
 export default styled(Nav) `
   top: 0;
-  position: absolute;
+  position: fixed;
   box-sizing: border-box;
   overflow: hidden;
   z-index: 500;

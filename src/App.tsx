@@ -9,8 +9,8 @@ class App extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <Wrapper>
-          <NavBar />
           <Hero />
+          <NavBar />
         </Wrapper>
       </ThemeProvider>
     )

@@ -48,7 +48,7 @@ export default styled(Box) `
   padding: 5px;
   margin-right: 10px;
   color: ${props => props.theme.secondaryColor};
-  border: solid 3px ${props => props.theme.transparent ? props.theme.primaryColor : props.theme.secondaryColor};;
+  border: solid 3px ${props => props.theme.transparent ? props.theme.primaryColor : props.theme.secondaryColor};
   font-family: ${props => props.theme.fontFamily};
   background: transparent;
   &:hover {

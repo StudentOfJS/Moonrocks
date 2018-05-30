@@ -9,6 +9,7 @@ const Wrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  grid-area: nav;
   width: 100%;
 `
 

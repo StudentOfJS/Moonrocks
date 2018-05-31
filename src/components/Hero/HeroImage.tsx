@@ -1,43 +1,36 @@
-import * as React from 'react'
-import styled, { IThemeInterface, keyframes } from "../../theme"
+import styled, { keyframes } from "../../theme"
+import Div from '../Div'
+
 
 
 const flyCycle = keyframes`
   0% {
-    transform: translate3d(-100%, -10%, 0);
+    transform: scale(0.1) translate3d(-100%, -10%, 0);
+    filter: blur(500px) saturate(0) invert(100%);
   }
-
   25% {
-    transform: scale(1.1) translate3d(0, -15%, 20%);
-  }
-  40% {
-    transform: scale(1.3);
+    transform: scale(0.5) rotate(360deg);
+    filter: blur(80px) saturate(1) invert(100%);
   }
   50% {
-    transform: scale(1.5) rotate(360deg);
+    transform: scale(2.5) rotate(720deg);
+    filter: blur(0px) saturate(4) invert(100%);
+  }
+  75% {
+    transform: scale(2);
+    filter: blur(1px) saturate(3.5) invert(100%);
   }
   100% {
-    transform: translate3d(100%, -20%, 100%) scale(1) rotate(360deg);
+    transform: scale(1);
+    filter: blur(4px) saturate(3) invert(100%);
   }
 
 `
 
-interface IHeroImageProps {
-  theme?: IThemeInterface;
-  className?: string;
-}
 
-const Box: React.StatelessComponent<IHeroImageProps> = props => (
-  <div className={props.className}>
-    {props.children}
-  </div>
-);
-
-
-export default styled(Box) `
+export default styled(Div) `
   animation-name: ${flyCycle};
-  animation-timing-function: steps(1000);
-  animation-duration: 10s;
-  animation-delay: -1s;
-  transition: ease-in-out;
+  animation-timing-function: linear;
+  animation-duration: 20s;
+  filter: blur(4px) saturate(3) invert(100%);
 `

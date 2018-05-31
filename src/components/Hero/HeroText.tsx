@@ -8,13 +8,16 @@ const HeroText = styled(Div) `
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  z-index: 101;
+  width: 100%;
+  color: white;
 `
 
 export default () => {
   return (
     <HeroText>
-      <Title>dAPPur</Title>
-      <SubTitle>dAPPur</SubTitle>
+      <Title>We invite you all</Title>
+      <SubTitle> to become citizens of the moon</SubTitle>
       <MinorTitle>dAPPur</MinorTitle>
       <Paragraph>dAPPur</Paragraph>
     </HeroText>

@@ -6,10 +6,8 @@ import { MinorTitle, Paragraph, SubTitle, Title } from '../Text'
 const HeroText = styled(Div) `
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  color: ${props => props.theme.primaryColor}
-
 `
 
 export default () => {

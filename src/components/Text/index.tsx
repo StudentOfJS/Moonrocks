@@ -1,12 +1,12 @@
 import styled from "../../theme"
 
 const Title = styled.h1`
-  font-size: 1.5em;
+  font-size: 3em;
   text-align: center;
   font-weight: 800;
 `;
 const SubTitle = styled.h2`
-  font-size: 1.3em;
+  font-size: 2em;
   text-align: center;
   font-weight: 700;
   font-style: oblique;

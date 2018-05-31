@@ -1,6 +1,5 @@
-import * as React from "react"
-import styled, { IThemeInterface, keyframes } from "../../theme"
-
+import styled, { keyframes } from "../../theme"
+import Div from '../Div'
 
 const tada = keyframes`
   from {
@@ -30,19 +29,7 @@ const tada = keyframes`
   }
 `
 
-interface ILogoProps {
-  theme?: IThemeInterface;
-  className?: string;
-}
-
-const Box: React.StatelessComponent<ILogoProps> = props => (
-  <div className={props.className}>
-    {props.children}
-  </div>
-);
-
-
-export default styled(Box) `
+export default styled(Div) `
   display: inline-flex;
   align-items: center;
   padding: 5px;

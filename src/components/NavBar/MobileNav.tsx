@@ -1,19 +1,7 @@
-import * as React from "react"
-import styled, { IThemeInterface } from "../../theme"
+import styled from "../../theme"
+import Div from '../Div'
 
-interface IButtonProps {
-  theme?: IThemeInterface;
-  primary?: boolean;
-  className?: string;
-}
-
-const Burger: React.StatelessComponent<IButtonProps> = props => (
-  <div className={props.className}>
-    {props.children}
-  </div>
-);
-
-export default styled(Burger) `
+export default styled(Div) `
   border-top: 2px solid ${props => props.theme.transparent ? props.theme.primaryColor : props.theme.secondaryColor};
   height: 25px;
   width: 30px;

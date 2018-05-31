@@ -3,7 +3,7 @@ import styled from "../../theme"
 import { MinorTitle } from "../Text"
 import Logo from "./Logo"
 import NavButton from "./NavButton"
-import { LockIcon } from "./NavIcons"
+import { RocketIcon } from "./NavIcons"
 
 const Wrapper = styled.nav`
   display: flex;
@@ -37,15 +37,14 @@ class NavBar extends React.Component<{}, IState> {
     return (
       <Wrapper>
         <StartWrapper>
-          <Logo>dAPPur</Logo>
+          <Logo>moonrock <RocketIcon size={32} title="rocket to the moon" /></Logo>
           <NavButton>
             <MinorTitle>token sale</MinorTitle>
           </NavButton>
-          {LockIcon(this.state.lock)}
         </StartWrapper>
         <EndWrapper>
           <NavButton>
-            <MinorTitle>what is dAPPur?</MinorTitle>
+            <MinorTitle>what is moonrock?</MinorTitle>
           </NavButton>
           <NavButton>
             <MinorTitle>team</MinorTitle>

@@ -37,7 +37,7 @@ export default styled.div`
   top: 0;
   background-color: black;
   opacity: 0.6;
-  grid-area: hero;
+  grid-area: content;
   animation-name: ${flicker};
   animation-timing-function: linear;
   animation-duration: 10s;

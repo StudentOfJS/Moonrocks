@@ -5,8 +5,8 @@ import Div from '../Div';
 import { Paragraph, Title } from '../Text';
 
 const Wrapper = styled(Div) `
-  height: 100vh;
-  grid-area: about;
+  height: 100%;
+  grid-area: content;
   color: ${props => props.theme.secondaryColor};
 `
 export default () => {

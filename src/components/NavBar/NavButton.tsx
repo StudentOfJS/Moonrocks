@@ -18,7 +18,7 @@ export default styled(Button) `
   display: inline-flex;
   background: transparent;
   color: ${props => props.theme.primaryColor};
-  max-width: 160px;
+  max-width: 200px;
   font-size: 1.1em;
   font-family: ${props => props.theme.fontFamily};
   border: none;

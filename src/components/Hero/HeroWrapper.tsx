@@ -6,8 +6,7 @@ export default styled(Div) `
   display: flex;
   align-items: center;
   justify-content: space-between;
-  grid-area: hero;
-  padding: 100px;
+  grid-area: content;
   color: ${props => props.theme.primaryColor};
   font-family: ${props => props.theme.fontFamily};
   background: ${props => props.theme.gradient};

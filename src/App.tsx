@@ -1,5 +1,4 @@
 import * as React from 'react'
-import About from './components/About'
 import Grid from './components/Grid'
 import NavBar from './components/NavBar'
 import Router from './routes'
@@ -12,7 +11,6 @@ class App extends React.Component {
         <Grid>
           <Router />
           <NavBar />
-          <About />
         </Grid>
       </ThemeProvider>
     )

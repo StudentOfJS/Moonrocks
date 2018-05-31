@@ -1,22 +1,7 @@
-import * as React from "react"
-import styled, { IThemeInterface } from "../../theme"
+import styled from "../../theme"
+import Div from "../Div";
 
-
-
-
-interface IHeroWrapperProps {
-  theme?: IThemeInterface;
-  className?: string;
-}
-
-const Hero: React.StatelessComponent<IHeroWrapperProps> = props => (
-  <div className={props.className}>
-    {props.children}
-  </div>
-);
-
-
-export default styled(Hero) `
+export default styled(Div) `
   height: 100vh;
   display: flex;
   align-items: center;
@@ -26,4 +11,5 @@ export default styled(Hero) `
   color: ${props => props.theme.primaryColor};
   font-family: ${props => props.theme.fontFamily};
   background: ${props => props.theme.gradient};
+  overflow: hidden;
 `

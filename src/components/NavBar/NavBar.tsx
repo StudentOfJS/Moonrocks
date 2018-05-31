@@ -1,4 +1,5 @@
 import * as React from "react"
+import { COMPANY, TOKEN_NAME } from "../../constants"
 import styled from "../../theme"
 import { RocketIcon } from "../icons/index"
 import { MinorTitle } from "../Text"
@@ -37,14 +38,14 @@ class NavBar extends React.Component<{}, IState> {
     return (
       <Wrapper>
         <StartWrapper>
-          <Logo>moonrock <RocketIcon size={32} title="rocket to the moon" /></Logo>
+          <Logo>{COMPANY} <RocketIcon size={32} title="rocket to the moon" /></Logo>
           <NavButton>
             <MinorTitle>token sale</MinorTitle>
           </NavButton>
         </StartWrapper>
         <EndWrapper>
           <NavButton>
-            <MinorTitle>what is moonrock?</MinorTitle>
+            <MinorTitle>what are {TOKEN_NAME}?</MinorTitle>
           </NavButton>
           <NavButton>
             <MinorTitle>team</MinorTitle>

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StyledIcon } from 'styled-icons/material'
 import { Lock, LockOpen } from 'styled-icons/material'
-import { Rocket } from 'styled-icons/octicons';
+import { Rocket } from 'styled-icons/octicons'
 
 const Locked: StyledIcon = Lock.extend`
   color: ${props => props.theme.iconColor ? props.theme.iconColor : props.theme.secondaryColor};

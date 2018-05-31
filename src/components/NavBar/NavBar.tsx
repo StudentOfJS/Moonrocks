@@ -1,9 +1,9 @@
 import * as React from "react"
 import styled from "../../theme"
+import { RocketIcon } from "../icons/index"
 import { MinorTitle } from "../Text"
 import Logo from "./Logo"
 import NavButton from "./NavButton"
-import { RocketIcon } from "./NavIcons"
 
 const Wrapper = styled.nav`
   display: flex;

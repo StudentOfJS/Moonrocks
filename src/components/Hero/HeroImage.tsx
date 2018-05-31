@@ -16,13 +16,33 @@ const flyCycle = keyframes`
     transform: scale(2.5) rotate(720deg);
     filter: blur(0px) saturate(4) invert(100%);
   }
+  55% {
+    transform: scale(2.5) rotate(720deg);
+    filter: blur(0px) saturate(4) invert(100%);
+  }
+  60% {
+    transform: scale(2.5) rotate(720deg);
+    filter: blur(0px) saturate(4) invert(100%);
+  }
   75% {
     transform: scale(2);
     filter: blur(1px) saturate(3.5) invert(100%);
   }
+  97% {
+    transform: scale(1);
+    filter: blur(6px) saturate(3) invert(100%);
+  }
+  98% {
+    transform: scale(1);
+    filter: blur(2px) saturate(3) invert(100%);
+  }
+  99% {
+    transform: scale(1);
+    filter: blur(6px) saturate(3) invert(100%);
+  }
   100% {
     transform: scale(1);
-    filter: blur(4px) saturate(3) invert(100%);
+    filter: blur(1px) saturate(1) invert(100%);
   }
 
 `
@@ -31,6 +51,6 @@ const flyCycle = keyframes`
 export default styled(Div) `
   animation-name: ${flyCycle};
   animation-timing-function: linear;
-  animation-duration: 20s;
-  filter: blur(4px) saturate(3) invert(100%);
+  animation-duration: 10s;
+  filter: invert(100%);
 `

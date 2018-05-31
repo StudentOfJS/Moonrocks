@@ -6,10 +6,11 @@ import { MinorTitle, Paragraph, SubTitle, Title } from '../Text'
 const HeroText = styled(Div) `
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   z-index: 101;
   width: 100%;
+  padding-left: 10%;
   color: white;
 `
 
@@ -18,8 +19,8 @@ export default () => {
     <HeroText>
       <Title>We invite you all</Title>
       <SubTitle> to become citizens of the moon</SubTitle>
-      <MinorTitle>dAPPur</MinorTitle>
-      <Paragraph>dAPPur</Paragraph>
+      <MinorTitle>moonrock token (MRT)</MinorTitle>
+      <Paragraph>one small step for blockchain, one giant leap for mankind</Paragraph>
     </HeroText>
   )
 }

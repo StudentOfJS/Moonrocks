@@ -1,17 +1,15 @@
 import * as React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import About from '../components/About'
 import Hero from '../components/Hero'
 
-const Router = () => {
+const Routes = () => {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact={true} path="/" component={Hero} />
-        <Route path="/about" component={About} />
-      </Switch>
-    </BrowserRouter>
+    <Switch>
+      <Route exact={true} path="/" component={Hero} />
+      <Route exact={true} path="/about" component={About} />
+    </Switch>
   )
 }
 
-export default Router;
+export default Routes

@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from 'react-router-dom'
 import { COMPANY, TOKEN_NAME } from "../../constants"
 import styled from "../../theme"
 import { RocketIcon } from "../icons/index"
@@ -38,23 +39,25 @@ class NavBar extends React.Component<{}, IState> {
     return (
       <Wrapper>
         <StartWrapper>
-          <Logo>{COMPANY} <RocketIcon size={32} title="rocket to the moon" /></Logo>
+          <Link to="/">
+            <Logo>{COMPANY} <RocketIcon size={32} title="rocket to the moon" /></Logo>
+          </Link>
           <NavButton>
-            <MinorTitle>token sale</MinorTitle>
+            <Link to="/tokensale" ><MinorTitle>token sale</MinorTitle></Link>
           </NavButton>
         </StartWrapper>
         <EndWrapper>
           <NavButton>
-            <MinorTitle>what are {TOKEN_NAME}?</MinorTitle>
+            <Link to="/about" ><MinorTitle>what are {TOKEN_NAME}?</MinorTitle></Link>
           </NavButton>
           <NavButton>
-            <MinorTitle>team</MinorTitle>
+            <Link to="/team" ><MinorTitle>team</MinorTitle></Link>
           </NavButton>
           <NavButton>
-            <MinorTitle>whitepaper</MinorTitle>
+            <Link to="/whitepaper" ><MinorTitle>whitepaper</MinorTitle></Link>
           </NavButton>
           <NavButton>
-            <MinorTitle>roadmap</MinorTitle>
+            <Link to="/roadmap" ><MinorTitle>roadmap</MinorTitle></Link>
           </NavButton>
         </EndWrapper>
       </Wrapper>

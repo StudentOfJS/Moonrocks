@@ -1,10 +1,10 @@
 import * as React from "react"
-import { Link } from 'react-router-dom'
 import { COMPANY, TOKEN_NAME } from "../../constants"
 import styled from "../../theme"
 import { RocketIcon } from "../icons/index"
 import { MinorTitle } from "../Text"
 import Logo from "./Logo"
+import NavBarLink from "./NavBarLink"
 import NavButton from "./NavButton"
 
 const Wrapper = styled.nav`
@@ -39,25 +39,25 @@ class NavBar extends React.Component<{}, IState> {
     return (
       <Wrapper>
         <StartWrapper>
-          <Link to="/">
+          <NavBarLink to="/">
             <Logo>{COMPANY} <RocketIcon size={32} title="rocket to the moon" /></Logo>
-          </Link>
+          </NavBarLink>
           <NavButton>
-            <Link to="/tokensale" ><MinorTitle>token sale</MinorTitle></Link>
+            <NavBarLink to="/tokensale" ><MinorTitle>token sale</MinorTitle></NavBarLink>
           </NavButton>
         </StartWrapper>
         <EndWrapper>
           <NavButton>
-            <Link to="/about" ><MinorTitle>what are {TOKEN_NAME}?</MinorTitle></Link>
+            <NavBarLink to="/about" ><MinorTitle>what are {TOKEN_NAME}?</MinorTitle></NavBarLink>
           </NavButton>
           <NavButton>
-            <Link to="/team" ><MinorTitle>team</MinorTitle></Link>
+            <NavBarLink to="/team" ><MinorTitle>team</MinorTitle></NavBarLink>
           </NavButton>
           <NavButton>
-            <Link to="/whitepaper" ><MinorTitle>whitepaper</MinorTitle></Link>
+            <NavBarLink to="/whitepaper" ><MinorTitle>whitepaper</MinorTitle></NavBarLink>
           </NavButton>
           <NavButton>
-            <Link to="/roadmap" ><MinorTitle>roadmap</MinorTitle></Link>
+            <NavBarLink to="/roadmap" ><MinorTitle>roadmap</MinorTitle></NavBarLink>
           </NavButton>
         </EndWrapper>
       </Wrapper>

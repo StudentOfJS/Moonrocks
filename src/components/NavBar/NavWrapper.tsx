@@ -14,6 +14,9 @@ const Nav: React.StatelessComponent<INavProps> = props => (
 
 
 export default styled(Nav) `
+  @media (max-width: 500px) {
+    display: none;
+  }
   top: 0;
   position: fixed;
   box-sizing: border-box;

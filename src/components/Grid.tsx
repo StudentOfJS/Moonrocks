@@ -14,9 +14,9 @@ export default styled.div`
       "footer"
     }
     @media (max-width: 500px) {
-      grid-template-columns: 1fr 6fr;
+      grid-template-columns: 6fr;
       grid-template-areas: 
-        "nav    content"
-        "footer    footer"
+        "content"
+        "footer"
     }
 `

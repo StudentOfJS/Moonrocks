@@ -14,31 +14,31 @@ const flyCycle = keyframes`
   }
   50% {
     transform: scale(2.5) rotate(720deg);
-    filter: blur(0px) saturate(4) invert(100%);
+    filter: blur(0.5px) saturate(3) invert(100%);
   }
   55% {
     transform: scale(2.5) rotate(720deg);
-    filter: blur(0px) saturate(4) invert(100%);
+    filter: blur(0.5px) saturate(3) invert(100%);
   }
   60% {
     transform: scale(2.5) rotate(720deg);
-    filter: blur(0px) saturate(4) invert(100%);
+    filter: blur(0.5px) saturate(3) invert(100%);
   }
   75% {
     transform: scale(2);
-    filter: blur(1px) saturate(3.5) invert(100%);
+    filter: blur(1px) saturate(2.5) invert(100%);
   }
   97% {
     transform: scale(1);
-    filter: blur(6px) saturate(3) invert(100%);
+    filter: blur(6px) saturate(2) invert(100%);
   }
   98% {
     transform: scale(1);
-    filter: blur(2px) saturate(3) invert(100%);
+    filter: blur(2px) saturate(2) invert(100%);
   }
   99% {
     transform: scale(1);
-    filter: blur(6px) saturate(3) invert(100%);
+    filter: blur(6px) saturate(1.5) invert(100%);
   }
   100% {
     transform: scale(1);
@@ -49,8 +49,12 @@ const flyCycle = keyframes`
 
 
 export default styled(Div) `
+  @media (max-width: 500px) {
+    display: none;
+  }
   animation-name: ${flyCycle};
   animation-timing-function: linear;
   animation-duration: 10s;
   filter: invert(100%);
+  padding-left: 10%;
 `

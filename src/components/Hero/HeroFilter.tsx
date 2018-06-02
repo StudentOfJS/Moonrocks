@@ -23,8 +23,17 @@ const flicker = keyframes`
   53% {
     opacity: 0.6;
   }
-  100% {
+  97% {
     opacity: 0.6;
+  }
+  98% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 
 `
@@ -36,7 +45,7 @@ export default styled.div`
   height: 100vh;
   top: 0;
   background-color: black;
-  opacity: 0.6;
+  opacity: 0;
   grid-area: content;
   animation-name: ${flicker};
   animation-timing-function: linear;

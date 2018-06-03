@@ -8,6 +8,7 @@ const HeroText = styled(Div) `
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  grid-area: content;
   z-index: 101;
   width: 100%;
   padding-left: 10%;

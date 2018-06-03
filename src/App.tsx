@@ -1,6 +1,6 @@
 import * as React from 'react'
-import Grid from './components/Grid'
 import NavBar from './components/NavBar'
+import Grid from './Grid'
 import Routes from './routes'
 import { theme, ThemeProvider } from './theme'
 

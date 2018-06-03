@@ -46,7 +46,7 @@ export default styled.div`
   top: 0;
   background-color: black;
   opacity: 0;
-  grid-area: content;
+  grid-area: sidebar content;
   animation-name: ${flicker};
   animation-timing-function: linear;
   animation-duration: 10s;

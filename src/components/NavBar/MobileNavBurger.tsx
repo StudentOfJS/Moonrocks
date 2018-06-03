@@ -1,6 +1,7 @@
 import * as React from 'react'
-import { connect } from 'react-redux'
-import { openMobileMenu } from '../../redux/actions'
+import { connect, Dispatch } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as mobileActions from '../../redux/actions'
 import { IStateMenu } from '../../redux/model'
 import styled from "../../theme"
 import Div from '../Div'
@@ -24,25 +25,28 @@ const Bar2 = Bar.extend`
 const Bar3 = Bar.extend`
   transform: rotate(45deg) translate(-8px, -8px);
 `
-export interface ISFCMenuProps {
+export interface IMenuProps {
   open: IStateMenu;
-  onClick: () => ({ type: string; payload: true });
+  onOpen: () => ({ type: 'actions/MOBILE_MENU_OPEN' });
+  onClose: () => ({ type: 'actions/MOBILE_MENU_CLOSE' });
 }
 
-const MobileNavBurger: React.SFC<ISFCMenuProps> = (props) => {
+const MobileNavBurger: React.SFC<any> = ({ onOpen, onClose, open }) => {
   return open
-    ? (<div onClick={onClick}><Container><Bar /><Bar /><Bar /></Container></div>)
-    : (<div onClick={onClick}><Container><Bar1 /><Bar2 /><Bar3 /></Container></div>)
+    ? (<div onClick={onOpen}><Container><Bar /><Bar /><Bar /></Container></div>)
+    : (<div onClick={onClose}><Container><Bar1 /><Bar2 /><Bar3 /></Container></div>)
 }
 
 const mapStateToProps = (state: IStateMenu) => ({
   open: state.openMobileMenu,
-});
+})
 
+const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({
+  onClose: mobileActions.closeMobileMenu,
+  onOpen: mobileActions.openMobileMenu,
+}, dispatch)
 
 export default connect(
   mapStateToProps,
-  {
-    onClick: openMobileMenu(!open)
-  }
+  mapDispatchToProps
 )(MobileNavBurger)

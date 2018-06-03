@@ -52,6 +52,7 @@ export default styled(Div) `
   @media (max-width: 500px) {
     display: none;
   }
+  grid-area: sidebar;
   animation-name: ${flyCycle};
   animation-timing-function: linear;
   animation-duration: 10s;

@@ -43,8 +43,8 @@ type Props = IState & IDispatchProps
 
 const MobileNavBurger: React.SFC<Props> = ({ onOpen, onClose, openMobileMenu }) => {
   return openMobileMenu
-    ? (<div onClick={onOpen}><Container><Bar /><Bar /><Bar /></Container></div>)
-    : (<div onClick={onClose}><Container><Bar1 /><Bar2 /><Bar3 /></Container></div>)
+    ? (<div onClick={onClose}><Container><Bar1 /><Bar2 /><Bar3 /></Container></div>)
+    : (<div onClick={onOpen}><Container><Bar /><Bar /><Bar /></Container></div>)
 }
 
 const mapStateToProps = (state: IState, props: Props) => ({

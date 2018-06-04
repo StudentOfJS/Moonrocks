@@ -16,6 +16,7 @@ const Draw = styled(Div) `
   align-items: center;
   justify-content: space-between;
   height: 100vh;
+  padding-top: 50px;
   width: 60%;
   background-color: black;
   opacity: 0.7;
@@ -58,7 +59,7 @@ const mapStateToProps = (state: IState, props: Props) => ({
   openMobileMenu: state.openMobileMenu,
 })
 
-const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({
+const mapDispatchToProps = (dispatch: Dispatch, props: Props) => bindActionCreators({
   close: mobileActions.closeMobileMenu,
 }, dispatch)
 

@@ -27,7 +27,7 @@ export const theme = {
   heroImage: `url("../images/astronaut.png")`,
   logo: `url("http://source.unsplash.com/random/50x50")`,
   primaryColor: "white",
-  secondaryColor: "	#7070db",
+  secondaryColor: "yellow",
   transparent: false
 }
 

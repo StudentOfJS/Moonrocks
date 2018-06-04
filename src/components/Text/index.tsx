@@ -18,7 +18,7 @@ const MinorTitle = styled.h3`
 `;
 const Paragraph = styled.p`
   font-size: 1em;
-  text-align: center;
+  text-align: left;
 `;
 
 export {

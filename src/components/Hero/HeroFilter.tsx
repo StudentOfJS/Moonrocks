@@ -57,7 +57,7 @@ export default styled.div`
     opacity: 1;
     animation-name: ${flicker};
     animation-timing-function: linear;
-    animation-duration: 10s;
+    animation-duration: 5s;
   }
 
 `

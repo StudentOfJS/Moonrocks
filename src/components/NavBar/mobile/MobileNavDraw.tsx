@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { COMPANY, TOKEN_NAME } from '../../../constants'
 import styled from '../../../theme'
+import Div from '../../Div'
 import { RocketIcon } from '../../icons'
 import { MinorTitle } from '../../Text'
 import Logo from '../Logo'
 import NavBarLink from '../NavBarLink'
-import { IMobileNavProps } from './MobileNav';
+import { IMobileNavProps } from './MobileNav'
 
 const Draw = styled.div`
   display: flex;
@@ -17,10 +18,10 @@ const Draw = styled.div`
   background-color: black;
   opacity: 0.8;
 `
-const Border = styled.div`
+const Border = styled(Div) `
   width: 200px;
   background: transparent;
-  border: 3px solid red;
+  border: 3px solid ${props => props.theme.secondaryColor};
   border-radius: 5px;
 `
 

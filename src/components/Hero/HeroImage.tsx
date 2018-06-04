@@ -56,8 +56,7 @@ export default styled(Div) `
     width: 50%;
     animation-name: ${flyCycle};
     animation-timing-function: linear;
-    animation-duration: 10s;
+    animation-duration: 5s;
     filter: invert(100%);
-    padding-left: 10%;
   }
 `

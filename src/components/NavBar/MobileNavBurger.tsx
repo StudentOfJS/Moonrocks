@@ -26,9 +26,9 @@ const Bar3 = Bar.extend`
   transform: rotate(45deg) translate(-8px, -8px);
 `
 export interface IMenuProps {
-  open: IStateMenu;
-  onOpen: () => ({ type: 'actions/MOBILE_MENU_OPEN' });
-  onClose: () => ({ type: 'actions/MOBILE_MENU_CLOSE' });
+  open: IStateMenu
+  onOpen: () => ({ type: 'actions/MOBILE_MENU_OPEN' })
+  onClose: () => ({ type: 'actions/MOBILE_MENU_CLOSE' })
 }
 
 const MobileNavBurger: React.SFC<any> = ({ onOpen, onClose, open }) => {

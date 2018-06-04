@@ -52,10 +52,12 @@ export default styled(Div) `
   @media (max-width: 500px) {
     display: none;
   }
-  width: 50%;
-  animation-name: ${flyCycle};
-  animation-timing-function: linear;
-  animation-duration: 10s;
-  filter: invert(100%);
-  padding-left: 10%;
+  @media (min-width: 500px) {
+    width: 50%;
+    animation-name: ${flyCycle};
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    filter: invert(100%);
+    padding-left: 10%;
+  }
 `

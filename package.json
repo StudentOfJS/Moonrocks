@@ -4,12 +4,12 @@
   "private": true,
   "dependencies": {
     "react": "^16.4.0",
-    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.4.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
     "react-scripts-ts": "2.16.0",
+    "react-transition-group": "^2.3.1",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.2",
     "styled-components": "^3.3.0",
@@ -28,11 +28,11 @@
     "@types/jest": "^22.2.3",
     "@types/node": "^10.1.2",
     "@types/react": "^16.3.14",
-    "@types/react-addons-css-transition-group": "^15.0.4",
     "@types/react-dom": "^16.0.5",
     "@types/react-redux": "^6.0.0",
     "@types/react-router-dom": "^4.2.6",
     "@types/react-router-redux": "^5.0.15",
+    "@types/react-transition-group": "^2.0.11",
     "@types/redux-devtools-extension": "^2.13.2",
     "typescript": "^2.8.3"
   }

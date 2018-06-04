@@ -40,13 +40,24 @@ const flicker = keyframes`
 
 
 export default styled.div`
-  z-index: 100;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  background-color: black;
-  opacity: 1;
-  animation-name: ${flicker};
-  animation-timing-function: linear;
-  animation-duration: 10s;
+  @media (max-width: 500px) {
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background-color: black;
+    opacity: 1;
+  }
+  @media (min-width: 500px) {
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background-color: black;
+    opacity: 1;
+    animation-name: ${flicker};
+    animation-timing-function: linear;
+    animation-duration: 10s;
+  }
+
 `

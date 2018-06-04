@@ -3,13 +3,13 @@ import styled, { keyframes } from "../../theme"
 
 const flicker = keyframes`
   0% {
-    opacity: 0.6;
+    opacity: 1;
   }
   48% {
     opacity: 0.6;
   }
   49% {
-    opacity: 1;
+    opacity: 0.5;
   }
   50% {
     opacity: 0;
@@ -45,8 +45,7 @@ export default styled.div`
   height: 100vh;
   top: 0;
   background-color: black;
-  opacity: 0;
-  grid-area: sidebar content;
+  opacity: 1;
   animation-name: ${flicker};
   animation-timing-function: linear;
   animation-duration: 10s;

@@ -7,14 +7,13 @@ import HeroWrapper from "./HeroWrapper"
 
 export default () => {
   return (
-    <React.Fragment>
-      <HeroFilter />
+    <HeroFilter>
       <HeroWrapper>
         <HeroImage>
           <img src={astronaut} />
         </HeroImage>
         <HeroText />
       </HeroWrapper>
-    </React.Fragment>
+    </HeroFilter>
   )
 }

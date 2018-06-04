@@ -1,22 +1,34 @@
 import styled from "./theme"
 
 export default styled.div`
-  display: grid;
-  grid-template-areas: 
-    "nav"
-    "mobile"
-    "content"
-    "sidebar"
-    "footer";
   @media (min-width: 700px) {
-    grid-template-columns: 3fr;
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+    grid-template-areas: 
+      "nav"
+      "mobile"
+      "content"
+      "sidebar"
+      "footer";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100vh 180px 80px;
     grid-template-areas: 
       "sidebar content"
       "nav      nav"
       "footer   footer";
     }
     @media (max-width: 500px) {
-      grid-template-columns: 6fr;
+      display: grid;
+      width: 100%;
+      margin: 0 auto;
+      grid-template-areas: 
+        "nav"
+        "mobile"
+        "content"
+        "sidebar"
+        "footer";
+      grid-template-columns: 1fr;
       grid-template-areas: 
         "content"
         "mobile"

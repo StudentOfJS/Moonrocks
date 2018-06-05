@@ -36,13 +36,13 @@ const SlideOut = keyframes`
 const ClosedDraw = styled.div`
   animation-name: ${SlideOut};
   animation-timing-function: ease-in;
-  animation-duration: 1s;
+  animation-duration: 700ms;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   height: 100vh;
-  width: 80%;
+  width: 100%;
   background-color: black;
   opacity: 0.8;
   visibility: hidden;
@@ -51,13 +51,13 @@ const ClosedDraw = styled.div`
 const Draw = styled.div`
   animation-name: ${SlideIn};
   animation-timing-function: ease-in;
-  animation-duration: 1s;
+  animation-duration: 700ms;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   height: 100vh;
-  width: 80%;
+  width: 100%;
   background-color: black;
   opacity: 0.8;
 `

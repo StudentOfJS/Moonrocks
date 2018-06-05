@@ -11,7 +11,7 @@ const Wrapper = styled(Div) `
   justify-content: center;
   height: 100vh;
   background-color: black;
-  color: ${props => props.theme.secondaryColor};
+  color: ${props => props.theme.primaryColor};
 `
 
 const InnerWrapper = styled(Div) `

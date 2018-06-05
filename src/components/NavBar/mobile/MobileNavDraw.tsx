@@ -64,7 +64,7 @@ const Draw = styled.div`
 const Border = styled(Div) `
   width: 200px;
   background: transparent;
-  border: 3px solid ${props => props.theme.secondaryColor};
+  border: 3px solid ${props => props.theme.accent};
   border-radius: 5px;
 `
 

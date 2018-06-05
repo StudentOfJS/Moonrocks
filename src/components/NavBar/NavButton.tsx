@@ -29,6 +29,6 @@ export default styled(Button) `
     transition: 200ms ease-out-in;
     cursor: pointer;
     opacity: 0.8;
-    box-shadow: 0 4px ${props => props.theme.secondaryColor} inset;
+    box-shadow: 0 4px ${props => props.theme.accent} inset;
   }
 `

@@ -16,18 +16,19 @@ export interface IThemeInterface {
   logo?: string
   primaryColor: string
   secondaryColor: string
+  accent?: string
   transparent?: boolean
-  iconColor?: string
   heroImage?: string
 }
 
 export const theme = {
+  accent: "yellow",
   fontFamily: `medium-content-sans-serif-font,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif`,
   gradient: `linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12)`,
   heroImage: `url("../images/astronaut.png")`,
   logo: `url("http://source.unsplash.com/random/50x50")`,
   primaryColor: "white",
-  secondaryColor: "yellow",
+  secondaryColor: "dark-gray",
   transparent: false
 }
 

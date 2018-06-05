@@ -29,22 +29,28 @@ export interface IMobileNavProps {
   leave?: () => void
   onClick?: () => void
   open: boolean
+  firstTime?: boolean
 }
 export interface IMobileNavState {
   openMobileMenu: boolean
+  firstTime: boolean
 }
 
 export default class MobileNav extends React.Component<any, IMobileNavState> {
   public state = {
-    openMobileMenu: false
+    firstTime: true,
+    openMobileMenu: false,
   }
   public leave = () => this.setState({ openMobileMenu: false })
-  public onClick = () => this.setState(prevProps => ({ openMobileMenu: !prevProps.openMobileMenu }))
+  public onClick = () => this.setState(prevProps => ({
+    firstTime: false,
+    openMobileMenu: !prevProps.openMobileMenu,
+  }))
   public render() {
     return (
       <Wrapper>
         <MobileNavBurger open={this.state.openMobileMenu} onClick={this.onClick} />
-        <MobileNavDraw open={this.state.openMobileMenu} leave={this.leave} />
+        <MobileNavDraw open={this.state.openMobileMenu} leave={this.leave} firstTime={this.state.firstTime} />
       </Wrapper>
     );
   }

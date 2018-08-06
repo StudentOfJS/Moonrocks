@@ -33,8 +33,8 @@ const InnerWrapper = styled(Div)`
   align-items: flex-start;
   justify-content: flex-start;
   background-color: rgba(0, 0, 0, 0.85);
-  padding: 0 5%;
   border-radius: 30px;
+  padding: 20px;
 `;
 
 export default () => {

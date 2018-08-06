@@ -30,16 +30,17 @@ export default () => {
       <InnerWrapper>
         <Title>What is {COMPANY}</Title>
         <Paragraph>
-          {COMPANY} is redefining what it means to got to the moon.
+          one small step for blockchain, one giant leap for mankind
+        </Paragraph>
+        <Paragraph>
+          {COMPANY} is knocking Buzz Aldrin out the way to secure your
+          realestate rights on the moon.
         </Paragraph>
         <Paragraph>
           {TOKEN_NAME} will fuel our rocket and provide you with part ownership
           for our little rock in the sky. Built utilizing the blockchain, this
-          technological breakthrough provides the first completely safe
-          environment on the web where decentralized applications are detached
-          from the internet while also permitting full scalability to millions
-          of users. Elastos enables the generation of wealth through ownership
-          and exchange of your data and digital assets.
+          technological breakthrough provides the first completely safe,
+          transparent and immutable way to secure realestate on the moon.
         </Paragraph>
       </InnerWrapper>
     </Wrapper>

@@ -18,8 +18,8 @@ const showerAnimation = keyframes`
 }
 `;
 
-const shower = styled.div`
-  animation: slide-in-blurred-top 0.5s cubic-bezier(0.23, 1, 0.32, 1) infinite
+export const Shower = styled.div`
+  animation: ${showerAnimation} 0.5s cubic-bezier(0.23, 1, 0.32, 1) infinite
     both;
   background: white;
   background: linear-gradient(
@@ -32,6 +32,16 @@ const shower = styled.div`
   width: 1px;
 `;
 
-const moonBackground = styled.div`
+export const MoonBackground = styled.div`
+  align-items: center;
+  background-color: black;
   background-image: url(${moon});
+  background-position: left top;
+  background-repeat: no-repeat;
+  color: ${props => props.theme.primaryColor};
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
 `;

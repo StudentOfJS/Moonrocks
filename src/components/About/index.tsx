@@ -40,6 +40,9 @@ export default () => {
   return (
     <MoonBackground>
       <InnerWrapper>
+        <i />
+        <i />
+        <i />
         <Title>What is {COMPANY}</Title>
         <Paragraph style={{ color: "yellow" }}>
           one small step for blockchain, one giant leap for mankind

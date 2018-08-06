@@ -18,25 +18,29 @@ const trackIn = keyframes`
 `;
 
 const Title = styled.h1`
-  font-size: 3em;
+  font-size: 5em;
   text-align: center;
-  font-weight: 800;
+  font-family: "Kirang Haerang", cursive;
+  font-weight: 300;
   animation: ${trackIn} 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 `;
 const SubTitle = styled.h2`
-  font-size: 2em;
+  font-family: "Kirang Haerang", cursive;
+  font-size: 2.3em;
   text-align: center;
-  font-weight: 700;
+  font-weight: 300;
   font-style: oblique;
   animation: ${trackIn} 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 `;
 const MinorTitle = styled.h3`
+  font-family: "Roboto", sans-serif;
   font-size: 1.1em;
   font-weight: 500;
   text-align: center;
   animation: ${trackIn} 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 `;
 const Paragraph = styled.p`
+  font-family: "Roboto", sans-serif;
   font-size: 1em;
   text-align: left;
   &:first-letter {

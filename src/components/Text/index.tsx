@@ -1,4 +1,4 @@
-import styled from "../../theme"
+import styled from "../../theme";
 
 const Title = styled.h1`
   font-size: 3em;
@@ -19,8 +19,10 @@ const MinorTitle = styled.h3`
 const Paragraph = styled.p`
   font-size: 1em;
   text-align: left;
+  &:first-letter {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
 `;
 
-export {
-  Title, SubTitle, MinorTitle, Paragraph
-}
+export { Title, SubTitle, MinorTitle, Paragraph };

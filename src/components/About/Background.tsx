@@ -66,7 +66,7 @@ export const MoonBackground = styled.div`
   color: ${props => props.theme.primaryColor};
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
   overflow: hidden;
   width: 100vw;

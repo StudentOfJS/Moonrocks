@@ -1,6 +1,7 @@
 import * as React from "react";
 import { COMPANY, TOKEN_NAME } from "../../constants";
 import styled, { keyframes } from "../../theme";
+import TokenDistribution from "../Charts/TokenDistribution";
 import Div from "../Div";
 import { Paragraph, Title } from "../Text";
 import { MoonBackground } from "./Background";
@@ -25,14 +26,14 @@ const slide = keyframes`
 const InnerWrapper = styled(Div)`
   animation: ${slide} 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
   display: flex;
-  width: 75%;
-  max-width: 600px;
+  width: 100%;
+  max-width: 700px;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   background-color: rgba(0, 0, 0, 0.85);
-  padding: 30px;
+  padding: 0 5%;
   border-radius: 30px;
 `;
 
@@ -57,6 +58,7 @@ export default () => {
           technological breakthrough provides the first completely safe,
           transparent and immutable way to secure realestate on the moon.
         </Paragraph>
+        <TokenDistribution />
       </InnerWrapper>
     </MoonBackground>
   );

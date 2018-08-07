@@ -1,10 +1,10 @@
 import * as React from "react";
-import { Github } from "styled-icons/fa-brands";
 import rod from "../../images/rod.jpg";
 import styled, { keyframes } from "../../theme";
 import Div from "../Div";
+import { GithubIcon, TwitterIcon, WhatshotIcon } from "../icons";
 import { MoonBackground } from "../MoonBackground";
-import { MinorTitle, Paragraph, Title } from "../Text";
+import { MinorTitle, Title } from "../Text";
 
 const slide = keyframes`
   {
@@ -67,6 +67,18 @@ const Column = styled.div`
   height: 100%;
 `;
 
+const iconSize = "28px";
+
+const Inline = styled.div`
+  align-items: center;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  height: 34px;
+  justify-content: space-evenly;
+  width: 160px;
+`;
+
 export default () => {
   return (
     <MoonBackground>
@@ -81,8 +93,11 @@ export default () => {
             <MinorTitle style={{ color: "yellow" }}>
               Frontend Developer
             </MinorTitle>
-            <Paragraph>Mad skills</Paragraph>
-            <Github color="white" />
+            <Inline>
+              <GithubIcon size={iconSize} />
+              <TwitterIcon size={iconSize} />
+              <WhatshotIcon size={iconSize} />
+            </Inline>
           </Column>
         </Row>
       </InnerWrapper>

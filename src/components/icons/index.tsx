@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Github } from "styled-icons/fa-brands";
+import { Github, Twitter } from "styled-icons/fa-brands";
 import { Rocket as FatRocket } from "styled-icons/fa-solid";
 import { StyledIcon } from "styled-icons/material";
-import { Lock, LockOpen } from "styled-icons/material";
+import { Lock, LockOpen, Whatshot } from "styled-icons/material";
 import { Rocket } from "styled-icons/octicons";
 
 const Locked: StyledIcon = Lock.extend`
@@ -32,6 +32,16 @@ export const FatRocketIcon: StyledIcon = FatRocket.extend`
 `;
 
 export const GithubIcon: StyledIcon = Github.extend`
+  color: ${props =>
+    props.theme.iconColor ? props.theme.iconColor : props.theme.secondaryColor};
+`;
+
+export const TwitterIcon: StyledIcon = Twitter.extend`
+  color: ${props =>
+    props.theme.iconColor ? props.theme.iconColor : props.theme.secondaryColor};
+`;
+
+export const WhatshotIcon: StyledIcon = Whatshot.extend`
   color: ${props =>
     props.theme.iconColor ? props.theme.iconColor : props.theme.secondaryColor};
 `;

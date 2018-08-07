@@ -90,6 +90,9 @@ export default () => {
         <Row>
           <TeamAvatar src={rod} />
           <Column>
+          <MinorTitle>
+              Rod Lewis
+            </MinorTitle>
             <MinorTitle style={{ color: "yellow" }}>
               Frontend Developer
             </MinorTitle>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Github } from "styled-icons/fa-brands";
 import { Rocket as FatRocket } from "styled-icons/fa-solid";
 import { StyledIcon } from "styled-icons/material";
 import { Lock, LockOpen } from "styled-icons/material";
@@ -26,6 +27,11 @@ export const RocketIcon: StyledIcon = Rocket.extend`
 `;
 
 export const FatRocketIcon: StyledIcon = FatRocket.extend`
+  color: ${props =>
+    props.theme.iconColor ? props.theme.iconColor : props.theme.secondaryColor};
+`;
+
+export const GithubIcon: StyledIcon = Github.extend`
   color: ${props =>
     props.theme.iconColor ? props.theme.iconColor : props.theme.secondaryColor};
 `;

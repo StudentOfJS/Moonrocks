@@ -3,8 +3,8 @@ import LazyLoad from "react-lazyload";
 import styled, { keyframes } from "../../theme";
 import TokenDistribution from "../Charts/TokenDistribution";
 import Div from "../Div";
+import { MoonBackground } from "../MoonBackground";
 import AboutText from "./AboutText";
-import { MoonBackground } from "./Background";
 
 const slide = keyframes`
   {

@@ -1,4 +1,5 @@
 import * as React from "react";
+import LazyLoad from "react-lazyload";
 import styled, { keyframes } from "../../theme";
 import TokenDistribution from "../Charts/TokenDistribution";
 import Div from "../Div";
@@ -34,6 +35,9 @@ const InnerWrapper = styled(Div)`
   background-color: rgba(0, 0, 0, 0.85);
   border-radius: 30px;
   overflow: hidden;
+  border: 8px dashed yellow;
+  padding: 20px;
+  margin: 100px;
 `;
 
 export default () => {
@@ -44,8 +48,10 @@ export default () => {
         <i />
         <i />
         <AboutText />
-        <TokenDistribution />
       </InnerWrapper>
+      <LazyLoad once={true} offset={100} height={"100%"}>
+        <TokenDistribution />
+      </LazyLoad>
     </MoonBackground>
   );
 };

@@ -9,6 +9,7 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100%;
 `;
 
 const Row = styled.div`
@@ -16,29 +17,28 @@ const Row = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 540px;
+  height: 100%;
   justify-content: center;
+  margin-bottom: 20px;
   width: 100%;
 `;
 
-const List = styled.ul`
-  padding-top: 40px;
-`;
+const List = styled.ul``;
 const ListItem = styled.li`
   list-style-image: url(${rocket});
   list-style-type: circle;
 `;
 
 const ChartDiv = styled.div`
-  height: 500px;
-  padding-top: 40px;
-  width: 500px;
+  height: 300px;
+  width: 400px;
 `;
 
 const options = {
   animation: {
     animateRotate: true
-  }
+  },
+  circumference: 300
 };
 
 const saleData = {
@@ -71,63 +71,34 @@ export default () => {
       <SubTitle>Token Sale Details</SubTitle>
       <MinorTitle>Token Sale Allocation %</MinorTitle>
       <Row>
-        <List>
-          <ListItem>
-            <Paragraph>19m tokens will be premined for sale.</Paragraph>
-          </ListItem>
-          <ListItem>
-            <Paragraph>9.5m tokens available for the Public Sale</Paragraph>
-          </ListItem>
-          <ListItem>
-            <Paragraph>50% of tokens for Public</Paragraph>
-          </ListItem>
-          <ListItem>
-            <Paragraph>
-              15% Early backers reserve released after 6 months
-            </Paragraph>
-          </ListItem>
-          <ListItem>
-            <Paragraph>
-              15% Early backers reserve released after 24 months
-            </Paragraph>
-          </ListItem>
-          <ListItem>
-            <Paragraph>
-              5% Early backers reserve released after 48 months
-            </Paragraph>
-          </ListItem>
-          <ListItem>
-            <Paragraph>5% released to Team </Paragraph>
-          </ListItem>
-          <ListItem>
-            <Paragraph>5% Team reserve released after 1 year</Paragraph>
-          </ListItem>
-          <ListItem>
-            <Paragraph>5% Team reserve released after 3 years</Paragraph>
-          </ListItem>
-        </List>
         <ChartDiv>
           <Doughnut data={saleData} />
         </ChartDiv>
+        <List>
+          <ListItem>
+            <Paragraph>19m tokens will be premined for sale</Paragraph>
+          </ListItem>
+          <ListItem>
+            <Paragraph>50% of tokens for Public 50%</Paragraph>
+          </ListItem>
+          <ListItem>
+            <Paragraph>35% for Early Investors</Paragraph>
+          </ListItem>
+          <ListItem>
+            <Paragraph>15% reserved for Team </Paragraph>
+          </ListItem>
+        </List>
       </Row>
       <MinorTitle>Fund Distribution %</MinorTitle>
       <Row>
-        <ChartDiv>
-          <Pie data={distData} />
-        </ChartDiv>
         <List>
           <ListItem>
-            <Paragraph>10% of funds will be spent on Marketing</Paragraph>
-          </ListItem>
-          <ListItem>
             <Paragraph>
-              Year one Marketing budget will be allocated 7%
+              Year one Marketing budget will be allocated 10%
             </Paragraph>
           </ListItem>
           <ListItem>
-            <Paragraph>
-              Development will be allocated 10% of funds p/a for 4 years
-            </Paragraph>
+            <Paragraph>Development will be allocated 35% of funds</Paragraph>
           </ListItem>
           <ListItem>
             <Paragraph>15% will be used for Legal</Paragraph>
@@ -146,6 +117,9 @@ export default () => {
             </Paragraph>
           </ListItem>
         </List>
+        <ChartDiv>
+          <Pie data={distData} />
+        </ChartDiv>
       </Row>
     </Column>
   );

@@ -42,6 +42,7 @@ const MinorTitle = styled.h3`
 const Paragraph = styled.p`
   font-family: "Roboto", sans-serif;
   font-size: 1em;
+  padding: 0 20px;
   text-align: left;
   &:first-letter {
     font-weight: bold;

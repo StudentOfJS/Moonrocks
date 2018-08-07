@@ -1,9 +1,8 @@
 import * as React from "react";
-import { COMPANY, TOKEN_NAME } from "../../constants";
 import styled, { keyframes } from "../../theme";
 import TokenDistribution from "../Charts/TokenDistribution";
 import Div from "../Div";
-import { Paragraph, Title } from "../Text";
+import AboutText from "./AboutText";
 import { MoonBackground } from "./Background";
 
 const slide = keyframes`
@@ -27,14 +26,14 @@ const InnerWrapper = styled(Div)`
   animation: ${slide} 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
   display: flex;
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   background-color: rgba(0, 0, 0, 0.85);
   border-radius: 30px;
-  padding: 20px;
+  overflow: hidden;
 `;
 
 export default () => {
@@ -44,20 +43,7 @@ export default () => {
         <i />
         <i />
         <i />
-        <Title>What is {COMPANY}</Title>
-        <Paragraph style={{ color: "yellow" }}>
-          one small step for blockchain, one giant leap for mankind
-        </Paragraph>
-        <Paragraph>
-          {COMPANY} is knocking Buzz Aldrin out the way to secure your
-          realestate rights on the moon.
-        </Paragraph>
-        <Paragraph>
-          {TOKEN_NAME} will fuel our rocket and provide you with part ownership
-          for our little rock in the sky. Built utilizing the blockchain, this
-          technological breakthrough provides the first completely safe,
-          transparent and immutable way to secure realestate on the moon.
-        </Paragraph>
+        <AboutText />
         <TokenDistribution />
       </InnerWrapper>
     </MoonBackground>

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Doughnut, Pie } from "react-chartjs-2";
+import LazyLoad from "react-lazyload";
 import rocket from "../../../images/rocket.svg";
 import styled from "../../../theme";
 import { MinorTitle, Paragraph, SubTitle } from "../../Text";
@@ -71,9 +72,11 @@ export default () => {
       <SubTitle>Token Sale Details</SubTitle>
       <MinorTitle>Token Sale Allocation %</MinorTitle>
       <Row>
-        <ChartDiv>
-          <Doughnut data={saleData} />
-        </ChartDiv>
+        <LazyLoad once={true} offset={1} height={300}>
+          <ChartDiv>
+            <Doughnut data={saleData} />
+          </ChartDiv>
+        </LazyLoad>
         <List>
           <ListItem>
             <Paragraph>19m tokens will be premined for sale</Paragraph>
@@ -98,28 +101,30 @@ export default () => {
             </Paragraph>
           </ListItem>
           <ListItem>
-            <Paragraph>Development will be allocated 35% of funds</Paragraph>
+            <Paragraph>Development allocated 35% of funds</Paragraph>
           </ListItem>
           <ListItem>
-            <Paragraph>15% will be used for Legal</Paragraph>
+            <Paragraph>15% reserved for Legal</Paragraph>
           </ListItem>
           <ListItem>
             <Paragraph>
-              15% will be assigned to building a self-governing community
+              15% assigned to building a self-governing community
             </Paragraph>
           </ListItem>
           <ListItem>
-            <Paragraph>10% will be reserved for community events</Paragraph>
+            <Paragraph>10% reserved for community events</Paragraph>
           </ListItem>
           <ListItem>
             <Paragraph>
-              25% will be placed under community control after the first year
+              25% placed under community control after the first year
             </Paragraph>
           </ListItem>
         </List>
-        <ChartDiv>
-          <Pie data={distData} />
-        </ChartDiv>
+        <LazyLoad once={true} offset={1} height={300}>
+          <ChartDiv>
+            <Pie data={distData} />
+          </ChartDiv>
+        </LazyLoad>
       </Row>
     </Column>
   );

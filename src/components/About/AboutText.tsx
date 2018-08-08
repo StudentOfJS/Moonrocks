@@ -1,11 +1,23 @@
 import * as React from "react";
 import { COMPANY, TOKEN_NAME } from "../../constants";
+import styled from "../../theme";
 import { RocketIcon } from "../icons";
 import { MinorTitle, Paragraph, Title } from "../Text";
 
+const PadBottom = styled.div`
+  padding-bottom: 100px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-radius: 30px;
+  overflow: hidden;
+`;
 export default () => {
   return (
-    <React.Fragment>
+    <PadBottom>
       <Title>What is {COMPANY}</Title>
       <MinorTitle style={{ color: "yellow" }}>
         one small step for blockchain, one giant leap for mankind
@@ -41,6 +53,6 @@ export default () => {
         choose to join a lunar exploration team and start extracting your fuel.
         In exchange you will recieve a share of discovered blocks of land.
       </Paragraph>
-    </React.Fragment>
+    </PadBottom>
   );
 };

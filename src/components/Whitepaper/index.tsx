@@ -5,7 +5,6 @@ import Div from "../Div";
 import { MoonBackground } from "../MoonBackground";
 import { Paragraph, Title } from "../Text";
 
-
 const { Document, Page } = pdf;
 
 const slide = keyframes`
@@ -29,37 +28,17 @@ const InnerWrapper = styled(Div)`
   animation: ${slide} 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
   display: flex;
   width: 100%;
-  height: 60vh;
-  max-width: 800px;
-  flex-wrap: wrap;
+  max-width: 1000px;
+  height: 150vh;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.85);
   border-radius: 30px;
   overflow: hidden;
   border: 8px dashed yellow;
   padding: 20px;
   margin: 100px;
-`;
-
-const Row = styled.div`
-  align-items: space-between;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: 100px;
-  justify-content: center;
-  margin-bottom: 20px;
-  width: 100%;
-`;
-
-const Column = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
 `;
 
 interface IState {
@@ -87,19 +66,15 @@ export default class Whitepaper extends React.Component<IState> {
           <i />
           <i />
           <Title>Whitepaper</Title>
-          <Row>
-            <Column>
-              <Document
-                file={"./whitepaper.pdf"}
-                onLoadSuccess={this.onDocumentLoadSuccess}
-              >
-                <Page pageNumber={pageNumber} />
-              </Document>
-              <Paragraph>
-                Page {pageNumber} of {numPages}
-              </Paragraph>
-            </Column>
-          </Row>
+          <Document
+            file={"whitepaper.pdf"}
+            onLoadSuccess={this.onDocumentLoadSuccess}
+          >
+            <Page pageNumber={pageNumber} />
+          </Document>
+          <Paragraph>
+            Page {pageNumber} of {numPages}
+          </Paragraph>
         </InnerWrapper>
       </MoonBackground>
     );

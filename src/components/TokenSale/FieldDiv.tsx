@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled, { IThemeInterface } from "../theme";
+import styled, { IThemeInterface } from "../../theme";
 
 interface IFieldProps {
   className?: string;
@@ -15,6 +15,6 @@ export default styled(FieldDiv)`
   flex-direction: column;
   justify-content: center;
   align-items: "flex-start";
-  color: ${props => props.theme.primaryTextColor};
+  color: ${props => props.theme.primaryColor};
   font-size: 24px;
 `;

@@ -43,6 +43,6 @@
     "@types/react-transition-group": "^2.0.11",
     "@types/redux-devtools-extension": "^2.13.2",
     "@types/redux-form": "^7.4.5",
-    "typescript": "^2.8.3"
+    "typescript": "^3.0.1"
   }
 }

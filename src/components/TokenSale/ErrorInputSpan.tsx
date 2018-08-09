@@ -1,7 +1,7 @@
 import styled from "../../theme";
 
 const ErrorInputSpan = styled.span`
-  color: ${props => props.theme.primaryHeaderColor};
+  color: tomato;
   font-size: 14px;
   padding-top: 2px;
 `;

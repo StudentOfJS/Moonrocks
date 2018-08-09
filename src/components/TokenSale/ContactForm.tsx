@@ -1,11 +1,15 @@
+import { Select } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";
 import { sendForm } from "../../redux/actions";
-import Button from "./Button";
 import { countriesData } from "./countriesData";
+import ErrorInputSpan from "./ErrorInputSpan";
+import FieldDiv from "./FieldDiv";
 import Form from "./Form";
-import StyledDangerLink from "./StyledDangerLink";
+import Input from "./Input";
+
+const Option = Select.Option;
 
 export interface IForm {
   firstName?: string;
@@ -16,73 +20,129 @@ export interface IForm {
 }
 
 const C: React.SFC<any> = props => {
+  const { handleSubmit, history, pristine, reset, submitting } = props;
   return (
     <Form
-      onSubmit={props.handleSubmit(async (values: IForm) => {
-        await props.sendForm(values);
-        props.history.push("/");
+      onSubmit={handleSubmit(async (values: IForm) => {
+        await sendForm(values);
+        history.push("/");
       })}
     >
-      <Field name="country" component="select">
-        <option />
-        {countriesData.map(country => (
-          <option key={country.key} value={country.value}>
-            {country.title}
-          </option>
-        ))}
-      </Field>
-      <div>
-        <label htmlFor="firstName">First Name</label>
+      <Field
+        name="country"
+        component={renderSelectField}
+        type="select"
+        label="Country"
+      />
+      <FieldDiv>
         <Field
           name="firstName"
-          component="input"
+          component={renderField}
           type="text"
-          placeholder="First Name"
+          label="First Name"
         />
-      </div>
-      <div>
-        <label htmlFor="lastName">Last Name</label>
+      </FieldDiv>
+      <FieldDiv>
         <Field
           name="lastName"
-          component="input"
+          component={renderField}
           type="text"
-          placeholder="Last Name"
+          label="Last Name"
         />
-      </div>
-      <div>
-        <label htmlFor="email">Email</label>
+      </FieldDiv>
+      <FieldDiv>
         <Field
           name="email"
-          component="input"
+          component={renderField}
           type="email"
-          placeholder="Email"
+          label="Email"
         />
-      </div>
-      <div>
-        <label htmlFor="eth">Ethereum Contribution Address</label>
+      </FieldDiv>
+      <FieldDiv>
         <Field
           name="eth"
-          component="input"
+          component={renderField}
           type="text"
-          placeholder="Eth Address"
+          label="Eth Address"
         />
+      </FieldDiv>
+      <div>
+        <button type="submit" disabled={submitting}>
+          Submit
+        </button>
+        <button type="button" disabled={pristine || submitting} onClick={reset}>
+          Clear Values
+        </button>
       </div>
-      <StyledDangerLink to="/">Cancel</StyledDangerLink>
-      <Button type="submit">Submit</Button>
     </Form>
   );
 };
 
+// interface IrenderFieldProps {
+//   input?: WrappedFieldInputProps;
+//   label: string;
+//   type: string;
+//   meta: WrappedFieldMetaProps;
+// }
+
+const renderField = ({
+  input,
+  label,
+  type,
+  meta: { touched, error, warning }
+}: any) => (
+  <div>
+    <label>{label}</label>
+    <div>
+      <Input {...input} placeholder={label} type={type} />
+      {touched &&
+        ((error && <ErrorInputSpan>{error}</ErrorInputSpan>) ||
+          (warning && <ErrorInputSpan>{warning}</ErrorInputSpan>))}
+    </div>
+  </div>
+);
+
+const filterOptions = (inputValue: string, option: JSX.Element) =>
+  option.props.children.toLowerCase().indexOf(inputValue.toLowerCase()) >= 0;
+
+const renderSelectField = ({
+  input,
+  label,
+  meta: { touched, error },
+  children,
+  ...custom
+}: any) => (
+  <FieldDiv>
+    <Select
+      showSearch={true}
+      style={{ width: 200 }}
+      placeholder={label}
+      optionFilterProp="country"
+      // tslint:disable-next-line:jsx-no-lambda
+      onChange={value => input.onChange(value)}
+      filterOption={filterOptions}
+    >
+      {countriesData.map(country => (
+        <Option key={country.key} value={country.value}>
+          {country.title}
+        </Option>
+      ))}
+    </Select>
+
+    {touched && (error && <ErrorInputSpan>{error}</ErrorInputSpan>)}
+  </FieldDiv>
+);
+
 const validate = (values: IForm) => {
   const errors: IForm = {};
   if (!values.firstName) {
-    errors.firstName = "enter your first name";
+    errors.firstName = "Required";
   }
   if (values.firstName && values.firstName.length < 3) {
     errors.firstName = "enter a name that's at least 3 characters";
   }
   if (!values.lastName) {
-    errors.lastName = "enter your last name";
+    errors.lastName = "Required";
   }
   if (values.lastName && values.lastName.length < 3) {
     errors.lastName = "enter a name that's at least 3 characters";

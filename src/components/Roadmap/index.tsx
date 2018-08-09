@@ -5,8 +5,6 @@ import Div from "../Div";
 import { MoonBackground } from "../MoonBackground";
 import { MinorTitle, Title } from "../Text";
 
-import "./index.css";
-
 const InnerWrapper = styled(Div)`
   display: flex;
   width: 100%;

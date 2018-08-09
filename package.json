@@ -17,6 +17,7 @@
     "react-transition-group": "^2.3.1",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.2",
+    "redux-form": "^7.4.2",
     "styled-components": "^3.3.0",
     "styled-icons": "^2.2.0",
     "tar": "^4.4.4",
@@ -41,6 +42,7 @@
     "@types/react-router-redux": "^5.0.15",
     "@types/react-transition-group": "^2.0.11",
     "@types/redux-devtools-extension": "^2.13.2",
+    "@types/redux-form": "^7.4.5",
     "typescript": "^2.8.3"
   }
 }

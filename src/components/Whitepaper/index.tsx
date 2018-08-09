@@ -15,7 +15,7 @@ const InnerWrapper = styled(Div)`
   flex-direction: column;
   align-items: center;
   background-color: white;
-  color: black;
+  color: #292a2b;
   border-radius: 30px;
   overflow: hidden;
   padding: 20px;

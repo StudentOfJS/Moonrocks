@@ -1,4 +1,4 @@
-import { Icon, Timeline } from "antd";
+import { Timeline } from "antd";
 import * as React from "react";
 import styled from "../../theme";
 import Div from "../Div";
@@ -15,7 +15,7 @@ const InnerWrapper = styled(Div)`
   flex-direction: column;
   align-items: center;
   background-color: white;
-  color: black;
+  color: #292a2b;
   border-radius: 30px;
   overflow: hidden;
   padding: 20px;
@@ -28,29 +28,72 @@ export default () => {
       <InnerWrapper>
         <Title>Roadmap</Title>
         <Timeline mode="alternate">
+          <Timeline.Item color="red">
+            <MinorTitle>
+              Start Development of Moon Rocks Platform October 2018
+            </MinorTitle>
+          </Timeline.Item>
+          <Timeline.Item color="purple">
+            <MinorTitle>Token Generation Event December 2018</MinorTitle>
+          </Timeline.Item>
+          <Timeline.Item color="purple">
+            <MinorTitle>
+              Open lottery to public sale participants - unsold tokens airdrop
+              January 2019
+            </MinorTitle>
+          </Timeline.Item>
+          <Timeline.Item color="purple">
+            <MinorTitle>
+              Airdrop tokens to lottery winners February 2019
+            </MinorTitle>
+          </Timeline.Item>
+          <Timeline.Item color="yellow">
+            <MinorTitle>
+              Start development of the community site and marketing campaign to
+              engage community March 2019
+            </MinorTitle>
+          </Timeline.Item>
           <Timeline.Item>
-            <MinorTitle>Token Sale Event November 2018</MinorTitle>
+            <MinorTitle>
+              Open voting to MRT holders on community development direction
+              April 2019
+            </MinorTitle>
+          </Timeline.Item>
+          <Timeline.Item>
+            <MinorTitle>Release beta community site May 2019</MinorTitle>
+          </Timeline.Item>
+
+          <Timeline.Item color="green">
+            <MinorTitle>Release testnet June 2019</MinorTitle>
+          </Timeline.Item>
+
+          <Timeline.Item>
+            <MinorTitle>Community site launch July 2019</MinorTitle>
+          </Timeline.Item>
+          <Timeline.Item>
+            <MinorTitle>
+              Community appointment of positions and allocation of community
+              events fund August 2019
+            </MinorTitle>
+          </Timeline.Item>
+          <Timeline.Item color="yellow">
+            <MinorTitle>
+              Start of mainnet launch marketing campaign Sepetember 2019
+            </MinorTitle>
           </Timeline.Item>
           <Timeline.Item color="green">
-            <MinorTitle>Create a services site 2015-09-01</MinorTitle>
-          </Timeline.Item>
-          <Timeline.Item
-            dot={<Icon type="clock-circle-o" style={{ fontSize: "16px" }} />}
-          >
-            <MinorTitle>Create a services site 2015-09-01</MinorTitle>
-          </Timeline.Item>
-          <Timeline.Item color="red">
-            <MinorTitle>Create a services site 2015-09-01</MinorTitle>
+            <MinorTitle>
+              Mainnet launch and start of lunar exploration pools by community
+              October 2019
+            </MinorTitle>
           </Timeline.Item>
           <Timeline.Item>
-            <MinorTitle>Create a services site 2015-09-01</MinorTitle>
+            <MinorTitle>
+              Community funds allocation released to community and all code open
+              sourced November 2019
+            </MinorTitle>
           </Timeline.Item>
-          <Timeline.Item
-            dot={<Icon type="clock-circle-o" style={{ fontSize: "16px" }} />}
-          >
-            <MinorTitle>Create a services site 2015-09-01</MinorTitle>
-          </Timeline.Item>
-        </Timeline>,
+        </Timeline>
       </InnerWrapper>
     </MoonBackground>
   );

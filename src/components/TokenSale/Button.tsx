@@ -5,10 +5,17 @@ interface IButtonProps {
   className?: string;
   type: string;
   theme: IThemeInterface;
+  disabled?: boolean;
+  onClick?: () => void;
 }
 
 const Button: React.SFC<IButtonProps> = props => (
-  <button type={props.type} className={props.className}>
+  <button
+    type={props.type}
+    className={props.className}
+    disabled={props.disabled}
+    onClick={props.onClick}
+  >
     {props.children}
   </button>
 );

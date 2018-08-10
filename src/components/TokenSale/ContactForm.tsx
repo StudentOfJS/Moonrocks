@@ -3,6 +3,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";
 import { sendForm } from "../../redux/actions";
+import Button from "./Button";
 import { countriesData } from "./countriesData";
 import ErrorInputSpan from "./ErrorInputSpan";
 import FieldDiv from "./FieldDiv";
@@ -67,12 +68,12 @@ const C: React.SFC<any> = props => {
         />
       </FieldDiv>
       <div>
-        <button type="submit" disabled={submitting}>
+        <Button type="submit" disabled={submitting}>
           Submit
-        </button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>
+        </Button>
+        <Button type="button" disabled={pristine || submitting} onClick={reset}>
           Clear Values
-        </button>
+        </Button>
       </div>
     </Form>
   );

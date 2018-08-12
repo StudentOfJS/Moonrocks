@@ -13,7 +13,8 @@ injectGlobal`{
   body {
     @import url('https://fonts.googleapis.com/css?family=Kirang+Haerang|Roboto');
     margin: 0; 
-    padding: 0; 
+    padding: 0;
+    background-color: black;
   }
 
 .ant-select {

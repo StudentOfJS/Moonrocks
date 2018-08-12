@@ -1,5 +1,4 @@
-import styled, { keyframes } from "../../theme"
-
+import styled, { keyframes } from "../../theme";
 
 const flicker = keyframes`
   0% {
@@ -33,15 +32,13 @@ const flicker = keyframes`
     opacity: 1;
   }
   100% {
-    opacity: 0;
+    opacity: 0.5;
   }
 
-`
-
+`;
 
 export default styled.div`
   @media (max-width: 500px) {
-    z-index: 100;
     width: 100%;
     height: 100vh;
     top: 0;
@@ -49,15 +46,12 @@ export default styled.div`
     opacity: 1;
   }
   @media (min-width: 500px) {
-    z-index: 100;
     width: 100%;
     height: 100vh;
     top: 0;
-    background-color: black;
-    opacity: 1;
     animation-name: ${flicker};
     animation-timing-function: linear;
     animation-duration: 5s;
+    background-color: black;
   }
-
-`
+`;

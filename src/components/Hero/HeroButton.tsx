@@ -36,6 +36,6 @@ export default styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation: ${pulse} 1.5s ease-in-out infinite both;
   }
 `;

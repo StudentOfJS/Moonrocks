@@ -4,6 +4,9 @@ import { Title } from "../Text";
 import ContactForm from "./ContactForm";
 
 const BgDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100vw;
   height: 100vh;
   color: ${props => props.theme.primaryColor};

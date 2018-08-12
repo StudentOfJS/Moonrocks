@@ -15,10 +15,7 @@ injectGlobal`{
     margin: 0; 
     padding: 0; 
   }
-  /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+
 .ant-select {
   font-family: "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;

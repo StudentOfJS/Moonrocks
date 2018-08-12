@@ -122,6 +122,7 @@ const renderSelectField = ({
       // tslint:disable-next-line:jsx-no-lambda
       onChange={value => input.onChange(value)}
       filterOption={filterOptions}
+      {...custom}
     >
       {countriesData.map(country => (
         <Option key={country.key} value={country.value}>

@@ -16,5 +16,5 @@ export default styled(FieldDiv)`
   justify-content: center;
   align-items: "flex-start";
   color: ${props => props.theme.primaryColor};
-  font-size: 24px;
+  font-size: 18px;
 `;

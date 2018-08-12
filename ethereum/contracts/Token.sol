@@ -1,10 +1,11 @@
 pragma solidity ^0.4.23;
-import "./SafeMath.sol";
-contract DappToken {
 
-    string public name = "dApp Token";
-    string public symbol = "DTU";
-    string public standard = "dApp Token v1.0.0";
+import "./SafeMath.sol";
+contract Token {
+
+    string public name = "Moonrock Token";
+    string public symbol = "MRT";
+    string public standard = "Moonrock Token v1.0.0";
 
     uint256 public totalSupply;
 
@@ -30,7 +31,11 @@ contract DappToken {
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
-        require(balanceOf[msg.sender] >= _value && _value > 0);
+        require(
+            balanceOf[msg.sender] >= _value && _value > 0,
+            "not enough funds available"
+        );
+
         balanceOf[msg.sender] = SafeMath.sub(balanceOf[msg.sender], _value);
         balanceOf[_to] = SafeMath.add(balanceOf[_to], _value);
         emit Transfer(msg.sender, _to, _value);
@@ -43,8 +48,14 @@ contract DappToken {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(balanceOf[_from] >= _value && _value > 0);
-        require(allowance[_from][msg.sender] >= _value);
+        require(
+            balanceOf[_from] >= _value && _value > 0,
+            "not enough funds available"
+        );
+        require(
+            allowance[_from][msg.sender] >= _value,
+            "exceeds alloted maximum"
+        );
 
         balanceOf[_from] = SafeMath.sub(balanceOf[_from], _value);
         balanceOf[_to] = SafeMath.add(balanceOf[_to], _value);

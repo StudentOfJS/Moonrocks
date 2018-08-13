@@ -1,6 +1,8 @@
 import * as React from "react";
 import styled, { keyframes } from "../../theme";
 import TokenDistribution from "../Charts/TokenDistribution";
+import Tokenomics from "../Charts/Tokenomics";
+import Countdown from "../Countdown";
 import Div from "../Div";
 import { MoonBackground } from "../MoonBackground";
 import AboutText from "./AboutText";
@@ -37,6 +39,9 @@ const InnerWrapper = styled(Div)`
   padding: 20px;
   margin: 100px 10px;
 `;
+const TimeWrap = styled(Div)`
+  margin-bottom: 40px;
+`;
 
 export default () => {
   return (
@@ -46,6 +51,10 @@ export default () => {
         <i />
         <i />
         <AboutText />
+        <Tokenomics />
+        <TimeWrap>
+          <Countdown />
+        </TimeWrap>
         <TokenDistribution />
       </InnerWrapper>
     </MoonBackground>

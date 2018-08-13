@@ -58,7 +58,9 @@ const ClockTitle = styled(MinorTitle)`
 `;
 
 const Display: React.SFC<{ n: number }> = ({ n }) => (
-  <DisplayNumbers>{String(n).length > 1 ? String(n) : `0${n}`}</DisplayNumbers>
+  <DisplayNumbers>
+    {String(n).length > 1 ? String(n) : `0${n ? n : 0}`}
+  </DisplayNumbers>
 );
 
 interface ITimeUnit {

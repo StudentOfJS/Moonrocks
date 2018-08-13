@@ -25,6 +25,7 @@ const slide = keyframes`
 
 const InnerWrapper = styled(Div)`
   animation: ${slide} 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+  color: ${props => props.theme.primaryColor};
   display: flex;
   width: 100%;
   height: 60vh;
@@ -38,7 +39,7 @@ const InnerWrapper = styled(Div)`
   overflow: hidden;
   border: 8px dashed yellow;
   padding: 20px;
-  margin: 100px;
+  margin: 80px;
 `;
 
 const TeamAvatar = styled.img`
@@ -54,7 +55,7 @@ const Row = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   height: 100px;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 20px;
   width: 100%;
 `;
@@ -76,7 +77,15 @@ const Inline = styled.div`
   flex-wrap: no-wrap;
   height: 34px;
   justify-content: space-evenly;
+  margin-top: 20px;
   width: 160px;
+`;
+
+const A = styled.a`
+  color: ${props => props.theme.primaryColor};
+  &:hover {
+    color: yellow;
+  }
 `;
 
 export default () => {
@@ -90,16 +99,23 @@ export default () => {
         <Row>
           <TeamAvatar src={rod} />
           <Column>
-          <MinorTitle>
-              Rod Lewis
-            </MinorTitle>
+            <MinorTitle>Rod Lewis</MinorTitle>
             <MinorTitle style={{ color: "yellow" }}>
               Frontend Developer
             </MinorTitle>
             <Inline>
-              <GithubIcon size={iconSize} />
-              <TwitterIcon size={iconSize} />
-              <WhatshotIcon size={iconSize} />
+              <A href="https://github.com/StudentOfJS" target="_blank">
+                <GithubIcon size={iconSize} />
+              </A>
+              <A href="https://twitter.com/StudentofJS" target="_blank">
+                <TwitterIcon size={iconSize} />
+              </A>
+              <A
+                href="https://exercism.io/profiles/StudentOfJS "
+                target="_blank"
+              >
+                <WhatshotIcon size={iconSize} />
+              </A>
             </Inline>
           </Column>
         </Row>

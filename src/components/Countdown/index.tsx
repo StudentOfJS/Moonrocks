@@ -23,16 +23,12 @@ const DisplayBox = styled.div`
   display: grid;
   grid-template-columns: ${d}px ${t}px ${t}px ${t}px;
   grid-gap: 2px;
-  padding: 2px;
 `;
 
 const DisplayBoxElement = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 50px;
-  justify-content: center;
+  height: ${t - p}px;
   text-align: center;
+  vertical-align: top;
   width: ${t - p}px;
 `;
 
@@ -46,21 +42,19 @@ const DisplayNumbers = styled.h3`
   color: ${props => props.theme.primaryColor};
   font-family: "Orbitron", sans-serif;
   font-size: 38px;
+  margin: 0;
 `;
 
 const Label = styled.label`
   color: ${props => props.theme.primaryColor};
   font-family: "Roboto", sans-serif;
-  font-size: 0.5em;
-  margin-top: -40px;
-  padding: 0;
+  font-size: 1em;
   text-align: left;
 `;
 
 const ClockTitle = styled(MinorTitle)`
-  font-size: 0.72em;
+  font-size: 1.5em;
   grid-column: 1 / 5;
-  margin-bottom: -5px;
 `;
 
 const Display: React.SFC<{ n: number }> = ({ n }) => (

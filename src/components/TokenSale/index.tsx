@@ -75,9 +75,7 @@ const TokenSale: React.SFC<ITokenSaleProps> = props => {
         <ContactForm />
       </Item2>
       <Item3>
-        <SubTitle>
-          <Countdown />
-        </SubTitle>
+        <Countdown />
       </Item3>
       <Item4>
         <SubTitle>MRT</SubTitle>

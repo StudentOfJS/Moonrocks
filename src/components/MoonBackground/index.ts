@@ -66,6 +66,7 @@ export const MoonBackground = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding: 100px 5px;
   justify-content: center;
   overflow: hidden;
   width: 100vw;

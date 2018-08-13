@@ -15,6 +15,8 @@ injectGlobal`{
     margin: 0; 
     padding: 0;
     background-color: black;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
 .ant-select {

@@ -68,8 +68,7 @@ export const MoonBackground = styled.div`
   min-height: 100vh;
   padding: 100px 5px;
   justify-content: center;
-  overflow: hidden;
-  width: 100vw;
+  width: 100%;
   i {
     display: inline-block;
     width: 250px;
@@ -83,7 +82,6 @@ export const MoonBackground = styled.div`
     animation: ${shooting} 10s 0s infinite;
     animation-timing-function: ease-in;
     animation-delay: -3s;
-    overflow: hidden;
   }
   i:nth-child(1) {
     left: 100vw;

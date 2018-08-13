@@ -59,7 +59,7 @@ const ClockTitle = styled(MinorTitle)`
 
 const Display: React.SFC<{ n: number }> = ({ n }) => (
   <DisplayNumbers>
-    {String(n).length > 1 ? String(n) : `0${n ? n : 0}`}
+    {n && String(n).length > 1 ? String(n) : `0${n ? n : 0}`}
   </DisplayNumbers>
 );
 
@@ -122,7 +122,7 @@ class Countdown extends React.Component<{}, ICState> {
           <Label>mins</Label>
         </DisplayBoxElement>
         <DisplayBoxElement>
-          <Display n={Math.floor(seconds)} />
+          <Display n={Math.trunc(seconds)} />
           <Label>secs</Label>
         </DisplayBoxElement>
       </DisplayBox>

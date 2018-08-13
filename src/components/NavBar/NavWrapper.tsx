@@ -27,7 +27,7 @@ export default styled(Nav)`
         ? props.theme.primaryColor
         : props.theme.secondaryColor};
     font-family: ${props => props.theme.fontFamily};
-    background: black;
+    background-color: rgba(0, 0, 0, 0.3);
     transition: background 300ms ease-out;
   }
 `;

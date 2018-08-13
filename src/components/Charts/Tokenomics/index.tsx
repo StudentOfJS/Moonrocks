@@ -1,39 +1,8 @@
 import * as React from "react";
 import { Doughnut } from "react-chartjs-2";
 import LazyLoad from "react-lazyload";
-import rocket from "../../../images/rocket.svg";
-import styled from "../../../theme";
 import { MinorTitle, Paragraph, SubTitle } from "../../Text";
-
-const Column = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-`;
-
-const Row = styled.div`
-  align-items: space-between;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: 100%;
-  justify-content: center;
-  padding-bottom: 20px;
-  width: 100%;
-`;
-
-const List = styled.ul``;
-const ListItem = styled.li`
-  list-style-image: url(${rocket});
-  list-style-type: circle;
-`;
-
-const ChartDiv = styled.div`
-  height: 300px;
-  width: 400px;
-`;
+import { ChartDiv, Column, List, ListItem, Row } from "../style";
 
 const options = {
   animation: {

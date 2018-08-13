@@ -28,5 +28,6 @@ const float = keyframes`
 export default styled.img`
    {
     animation: ${float} 3s linear 20s both;
+    animation-iteration-count: 4;
   }
 `;

@@ -82,6 +82,8 @@ export const MoonBackground = styled.div`
     opacity: 0.7;
     animation: ${shooting} 10s 0s infinite;
     animation-timing-function: ease-in;
+    animation-delay: -3s;
+    overflow: hidden;
   }
   i:nth-child(1) {
     left: 100vw;
@@ -91,6 +93,7 @@ export const MoonBackground = styled.div`
   }
   i:nth-child(2) {
     animation: ${shooting2} 6s 1s infinite;
+    animation-delay: -3s;
     left: 30vw;
     height: 70px;
     width: 4px;
@@ -99,6 +102,7 @@ export const MoonBackground = styled.div`
   i:nth-child(3) {
     height: 11px;
     width: 3px;
+    animation-delay: -3s;
     animation: ${shooting3} 8s 3s infinite;
     left: 10vw;
     background-color: #fff;

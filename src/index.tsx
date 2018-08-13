@@ -11,7 +11,7 @@ import { injectGlobal } from "./theme";
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`{
   body {
-    @import url('https://fonts.googleapis.com/css?family=Kirang+Haerang|Roboto');
+    @import url('https://fonts.googleapis.com/css?family=Kirang+Haerang|Roboto|Orbitron');
     margin: 0; 
     padding: 0;
     background-color: black;

@@ -25,7 +25,6 @@ const slide = keyframes`
 const InnerWrapper = styled(Div)`
   animation: ${slide} 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
   display: flex;
-  width: 100%;
   max-width: 880px;
   flex-wrap: wrap;
   flex-direction: column;
@@ -36,7 +35,7 @@ const InnerWrapper = styled(Div)`
   overflow: hidden;
   border: 8px dashed yellow;
   padding: 20px;
-  margin: 100px;
+  margin: 100px 10px;
 `;
 
 export default () => {

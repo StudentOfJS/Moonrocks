@@ -30,17 +30,17 @@ const InnerWrapper = styled(Div)`
   max-width: 880px;
   flex-wrap: wrap;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   background-color: rgba(0, 0, 0, 0.85);
   border-radius: 30px;
   overflow: hidden;
   border: 8px dashed yellow;
   padding: 20px;
-  margin: 100px 10px;
 `;
 const TimeWrap = styled(Div)`
-  margin-bottom: 40px;
+  color: ${props => props.theme.primaryColor};
+  margin: 30px 0;
 `;
 
 export default () => {

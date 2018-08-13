@@ -39,7 +39,7 @@ export default () => {
             <Paragraph>19m tokens will be premined for sale</Paragraph>
           </ListItem>
           <ListItem>
-            <Paragraph>50% of tokens for Public 50%</Paragraph>
+            <Paragraph>50% of tokens for Public Sale</Paragraph>
           </ListItem>
           <ListItem>
             <Paragraph>35% for Early Investors</Paragraph>

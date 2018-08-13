@@ -3,14 +3,19 @@ import styled from "../../theme";
 
 export const Column = styled.div`
   align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  color: ${props => props.theme.secondaryColor};
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  width: 100%;
 `;
 
 export const Row = styled.div`
   align-items: space-between;
+  color: ${props => props.theme.secondaryColor};
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -20,8 +25,11 @@ export const Row = styled.div`
   width: 100%;
 `;
 
-export const List = styled.ul``;
+export const List = styled.ul`
+  color: ${props => props.theme.secondaryColor};
+`;
 export const ListItem = styled.li`
+  color: ${props => props.theme.secondaryColor};
   list-style-image: url(${rocket});
   list-style-type: circle;
 `;

@@ -63,7 +63,6 @@ export const MoonBackground = styled.div`
   background-image: url(${moon});
   background-position: left top;
   background-repeat: no-repeat;
-  color: ${props => props.theme.primaryColor};
   display: flex;
   flex-direction: column;
   min-height: 100vh;

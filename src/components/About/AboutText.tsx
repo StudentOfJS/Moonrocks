@@ -5,6 +5,7 @@ import { RocketIcon } from "../icons";
 import { MinorTitle, Paragraph, Title } from "../Text";
 
 const PadBottom = styled.div`
+  color: ${props => props.theme.primaryColor};
   padding-bottom: 100px;
   display: flex;
   width: 100%;

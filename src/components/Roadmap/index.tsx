@@ -1,5 +1,6 @@
 import { Timeline } from "antd";
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import styled from "../../theme";
 import Div from "../Div";
 import { MoonBackground } from "../MoonBackground";
@@ -23,6 +24,14 @@ const InnerWrapper = styled(Div)`
 export default () => {
   return (
     <MoonBackground>
+      <Helmet>
+        <title>Moonrock's Roadmap</title>
+        <meta
+          name="description"
+          content="Find out more about Moonrock's roadmap"
+        />
+        <link rel="canonical" href="https://moonrocks.com/roadmap" />
+      </Helmet>
       <InnerWrapper>
         <Title>Roadmap</Title>
         <Timeline mode="alternate">

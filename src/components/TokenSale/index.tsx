@@ -70,12 +70,9 @@ const TokenSale: React.SFC<ITokenSaleProps> = props => {
   return (
     <Grid>
       <Helmet>
-        <title>Moonrock's Whitepaper'</title>
-        <meta
-          name="description"
-          content="Read Moonrock's whitepaper and find out mroe about our tech"
-        />
-        <link rel="canonical" href="https://moonrocks.com/whitepaper" />
+        <title>Moonrock's ICO</title>
+        <meta name="description" content="Moonrock's token sale information" />
+        <link rel="canonical" href="https://moonrocks.com/tokensale" />
       </Helmet>
       <Item1>
         <Title>Moonrocks</Title>

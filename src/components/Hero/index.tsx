@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import astronaut from "../../images/astronaut.png";
 import HeroFilter from "./HeroFilter";
 import HeroImage from "./HeroImage";
@@ -9,6 +10,11 @@ import HeroWrapper from "./HeroWrapper";
 export default () => {
   return (
     <HeroFilter>
+      <Helmet>
+        <title>Moonrock (MRT)</title>
+        <meta name="description" content="Moonrock's (MRT) token sale " />
+        <link rel="canonical" href="https://moonrocks.com/about" />
+      </Helmet>
       <HeroWrapper>
         <HeroImageDiv>
           <HeroImage src={astronaut} alt="Astronaught Moonrocks Token" />

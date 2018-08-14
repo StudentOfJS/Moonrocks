@@ -27,8 +27,8 @@ const Grid = styled.div`
   @media (min-width: 600px) {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(4, 20%);
-    grid-template-rows: repeat(30%, 100px);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     align-content: space-around;
     justify-content: space-between;
     width: 100vw;
@@ -47,6 +47,7 @@ const Grid = styled.div`
 
 const Item1 = styled.div`
   grid-column: 1 / 5;
+  grid-row: 1 / 2;
 `;
 const Item2 = styled.div`
   grid-column: 1 / 3;

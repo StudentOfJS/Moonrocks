@@ -26,6 +26,10 @@ const EndWrapper = styled.div`
   align-items: center;
   justify-content: flex-end;
 `;
+
+const TextShadow = styled(MinorTitle)`
+  text-shadow: 1px 2px 0px black;
+`;
 interface IState {
   lock: boolean;
 }
@@ -52,12 +56,12 @@ class NavBar extends React.Component<{}, IState> {
         <EndWrapper>
           <NavButton>
             <NavBarLink to="/about">
-              <MinorTitle>what are {TOKEN_NAME}?</MinorTitle>
+              <TextShadow>what are {TOKEN_NAME}?</TextShadow>
             </NavBarLink>
           </NavButton>
           <NavButton>
             <NavBarLink to="/team">
-              <MinorTitle>team</MinorTitle>
+              <TextShadow>team</TextShadow>
             </NavBarLink>
           </NavButton>
           <NavButton>

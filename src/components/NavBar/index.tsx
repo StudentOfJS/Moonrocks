@@ -1,7 +1,7 @@
-import * as React from "react"
-import MobileNav from "./mobile/MobileNav"
-import NavBar from "./NavBar"
-import NavWrapper from "./NavWrapper"
+import * as React from "react";
+import MobileNav from "./mobile/MobileNav";
+import NavBar from "./NavBar";
+import NavWrapper from "./NavWrapper";
 
 export default () => {
   return (
@@ -11,5 +11,5 @@ export default () => {
         <NavBar />
       </NavWrapper>
     </React.Fragment>
-  )
-}
+  );
+};

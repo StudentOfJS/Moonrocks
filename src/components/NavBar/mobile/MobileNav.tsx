@@ -1,12 +1,10 @@
-import * as React from 'react'
-import styled from "../../../theme"
-import { Nav } from '../NavWrapper'
-import MobileNavBurger from './MobileNavBurger'
-import MobileNavDraw from './MobileNavDraw'
+import * as React from "react";
+import styled from "../../../theme";
+import { Nav } from "../NavWrapper";
+import MobileNavBurger from "./MobileNavBurger";
+import MobileNavDraw from "./MobileNavDraw";
 
-
-
-const Wrapper = styled(Nav) `
+const Wrapper = styled(Nav)`
   @media (min-width: 500px) {
     display: none;
   }
@@ -22,37 +20,44 @@ const Wrapper = styled(Nav) `
     font-family: ${props => props.theme.fontFamily};
     background: transparent;
   }
-`
+`;
 export interface IMobileNavProps {
-  className?: string
-  style?: React.CSSProperties
-  leave?: () => void
-  onClick?: () => void
-  open: boolean
-  firstTime?: boolean
+  className?: string;
+  style?: React.CSSProperties;
+  leave?: () => void;
+  onClick?: () => void;
+  open: boolean;
+  firstTime?: boolean;
 }
 export interface IMobileNavState {
-  openMobileMenu: boolean
-  firstTime: boolean
+  openMobileMenu: boolean;
+  firstTime: boolean;
 }
 
 export default class MobileNav extends React.Component<any, IMobileNavState> {
   public state = {
     firstTime: true,
-    openMobileMenu: false,
-  }
-  public leave = () => this.setState({ openMobileMenu: false })
-  public onClick = () => this.setState(prevProps => ({
-    firstTime: false,
-    openMobileMenu: !prevProps.openMobileMenu,
-  }))
+    openMobileMenu: false
+  };
+  public leave = () => this.setState({ openMobileMenu: false });
+  public onClick = () =>
+    this.setState(prevProps => ({
+      firstTime: false,
+      openMobileMenu: !prevProps.openMobileMenu
+    }));
   public render() {
     return (
       <Wrapper>
-        <MobileNavBurger open={this.state.openMobileMenu} onClick={this.onClick} />
-        <MobileNavDraw open={this.state.openMobileMenu} leave={this.leave} firstTime={this.state.firstTime} />
+        <MobileNavBurger
+          open={this.state.openMobileMenu}
+          onClick={this.onClick}
+        />
+        <MobileNavDraw
+          open={this.state.openMobileMenu}
+          leave={this.leave}
+          firstTime={this.state.firstTime}
+        />
       </Wrapper>
     );
   }
 }
-

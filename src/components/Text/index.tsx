@@ -35,7 +35,7 @@ const SubTitle = styled.h2`
 const MinorTitle = styled.h3`
   font-family: "Roboto", sans-serif;
   font-size: 1.1em;
-  font-weight: 500;
+  font-weight: 700;
   padding: 0 20px;
   text-align: center;
   animation: ${trackIn} 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;

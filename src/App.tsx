@@ -1,8 +1,7 @@
-import * as React from 'react'
-import NavBar from './components/NavBar'
-// import Grid from './Grid'
-import Routes from './routes'
-import { theme, ThemeProvider } from './theme'
+import * as React from "react";
+import NavBar from "./components/NavBar";
+import Routes from "./routes";
+import { theme, ThemeProvider } from "./theme";
 
 class App extends React.Component {
   public render() {
@@ -13,8 +12,8 @@ class App extends React.Component {
           <NavBar />
         </React.Fragment>
       </ThemeProvider>
-    )
+    );
   }
 }
 
-export default App
+export default App;

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import rod from "../../images/rod.jpg";
 import styled, { keyframes } from "../../theme";
 import Div from "../Div";
@@ -91,6 +92,11 @@ const A = styled.a`
 export default () => {
   return (
     <MoonBackground>
+      <Helmet>
+        <title>Moonrock's Team</title>
+        <meta name="description" content="Meet the Moonrock team members" />
+        <link rel="canonical" href="https://moonrocks.com/team" />
+      </Helmet>
       <InnerWrapper>
         <i />
         <i />

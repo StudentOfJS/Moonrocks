@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import styled, { keyframes } from "../../theme";
 import TokenDistribution from "../Charts/TokenDistribution";
 import Tokenomics from "../Charts/Tokenomics";
@@ -46,6 +47,14 @@ const TimeWrap = styled(Div)`
 export default () => {
   return (
     <MoonBackground>
+      <Helmet>
+        <title>About Moonrock's ICO</title>
+        <meta
+          name="description"
+          content="Find out more about Moonrock's token sale"
+        />
+        <link rel="canonical" href="https://moonrocks.com/about" />
+      </Helmet>
       <InnerWrapper>
         <i />
         <i />

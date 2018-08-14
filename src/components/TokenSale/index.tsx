@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import styled from "../../theme";
 import Countdown from "../Countdown";
 import { SubTitle, Title } from "../Text";
@@ -68,6 +69,14 @@ interface ITokenSaleProps {
 const TokenSale: React.SFC<ITokenSaleProps> = props => {
   return (
     <Grid>
+      <Helmet>
+        <title>Moonrock's Whitepaper'</title>
+        <meta
+          name="description"
+          content="Read Moonrock's whitepaper and find out mroe about our tech"
+        />
+        <link rel="canonical" href="https://moonrocks.com/whitepaper" />
+      </Helmet>
       <Item1>
         <Title>Moonrocks</Title>
       </Item1>

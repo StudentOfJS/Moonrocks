@@ -13,7 +13,7 @@ export default () => {
       <Helmet>
         <title>Moonrock (MRT)</title>
         <meta name="description" content="Moonrock's (MRT) token sale " />
-        <link rel="canonical" href="https://moonrocks.com/about" />
+        <link rel="canonical" href="https://moonrocks.com" />
       </Helmet>
       <HeroWrapper>
         <HeroImageDiv>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import * as pdf from "react-pdf/dist/entry.webpack";
 import styled from "../../theme";
 import Div from "../Div";
@@ -42,6 +43,14 @@ export default class Whitepaper extends React.Component<IState> {
 
     return (
       <MoonBackground>
+        <Helmet>
+          <title>Moonrock's Whitepaper</title>
+          <meta
+            name="description"
+            content="Read Moonrock's whitepaper and find out mroe about our tech"
+          />
+          <link rel="canonical" href="https://moonrocks.com/whitepaper" />
+        </Helmet>
         <InnerWrapper>
           <Title>Whitepaper</Title>
           <Document

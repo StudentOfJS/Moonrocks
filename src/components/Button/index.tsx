@@ -4,11 +4,14 @@ import styled, { IThemeInterface } from "../../theme";
 interface IButtonProps {
   theme?: IThemeInterface;
   primary?: boolean;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   className?: string;
 }
 
 const Button: React.StatelessComponent<IButtonProps> = props => (
-  <button className={props.className}>{props.children}</button>
+  <button onClick={props.onClick} className={props.className}>
+    {props.children}
+  </button>
 );
 
 export default styled(Button)`

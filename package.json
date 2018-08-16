@@ -54,8 +54,10 @@
     "@types/react-transition-group": "^2.0.11",
     "@types/redux-devtools-extension": "^2.13.2",
     "@types/redux-form": "^7.4.5",
+    "@types/sinon": "^5.0.1",
     "enzyme": "^3.4.2",
     "enzyme-adapter-react-16": "^1.2.0",
+    "sinon": "^6.1.5",
     "typescript": "^3.0.1"
   }
 }

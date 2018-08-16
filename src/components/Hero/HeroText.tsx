@@ -17,8 +17,8 @@ const HeroText = styled(Div)`
 export default () => {
   return (
     <HeroText>
-      <Title>We invite you all to</Title>
-      <SubTitle>become citizens of the Moon</SubTitle>
+      <Title>We are Moonrock, a community lunar project</Title>
+      <SubTitle>we invite you all to become citizens of the Moon</SubTitle>
       <HeroButton>
         <Button>learn how</Button>
       </HeroButton>

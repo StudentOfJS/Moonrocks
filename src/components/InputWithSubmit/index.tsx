@@ -1,23 +1,43 @@
 import { debounce } from "lodash";
 import * as React from "react";
 import styled from "../../theme";
-import Button from "../Button";
+import Input from "../Input/Input";
 
-export const StyledInput = styled.input`
-  padding: 0.5em;
-  margin: 0.5em 0 0.5em 0.5em;
+export const StyledInput = styled(Input)`
   color: palevioletred;
-  background: papayawhip;
-  border: none;
-  border-radius: 3px;
-  &::before {
-    content: &#64;
-    margin: 0 10px;
-  }
+  box-shadow: inset 1px 1px 4px darkgrey;
 `;
 const StyledInputSpan = styled.span`
+  &:before {
+    color: grey;
+    font-size: 52px;
+    content: "🚀 ";
+  }
   display: inline-flex;
   align-items: center;
+  background: white;
+  color: ${props => props.theme.primaryColor};
+  height: 50px;
+  border: 5px solid white;
+  border-radius: 10px;
+`;
+
+const SubmitButton = styled.button`
+  background: grey;
+  border-radius: 8px;
+  margin-left: 5px;
+  border: none;
+  color: ${props => props.theme.primaryColor};
+  width: 180px;
+  height: 50px;
+  font-size: 1.5em;
+  font-family: ${props => props.theme.fontFamily};
+  &:hover {
+    cursor: pointer;
+    color: grey;
+    background: ${props => props.theme.primaryColor};
+    box-shadow: none;
+  }
 `;
 
 interface ISignupProps {
@@ -55,7 +75,9 @@ export default class InputWithSubmit extends React.Component<
           type={this.props.type}
           onChange={debounce(this.handleChange, 1000)}
         />
-        <Button onClick={this.handleSubmit}>{this.props.btnText}</Button>
+        <SubmitButton onClick={this.handleSubmit}>
+          {this.props.btnText}
+        </SubmitButton>
       </StyledInputSpan>
     );
   }

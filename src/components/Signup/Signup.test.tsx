@@ -1,13 +1,13 @@
 import { shallow, ShallowWrapper } from "enzyme";
 import * as React from "react";
 import * as sinon from "sinon";
-import InputWithSubmit, { StyledInput } from ".";
+import Signup, { StyledInput } from ".";
 import Button from "../Button";
 
 let wrapped: ShallowWrapper;
 beforeEach(() => {
   wrapped = shallow(
-    <InputWithSubmit
+    <Signup
       placeholder="test"
       type="text"
       // tslint:disable-next-line:jsx-no-lambda

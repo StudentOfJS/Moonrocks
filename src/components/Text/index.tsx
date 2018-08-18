@@ -23,6 +23,7 @@ const Title = styled.h1`
   font-family: "Kirang Haerang", cursive;
   font-weight: 300;
   animation: ${trackIn} 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  margin: 0;
 `;
 const SubTitle = styled.h2`
   font-family: "Kirang Haerang", cursive;
@@ -35,7 +36,6 @@ const SubTitle = styled.h2`
 const MinorTitle = styled.h3`
   font-family: "Roboto", sans-serif;
   font-size: 1.1em;
-  font-weight: 700;
   padding: 0 20px;
   text-align: center;
   animation: ${trackIn} 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;

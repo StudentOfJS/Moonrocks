@@ -20,6 +20,7 @@ const StyledInputSpan = styled.span`
   height: 50px;
   border: 5px solid white;
   border-radius: 10px;
+  box-shadow: 2px 2px 4px darkgrey;
 `;
 
 const SubmitButton = styled.button`
@@ -36,7 +37,6 @@ const SubmitButton = styled.button`
     cursor: pointer;
     color: grey;
     background: ${props => props.theme.primaryColor};
-    box-shadow: none;
   }
 `;
 
@@ -50,7 +50,7 @@ interface IState {
   value: string;
 }
 
-export default class InputWithSubmit extends React.Component<
+export default class Signup extends React.Component<
   ISignupProps,
   IState
 > {

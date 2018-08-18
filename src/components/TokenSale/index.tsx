@@ -2,7 +2,7 @@ import * as React from "react";
 import { Helmet } from "react-helmet";
 import styled from "../../theme";
 import Countdown from "../Countdown";
-import InputWithSubmit from "../InputWithSubmit";
+import Signup from "../Signup";
 import { SubTitle, Title } from "../Text";
 import ContactForm from "./ContactForm";
 
@@ -86,12 +86,12 @@ const TokenSale: React.SFC<ITokenSaleProps> = props => {
         <Countdown />
       </Item3>
       <Item4>
-        <InputWithSubmit
-          placeholder="test"
-          type="text"
+        <Signup
+          placeholder="Enter your email..."
+          type="email"
           // tslint:disable-next-line:jsx-no-lambda
           submit={v => null}
-          btnText="test"
+          btnText="Signup"
         />
       </Item4>
       <Item5>

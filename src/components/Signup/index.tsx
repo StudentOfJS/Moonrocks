@@ -1,6 +1,8 @@
-import { debounce } from "lodash";
+// import { debounce } from "lodash";
 import * as React from "react";
+import { string, StringSchema } from "yup";
 import styled from "../../theme";
+import { NonStyledBtn } from "../Button";
 import Input from "../Input/Input";
 
 export const StyledInput = styled(Input)`
@@ -23,12 +25,13 @@ const StyledInputSpan = styled.span`
   box-shadow: 2px 2px 4px darkgrey;
 `;
 
-const SubmitButton = styled.button`
-  background: grey;
+const SubmitButton = styled(NonStyledBtn)`
+  background: ${props => (props.disabled ? props.theme.primaryColor : "grey")};
   border-radius: 8px;
   margin-left: 5px;
   border: none;
-  color: ${props => props.theme.primaryColor};
+  color: ${props => (props.disabled ? "grey" : props.theme.primaryColor)};
+  outline: none;
   width: 180px;
   height: 50px;
   font-size: 1.5em;
@@ -40,6 +43,13 @@ const SubmitButton = styled.button`
   }
 `;
 
+const ErrorMessage = styled.label`
+  color: palevioletred;
+  font-size: 1em;
+  font-family: ${props => props.theme.fontFamily};
+  text-align: center;
+`;
+
 interface ISignupProps {
   btnText: string;
   placeholder: string;
@@ -47,35 +57,52 @@ interface ISignupProps {
   type: string;
 }
 interface IState {
+  error: string;
+  schema: StringSchema;
+  touched: boolean;
   value: string;
 }
 
-export default class Signup extends React.Component<
-  ISignupProps,
-  IState
-> {
+export default class Signup extends React.Component<ISignupProps, IState> {
   public state = {
+    error: "",
+    schema: string()
+      .email()
+      .required(),
+    touched: false,
     value: ""
   };
 
-  public handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-    const value = e.currentTarget.value;
-    this.setState({ value });
+  public handleChange = ({ target: { value } }: any) => {
+    this.state.schema.isValidSync(this.state.value)
+      ? this.setState({ error: "", value, touched: true })
+      : this.setState({ error: "invalid email", value, touched: true });
   };
 
   public handleSubmit = () => {
     this.props.submit(this.state.value);
+    this.setState(prevProps => ({
+      error: "",
+      touched: false,
+      value: ""
+    }));
   };
 
   public render() {
+    const { error, touched } = this.state;
     return (
       <StyledInputSpan>
         <StyledInput
           placeholder={this.props.placeholder}
           type={this.props.type}
-          onChange={debounce(this.handleChange, 1000)}
+          onChange={this.handleChange}
+          value={this.state.value}
         />
-        <SubmitButton onClick={this.handleSubmit}>
+        {touched && error && <ErrorMessage>{error}</ErrorMessage>}
+        <SubmitButton
+          onClick={this.handleSubmit}
+          disabled={!touched || !!error}
+        >
           {this.props.btnText}
         </SubmitButton>
       </StyledInputSpan>

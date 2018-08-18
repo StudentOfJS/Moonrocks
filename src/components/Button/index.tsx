@@ -2,19 +2,25 @@ import * as React from "react";
 import styled, { IThemeInterface } from "../../theme";
 
 interface IButtonProps {
-  theme?: IThemeInterface;
-  primary?: boolean;
-  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   className?: string;
+  type?: string;
+  theme: IThemeInterface;
+  disabled?: boolean;
+  onClick?: () => void;
 }
 
-const Button: React.StatelessComponent<IButtonProps> = props => (
-  <button onClick={props.onClick} className={props.className}>
+export const NonStyledBtn: React.SFC<IButtonProps> = props => (
+  <button
+    type={props.type}
+    className={props.className}
+    disabled={props.disabled}
+    onClick={props.onClick}
+  >
     {props.children}
   </button>
 );
 
-export default styled(Button)`
+export default styled(NonStyledBtn)`
   background: transparent;
   color: ${props => props.theme.primaryColor};
   width: 180px;

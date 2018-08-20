@@ -74,7 +74,7 @@ export default () => {
         </Element>
 
         <TimeWrap>
-          <Element name="roadmap" className="element">
+          <Element name="tokensale" className="element">
             <MinorTitle>Sign up now for early access</MinorTitle>
           </Element>
           <Signup

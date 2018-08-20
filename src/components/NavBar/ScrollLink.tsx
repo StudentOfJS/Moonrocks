@@ -1,7 +1,7 @@
 import { Link } from "react-scroll";
 import styled from "../../theme";
 
-export const ScrollLink = styled(Link)`
+export default styled(Link)`
   display: inline-flex;
   background: transparent;
   color: ${props => props.theme.primaryColor};

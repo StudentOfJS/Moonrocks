@@ -31,13 +31,27 @@ const EndWrapper = styled.div`
 const TextShadow = styled(MinorTitle)`
   filter: drop-shadow(0.5px 0.5px 1px #4444dd);
 `;
+
+interface IOptions {
+  duration: number;
+  offset: number;
+  smooth: boolean;
+  spy: boolean;
+}
 interface IState {
   lock: boolean;
+  options: IOptions;
 }
 
 class NavBar extends React.Component<{}, IState> {
   public state: IState = {
-    lock: true
+    lock: true,
+    options: {
+      duration: 500,
+      offset: 1,
+      smooth: true,
+      spy: true
+    }
   };
   public render() {
     return (
@@ -55,13 +69,7 @@ class NavBar extends React.Component<{}, IState> {
           </NavButton>
         </StartWrapper>
         <EndWrapper>
-          <ScrollLink
-            to="about"
-            spy={true}
-            smooth={true}
-            offset={1}
-            duration={500}
-          >
+          <ScrollLink to="about" {...this.state.options}>
             <TextShadow>what are {TOKEN_NAME}?</TextShadow>
           </ScrollLink>
           <NavButton>
@@ -74,11 +82,9 @@ class NavBar extends React.Component<{}, IState> {
               <MinorTitle>whitepaper</MinorTitle>
             </NavBarLink>
           </NavButton>
-          <NavButton>
-            <NavBarLink to="/roadmap">
-              <MinorTitle>roadmap</MinorTitle>
-            </NavBarLink>
-          </NavButton>
+          <ScrollLink to="roadmap" {...this.state.options}>
+            <MinorTitle>roadmap</MinorTitle>
+          </ScrollLink>
         </EndWrapper>
       </Wrapper>
     );

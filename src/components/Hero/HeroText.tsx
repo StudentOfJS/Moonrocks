@@ -19,7 +19,6 @@ const HeroGroup = styled(Div)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
 `;
 
 export default () => {
@@ -31,7 +30,7 @@ export default () => {
         <SubTitle>we invite you all to become citizens of the Moon</SubTitle>
       </HeroGroup>
       <HeroGroup>
-        <MinorTitle>Coming soon. Sign up now for early access.</MinorTitle>
+        <MinorTitle>Sign up now for early access.</MinorTitle>
         <Signup
           placeholder="Enter your email..."
           type="email"

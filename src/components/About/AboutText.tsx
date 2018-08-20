@@ -13,7 +13,7 @@ const AboutTextWrapper = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   border-radius: 30px;
-  overflow: hidden;
+  overflow-x: hidden;
 `;
 export default () => {
   return (

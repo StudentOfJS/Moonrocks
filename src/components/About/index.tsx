@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import LazyLoad from "react-lazyload";
+import { Element } from "react-scroll";
 import styled, { keyframes } from "../../theme";
 import TokenDistribution from "../Charts/TokenDistribution";
 import Tokenomics from "../Charts/Tokenomics";
@@ -63,12 +64,19 @@ export default () => {
         <i />
         <i />
         <i />
-        <AboutText />
-        <LazyLoad once={true} offset={1} height={"100%"}>
-          <Roadmap />
-        </LazyLoad>
+        <Element name="about" className="element">
+          <AboutText />
+        </Element>
+        <Element name="roadmap" className="element">
+          <LazyLoad once={true} offset={1} height={"100%"}>
+            <Roadmap />
+          </LazyLoad>
+        </Element>
+
         <TimeWrap>
-          <MinorTitle>Sign up now for early access</MinorTitle>
+          <Element name="roadmap" className="element">
+            <MinorTitle>Sign up now for early access</MinorTitle>
+          </Element>
           <Signup
             placeholder="Enter your email..."
             type="email"
@@ -77,7 +85,6 @@ export default () => {
             btnText="Signup"
           />
         </TimeWrap>
-
         <LazyLoad once={true} offset={1} height={"100%"}>
           <Tokenomics />
         </LazyLoad>

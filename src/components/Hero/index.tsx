@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import LazyLoad from "react-lazyload";
 import astronaut from "../../images/astronaut.png";
 import About from "../About";
 import HeroFilter from "./HeroFilter";
@@ -23,9 +22,7 @@ export default () => {
         </HeroImageDiv>
         <HeroText />
       </HeroWrapper>
-      <LazyLoad once={true} offset={0} height={"100%"}>
-        <About />
-      </LazyLoad>
+      <About />
     </HeroFilter>
   );
 };

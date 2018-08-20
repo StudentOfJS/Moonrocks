@@ -6,6 +6,7 @@ import { MinorTitle } from "../Text";
 import Logo from "./Logo";
 import NavBarLink from "./NavBarLink";
 import NavButton from "./NavButton";
+import ScrollLink from "./ScrollLink";
 
 const Wrapper = styled.nav`
   display: flex;
@@ -54,11 +55,15 @@ class NavBar extends React.Component<{}, IState> {
           </NavButton>
         </StartWrapper>
         <EndWrapper>
-          <NavButton>
-            <NavBarLink to="/about">
-              <TextShadow>what are {TOKEN_NAME}?</TextShadow>
-            </NavBarLink>
-          </NavButton>
+          <ScrollLink
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={1}
+            duration={500}
+          >
+            <TextShadow>what are {TOKEN_NAME}?</TextShadow>
+          </ScrollLink>
           <NavButton>
             <NavBarLink to="/team">
               <TextShadow>team</TextShadow>

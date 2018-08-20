@@ -54,6 +54,11 @@ class NavBar extends React.Component<any, IState> {
       spy: true
     }
   };
+
+  // @todo implement to top button
+  // @todo implement active styles
+  // @todo route based on location
+
   // public componentDidMount = () => {
   //   Events.scrollEvent.register("begin", function(to, element) {
   //     console.log("begin", arguments);
@@ -67,12 +72,9 @@ class NavBar extends React.Component<any, IState> {
   // };
   public scrollTop = () => scroll.scrollToTop();
   public render() {
-    // tslint:disable-next-line:no-console
-    console.log(this.props);
     return (
       <Wrapper>
         <StartWrapper>
-          {}
           <ScrollA onClick={this.scrollTop}>
             <Logo>
               {COMPANY} <RocketIcon size={32} title="rocket to the moon" />

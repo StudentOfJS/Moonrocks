@@ -8,6 +8,8 @@ import Countdown from "../Countdown";
 import Div from "../Div";
 import { MoonBackground } from "../MoonBackground";
 import Roadmap from "../Roadmap";
+import Signup from "../Signup";
+import { MinorTitle } from "../Text";
 import AboutText from "./AboutText";
 
 const slide = keyframes`
@@ -65,6 +67,14 @@ export default () => {
         <LazyLoad once={true} offset={1} height={"100%"}>
           <Roadmap />
         </LazyLoad>
+        <MinorTitle>Sign up now for early access.</MinorTitle>
+        <Signup
+          placeholder="Enter your email..."
+          type="email"
+          // tslint:disable-next-line:jsx-no-lambda
+          submit={v => null}
+          btnText="Signup"
+        />
         <LazyLoad once={true} offset={1} height={"100%"}>
           <Tokenomics />
         </LazyLoad>

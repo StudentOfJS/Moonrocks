@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
+import LazyLoad from "react-lazyload";
 import astronaut from "../../images/astronaut.png";
 import About from "../About";
 import Roadmap from "../Roadmap";
@@ -23,8 +24,12 @@ export default () => {
         </HeroImageDiv>
         <HeroText />
       </HeroWrapper>
-      <About />
-      <Roadmap />
+      <LazyLoad once={true} offset={1} height={"100%"}>
+        <About />
+      </LazyLoad>
+      <LazyLoad once={true} offset={1} height={"100%"}>
+        <Roadmap />
+      </LazyLoad>
     </HeroFilter>
   );
 };

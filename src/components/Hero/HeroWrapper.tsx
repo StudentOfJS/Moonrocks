@@ -10,4 +10,5 @@ export default styled(Div)`
   font-family: ${props => props.theme.fontFamily};
   background: ${props => props.theme.gradient};
   overflow: hidden;
+  padding: 25px;
 `;

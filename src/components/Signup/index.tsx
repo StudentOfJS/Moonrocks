@@ -87,7 +87,6 @@ export default class Signup extends React.Component<ISignupProps, IState> {
       value: ""
     }));
   };
-
   public render() {
     const { error, touched } = this.state;
     return (

@@ -18,12 +18,17 @@ const trackIn = keyframes`
 `;
 
 const Title = styled.h1`
-  font-size: 5em;
   text-align: center;
   font-family: "Kirang Haerang", cursive;
   font-weight: 300;
-  animation: ${trackIn} 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   margin: 0;
+  @media only screen and (max-width: 600px) {
+    font-size: 3em;
+    animation: ${trackIn} 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 5em;
+  }
 `;
 const SubTitle = styled.h2`
   font-family: "Kirang Haerang", cursive;
@@ -39,6 +44,10 @@ const MinorTitle = styled.h3`
   padding: 0 20px;
   text-align: center;
   animation: ${trackIn} 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  @media only screen and (max-width: 600px) {
+    font-size: 0.8em;
+    animation: ${trackIn} 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
 `;
 const Paragraph = styled.p`
   font-family: "Roboto", sans-serif;

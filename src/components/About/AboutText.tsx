@@ -14,6 +14,7 @@ const AboutTextWrapper = styled.div`
   justify-content: flex-start;
   border-radius: 30px;
   overflow-x: hidden;
+  margin: 50px 0;
 `;
 export default () => {
   return (

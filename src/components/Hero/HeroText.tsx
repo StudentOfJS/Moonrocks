@@ -39,7 +39,6 @@ export default () => {
           btnText="Signup"
         />
       </HeroGroup>
-      <MinorTitle>moonrock token (MRT)</MinorTitle>
     </HeroText>
   );
 };

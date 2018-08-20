@@ -1,17 +1,7 @@
-import * as React from "react";
-import styled, { IThemeInterface } from "../../theme";
+import { Link } from "react-scroll";
+import styled from "../../theme";
 
-interface IButtonProps {
-  theme?: IThemeInterface;
-  primary?: boolean;
-  className?: string;
-}
-
-const Button: React.StatelessComponent<IButtonProps> = props => (
-  <button className={props.className}>{props.children}</button>
-);
-
-export default styled(Button)`
+export const ScrollLink = styled(Link)`
   display: inline-flex;
   background: transparent;
   color: ${props => props.theme.primaryColor};

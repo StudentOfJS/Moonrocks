@@ -24,7 +24,7 @@ const OuterWrapper = styled(Div)`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding: 100px 5px;
+  padding: 100px 10px;
   justify-content: center;
   width: 100%;
 `;

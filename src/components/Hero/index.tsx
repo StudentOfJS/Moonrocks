@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 import LazyLoad from "react-lazyload";
 import astronaut from "../../images/astronaut.png";
 import About from "../About";
-import Roadmap from "../Roadmap";
 import HeroFilter from "./HeroFilter";
 import HeroImage from "./HeroImage";
 import HeroImageDiv from "./HeroImageDiv";
@@ -26,9 +25,6 @@ export default () => {
       </HeroWrapper>
       <LazyLoad once={true} offset={1} height={"100%"}>
         <About />
-      </LazyLoad>
-      <LazyLoad once={true} offset={1} height={"100%"}>
-        <Roadmap />
       </LazyLoad>
     </HeroFilter>
   );

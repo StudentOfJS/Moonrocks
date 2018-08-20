@@ -28,7 +28,7 @@ const EndWrapper = styled.div`
 `;
 
 const TextShadow = styled(MinorTitle)`
-  text-shadow: 1px 2px 0px black;
+  filter: drop-shadow(0.5px 0.5px 1px #4444dd);
 `;
 interface IState {
   lock: boolean;

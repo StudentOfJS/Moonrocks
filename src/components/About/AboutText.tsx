@@ -4,9 +4,8 @@ import styled from "../../theme";
 import { RocketIcon } from "../icons";
 import { MinorTitle, Paragraph, Title } from "../Text";
 
-const PadBottom = styled.div`
+const AboutTextWrapper = styled.div`
   color: ${props => props.theme.primaryColor};
-  padding-bottom: 100px;
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -18,7 +17,7 @@ const PadBottom = styled.div`
 `;
 export default () => {
   return (
-    <PadBottom>
+    <AboutTextWrapper>
       <Title>What is {COMPANY}</Title>
       <MinorTitle style={{ color: "yellow" }}>
         one small step for blockchain, one giant leap for mankind
@@ -54,6 +53,6 @@ export default () => {
         choose to join a lunar exploration team and start extracting your fuel.
         In exchange you will recieve a share of discovered blocks of land.
       </Paragraph>
-    </PadBottom>
+    </AboutTextWrapper>
   );
 };

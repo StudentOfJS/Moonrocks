@@ -1,4 +1,5 @@
 import * as React from "react";
+import { animateScroll as scroll } from "react-scroll";
 import { COMPANY, TOKEN_NAME } from "../../constants";
 import styled from "../../theme";
 import { RocketIcon } from "../icons";
@@ -6,7 +7,7 @@ import { MinorTitle } from "../Text";
 import Logo from "./Logo";
 import NavBarLink from "./NavBarLink";
 import NavButton from "./NavButton";
-import ScrollLink from "./ScrollLink";
+import ScrollLink, { ScrollA } from "./ScrollLink";
 
 const Wrapper = styled.nav`
   display: flex;
@@ -53,15 +54,16 @@ class NavBar extends React.Component<{}, IState> {
       spy: true
     }
   };
+  public scrollTop = () => scroll.scrollToTop();
   public render() {
     return (
       <Wrapper>
         <StartWrapper>
-          <NavBarLink to="/">
+          <ScrollA onClick={this.scrollTop}>
             <Logo>
               {COMPANY} <RocketIcon size={32} title="rocket to the moon" />
             </Logo>
-          </NavBarLink>
+          </ScrollA>
           <ScrollLink to="tokensale" {...this.state.options}>
             <MinorTitle>token sale</MinorTitle>
           </ScrollLink>

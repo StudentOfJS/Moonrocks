@@ -67,12 +67,6 @@ export default () => {
         <Element name="about" className="element">
           <AboutText />
         </Element>
-        <Element name="roadmap" className="element">
-          <LazyLoad once={true} offset={1} height={"100%"}>
-            <Roadmap />
-          </LazyLoad>
-        </Element>
-
         <TimeWrap>
           <Element name="tokensale" className="element">
             <MinorTitle>Sign up now for early access</MinorTitle>
@@ -96,6 +90,11 @@ export default () => {
         <LazyLoad once={true} offset={1} height={"100%"}>
           <TokenDistribution />
         </LazyLoad>
+        <Element name="roadmap" className="element">
+          <LazyLoad once={true} offset={1} height={"100%"}>
+            <Roadmap />
+          </LazyLoad>
+        </Element>
       </InnerWrapper>
     </MoonBackground>
   );

@@ -1,14 +1,14 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
+import LazyLoad from "react-lazyload";
 import styled, { keyframes } from "../../theme";
 import TokenDistribution from "../Charts/TokenDistribution";
 import Tokenomics from "../Charts/Tokenomics";
 import Countdown from "../Countdown";
 import Div from "../Div";
 import { MoonBackground } from "../MoonBackground";
-import AboutText from "./AboutText";
-import LazyLoad from "react-lazyload";
 import Roadmap from "../Roadmap";
+import AboutText from "./AboutText";
 
 const slide = keyframes`
   {

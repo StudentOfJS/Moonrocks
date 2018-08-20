@@ -67,14 +67,17 @@ export default () => {
         <LazyLoad once={true} offset={1} height={"100%"}>
           <Roadmap />
         </LazyLoad>
-        <MinorTitle>Sign up now for early access.</MinorTitle>
-        <Signup
-          placeholder="Enter your email..."
-          type="email"
-          // tslint:disable-next-line:jsx-no-lambda
-          submit={v => null}
-          btnText="Signup"
-        />
+        <TimeWrap>
+          <MinorTitle>Sign up now for early access.</MinorTitle>
+          <Signup
+            placeholder="Enter your email..."
+            type="email"
+            // tslint:disable-next-line:jsx-no-lambda
+            submit={v => null}
+            btnText="Signup"
+          />
+        </TimeWrap>
+
         <LazyLoad once={true} offset={1} height={"100%"}>
           <Tokenomics />
         </LazyLoad>

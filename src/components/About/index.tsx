@@ -7,6 +7,8 @@ import Countdown from "../Countdown";
 import Div from "../Div";
 import { MoonBackground } from "../MoonBackground";
 import AboutText from "./AboutText";
+import LazyLoad from "react-lazyload";
+import Roadmap from "../Roadmap";
 
 const slide = keyframes`
   {
@@ -60,11 +62,20 @@ export default () => {
         <i />
         <i />
         <AboutText />
-        <Tokenomics />
-        <TimeWrap>
-          <Countdown />
-        </TimeWrap>
-        <TokenDistribution />
+        <LazyLoad once={true} offset={1} height={"100%"}>
+          <Roadmap />
+        </LazyLoad>
+        <LazyLoad once={true} offset={1} height={"100%"}>
+          <Tokenomics />
+        </LazyLoad>
+        <LazyLoad once={true} offset={1} height={"100%"}>
+          <TimeWrap>
+            <Countdown />
+          </TimeWrap>
+        </LazyLoad>
+        <LazyLoad once={true} offset={1} height={"100%"}>
+          <TokenDistribution />
+        </LazyLoad>
       </InnerWrapper>
     </MoonBackground>
   );

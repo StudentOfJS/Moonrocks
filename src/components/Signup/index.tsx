@@ -22,7 +22,6 @@ const StyledInputSpan = styled.span`
   height: 50px;
   border: 5px solid white;
   border-radius: 10px;
-  box-shadow: 2px 2px 4px darkgrey;
 `;
 
 const SubmitButton = styled(NonStyledBtn)`

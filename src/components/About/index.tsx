@@ -68,7 +68,7 @@ export default () => {
           <Roadmap />
         </LazyLoad>
         <TimeWrap>
-          <MinorTitle>Sign up now for early access.</MinorTitle>
+          <MinorTitle>Sign up now for early access</MinorTitle>
           <Signup
             placeholder="Enter your email..."
             type="email"

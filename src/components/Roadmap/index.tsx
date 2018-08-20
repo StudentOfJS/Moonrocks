@@ -3,7 +3,6 @@ import * as React from "react";
 import { Helmet } from "react-helmet";
 import styled from "../../theme";
 import Div from "../Div";
-import { MoonBackground } from "../MoonBackground";
 import { MinorTitle, Title } from "../Text";
 
 const InnerWrapper = styled(Div)`
@@ -20,9 +19,19 @@ const InnerWrapper = styled(Div)`
   padding: 20px;
 `;
 
+const OuterWrapper = styled(Div)`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 100px 5px;
+  justify-content: center;
+  width: 100%;
+`;
+
 export default () => {
   return (
-    <MoonBackground>
+    <OuterWrapper>
       <Helmet>
         <title>Moonrock's Roadmap</title>
         <meta
@@ -101,6 +110,6 @@ export default () => {
           </Timeline.Item>
         </Timeline>
       </InnerWrapper>
-    </MoonBackground>
+    </OuterWrapper>
   );
 };

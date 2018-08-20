@@ -44,7 +44,7 @@ interface IState {
   options: IOptions;
 }
 
-class NavBar extends React.Component<{}, IState> {
+class NavBar extends React.Component<any, IState> {
   public state: IState = {
     lock: true,
     options: {
@@ -54,11 +54,25 @@ class NavBar extends React.Component<{}, IState> {
       spy: true
     }
   };
+  // public componentDidMount = () => {
+  //   Events.scrollEvent.register("begin", function(to, element) {
+  //     console.log("begin", arguments);
+  //   });
+
+  //   Events.scrollEvent.register("end", function(to, element) {
+  //     console.log("end", arguments);
+  //   });
+
+  //   scrollSpy.update();
+  // };
   public scrollTop = () => scroll.scrollToTop();
   public render() {
+    // tslint:disable-next-line:no-console
+    console.log(this.props);
     return (
       <Wrapper>
         <StartWrapper>
+          {}
           <ScrollA onClick={this.scrollTop}>
             <Logo>
               {COMPANY} <RocketIcon size={32} title="rocket to the moon" />

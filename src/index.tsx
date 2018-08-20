@@ -4,7 +4,6 @@ import App from "./App";
 import store from "./redux/store";
 
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
 import registerServiceWorker from "./registerServiceWorker";
 import { injectGlobal } from "./theme";
 
@@ -743,11 +742,9 @@ injectGlobal`{
 }
 `;
 ReactDOM.render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </BrowserRouter>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById("root") as HTMLElement
 );
 registerServiceWorker();

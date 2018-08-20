@@ -8,6 +8,11 @@ import Input from "../Input/Input";
 export const StyledInput = styled(Input)`
   color: palevioletred;
   box-shadow: inset 1px 1px 4px darkgrey;
+  @media only screen and (max-width: 600px) {
+    font-size: 14px;
+    height: 40px;
+    width: 100%;
+  }
 `;
 const StyledInputSpan = styled.span`
   &:before {
@@ -22,6 +27,18 @@ const StyledInputSpan = styled.span`
   height: 50px;
   border: 5px solid white;
   border-radius: 10px;
+  margin: 0 20px;
+  @media only screen and (max-width: 600px) {
+    &:before {
+      color: grey;
+      font-size: 20px;
+      content: "🚀 ";
+      padding: 0 5px;
+    }
+    font-size: 18px;
+    height: 40px;
+    border: 2px solid white;
+  }
 `;
 
 const SubmitButton = styled(NonStyledBtn)`
@@ -39,6 +56,11 @@ const SubmitButton = styled(NonStyledBtn)`
     cursor: pointer;
     color: grey;
     background: ${props => props.theme.primaryColor};
+  }
+  @media only screen and (max-width: 600px) {
+    font-size: 18px;
+    height: 40px;
+    width: 100px;
   }
 `;
 

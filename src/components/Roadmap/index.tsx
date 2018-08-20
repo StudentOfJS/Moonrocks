@@ -18,7 +18,6 @@ const InnerWrapper = styled(Div)`
   border-radius: 30px;
   overflow: hidden;
   padding: 20px;
-  margin: 100px;
 `;
 
 export default () => {

@@ -23,7 +23,7 @@ export default () => {
         </HeroImageDiv>
         <HeroText />
       </HeroWrapper>
-      <LazyLoad once={true} offset={1} height={"100%"}>
+      <LazyLoad once={true} offset={0} height={"100%"}>
         <About />
       </LazyLoad>
     </HeroFilter>

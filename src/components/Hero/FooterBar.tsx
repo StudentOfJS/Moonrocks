@@ -1,4 +1,5 @@
 import * as React from "react";
+import { animateScroll as scroll } from "react-scroll";
 import styled, { keyframes } from "../../theme";
 import Div from "../Div";
 import { RocketIcon } from "../icons";
@@ -168,7 +169,7 @@ export interface IScrollProps {
 }
 
 export interface IFooterBarProps {
-  scrollToTop: (options: IScrollProps) => void;
+  // scrollToTop: (options: IScrollProps) => void;
   top: boolean;
 }
 
@@ -182,7 +183,7 @@ export default class FooterBar extends React.Component<
   };
   public launchRocket = () => {
     this.setState({ launch: true });
-    this.props.scrollToTop({
+    scroll.scrollToTop({
       delay: 700,
       duration: 1500,
       smooth: true

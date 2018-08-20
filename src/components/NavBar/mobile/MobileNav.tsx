@@ -10,12 +10,11 @@ const Wrapper = styled(Nav)`
   }
   @media (max-width: 500px) {
     top: 0;
-    position: fixed;
+    position: absolute;
     box-sizing: border-box;
     overflow: hidden;
     z-index: 200;
-    width: 100%;
-    height: 100vh;
+    filter: drop-shadow(1px 1px 1px #4444dd);
     color: ${props => props.theme.secondaryColor};
     font-family: ${props => props.theme.fontFamily};
     background: transparent;

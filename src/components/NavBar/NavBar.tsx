@@ -62,11 +62,9 @@ class NavBar extends React.Component<{}, IState> {
               {COMPANY} <RocketIcon size={32} title="rocket to the moon" />
             </Logo>
           </NavBarLink>
-          <NavButton>
-            <NavBarLink to="/tokensale">
-              <MinorTitle>token sale</MinorTitle>
-            </NavBarLink>
-          </NavButton>
+          <ScrollLink to="tokensale" {...this.state.options}>
+            <MinorTitle>token sale</MinorTitle>
+          </ScrollLink>
         </StartWrapper>
         <EndWrapper>
           <ScrollLink to="about" {...this.state.options}>

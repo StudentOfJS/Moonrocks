@@ -7,7 +7,7 @@ import { MinorTitle } from "../Text";
 import Logo from "./Logo";
 import NavBarLink from "./NavBarLink";
 import NavButton from "./NavButton";
-import ScrollLink from "./ScrollLink";
+import ScrollLink, { ScrollA } from "./ScrollLink";
 
 const Wrapper = styled.nav`
   display: flex;
@@ -66,14 +66,12 @@ class NavBar extends React.Component<any, IState> {
     return (
       <Wrapper>
         <StartWrapper>
-          <NavButton>
-            <NavBarLink to="/">
-              <Logo>
-                <MinorTitle>{COMPANY}</MinorTitle>
-                <RocketIcon size={32} title="rocket to the moon" />
-              </Logo>
-            </NavBarLink>
-          </NavButton>
+          <ScrollA onClick={this.scrollTop} {...this.state.options}>
+            <Logo>
+              <MinorTitle>{COMPANY}</MinorTitle>
+              <RocketIcon size={32} title="rocket to the moon" />
+            </Logo>
+          </ScrollA>
           <ScrollLink to="tokensale" {...this.state.options}>
             <MinorTitle>token sale</MinorTitle>
           </ScrollLink>
@@ -82,19 +80,17 @@ class NavBar extends React.Component<any, IState> {
           <ScrollLink to="about" {...this.state.options}>
             <TextShadow>what are {TOKEN_NAME}?</TextShadow>
           </ScrollLink>
-          <NavButton>
-            <NavBarLink to="/team">
-              <TextShadow>team</TextShadow>
-            </NavBarLink>
-          </NavButton>
+          <ScrollLink to="team" {...this.state.options}>
+            <TextShadow>team</TextShadow>
+          </ScrollLink>
+          <ScrollLink to="roadmap" {...this.state.options}>
+            <MinorTitle>roadmap</MinorTitle>
+          </ScrollLink>
           <NavButton>
             <NavBarLink to="/whitepaper">
               <MinorTitle>whitepaper</MinorTitle>
             </NavBarLink>
           </NavButton>
-          <ScrollLink to="roadmap" {...this.state.options}>
-            <MinorTitle>roadmap</MinorTitle>
-          </ScrollLink>
         </EndWrapper>
       </Wrapper>
     );

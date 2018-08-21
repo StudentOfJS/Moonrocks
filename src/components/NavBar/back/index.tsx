@@ -49,41 +49,18 @@ const animatehand = keyframes`
 
 const BackHand = styled(HandPointLeftIcon)`
   &:hover {
-    animation: shake-horizontal 1.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) both;
+    animation: ${animatehand} 1.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) both;
   }
 `;
 
-export interface IMobileNavProps {
-  className?: string;
-  style?: React.CSSProperties;
-  leave?: () => void;
-  onClick?: () => void;
-  open: boolean;
-  firstTime?: boolean;
-}
-export interface IMobileNavState {
-  openMobileMenu: boolean;
-  firstTime: boolean;
-}
+const Back: React.SFC = () => {
+  return (
+    <Wrapper>
+      <Link to="/">
+        <BackHand size="54px" />
+      </Link>
+    </Wrapper>
+  );
+};
 
-export default class MobileNav extends React.Component<any, IMobileNavState> {
-  public state = {
-    firstTime: true,
-    openMobileMenu: false
-  };
-  public leave = () => this.setState({ openMobileMenu: false });
-  public onClick = () =>
-    this.setState(prevProps => ({
-      firstTime: false,
-      openMobileMenu: !prevProps.openMobileMenu
-    }));
-  public render() {
-    return (
-      <Wrapper>
-        <Link to="/">
-          <BackHand size="54px" />
-        </Link>
-      </Wrapper>
-    );
-  }
-}
+export default Back;

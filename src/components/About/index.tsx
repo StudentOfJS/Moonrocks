@@ -7,6 +7,7 @@ import TokenDistribution from "../Charts/TokenDistribution";
 import Tokenomics from "../Charts/Tokenomics";
 import Countdown from "../Countdown";
 import Div from "../Div";
+import FooterBar from "../FooterBar/FooterBar";
 import { MoonBackground } from "../MoonBackground";
 import Roadmap from "../Roadmap";
 import Signup from "../Signup";
@@ -96,6 +97,7 @@ export default () => {
           </LazyLoad>
         </Element>
       </InnerWrapper>
+      <FooterBar />
     </MoonBackground>
   );
 };

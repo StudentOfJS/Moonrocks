@@ -1,8 +1,9 @@
 import * as React from "react";
 import { animateScroll as scroll } from "react-scroll";
 import styled, { keyframes } from "../../theme";
-import Div from "../Div";
+// import Div from "../Div";
 import { FatRocketIcon } from "../icons";
+import { MinorTitle } from "../Text";
 
 const preLaunch = keyframes`
 {
@@ -55,24 +56,18 @@ const preLaunch = keyframes`
 
 const RocketDiv = styled.div`
   align-self: flex-end;
-  bottom: 1rem;
+  background: transparent;
+  bottom: 0;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
   position: sticky;
-  padding-right: 1rem;
+  width: 95%
+  z-index: 1;
   &:hover {
     animation: ${preLaunch} 0.5s linear infinite both;
     cursor: pointer;
   }
-`;
-
-const Bar = styled(Div)`
-  align-items: flex-start;
-  background: transparent;
-  display: flex;
-  height: 450vh;
-  justify-content: flex-end;
-  top: 0;
-  width: 100%;
-  z-index: 400;
 `;
 
 export interface IRocketProps {
@@ -81,7 +76,9 @@ export interface IRocketProps {
 
 const Rocket: React.SFC<IRocketProps> = ({ launch }) => (
   <RocketDiv>
-    <FatRocketIcon size={32} color={launch ? "tomato" : "white"} />
+    <MinorTitle>
+      <FatRocketIcon size={32} color={launch ? "tomato" : "white"} /> Top
+    </MinorTitle>
   </RocketDiv>
 );
 
@@ -110,11 +107,9 @@ export default class FooterBar extends React.Component<{}, IState> {
   };
   public render() {
     return (
-      <Bar>
-        <a onClick={this.launchRocket}>
-          <Rocket {...this.state} />
-        </a>
-      </Bar>
+      <a onClick={this.launchRocket}>
+        <Rocket {...this.state} />
+      </a>
     );
   }
 }

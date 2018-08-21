@@ -9,7 +9,10 @@ const CookiePolicyDocument = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  height: 100%;
   justify-content: flex-start;
+  padding: 80px 5%;
+  width: 100%
 `
 const CookieList = styled.ul`
   border-radius: 8px;
@@ -28,7 +31,7 @@ const CookiePolicy: React.SFC = () => {
     <CookiePolicyDocument>
       <SubTitle>Cookie Policy for test.com</SubTitle>
 
-      <Paragraph>This is the Cookie Policy for moonrocks.io, accessible from https://moonrocks.io</Paragraph>
+      <Paragraph>This is the Cookie Policy for moonrocks.io, accessible from <a href="https://moonrocks.io">https://moonrocks.io</a></Paragraph>
 
       <MinorTitle>What Are Cookies</MinorTitle>
 

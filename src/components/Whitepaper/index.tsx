@@ -1,12 +1,23 @@
+import { Document, Page, StyleSheet, Text, View } from "@react-pdf/renderer";
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import * as pdf from "react-pdf/dist/entry.webpack";
 import styled from "../../theme";
 import Div from "../Div";
 import { MoonBackground } from "../MoonBackground";
-import { Paragraph, Title } from "../Text";
+import { Title } from "../Text";
 
-const { Document, Page } = pdf;
+// Create styles
+const styles = StyleSheet.create({
+  page: {
+    backgroundColor: "#E4E4E4",
+    flexDirection: "row"
+  },
+  section: {
+    flexGrow: 1,
+    margin: 10,
+    padding: 10
+  }
+});
 
 const InnerWrapper = styled(Div)`
   display: flex;
@@ -23,45 +34,32 @@ const InnerWrapper = styled(Div)`
   margin: 100px;
 `;
 
-interface IState {
-  numPages: number | null;
-  pageNumber: number;
-}
-
-export default class Whitepaper extends React.Component<IState> {
-  public state = {
-    numPages: null,
-    pageNumber: 1
-  };
-
-  public onDocumentLoadSuccess = ({ numPages }: IState) => {
-    this.setState({ numPages });
-  };
+export default class Whitepaper extends React.PureComponent {
+  public state = {};
 
   public render() {
-    const { pageNumber, numPages } = this.state;
-
     return (
       <MoonBackground>
         <Helmet>
           <title>Moonrock's Whitepaper</title>
           <meta
             name="description"
-            content="Read Moonrock's whitepaper and find out mroe about our tech"
+            content="Read Moonrock's whitepaper and find out more about our tech"
           />
-          <link rel="canonical" href="https://moonrocks.com/whitepaper" />
+          <link rel="canonical" href="https://moonrocks.io/whitepaper" />
         </Helmet>
         <InnerWrapper>
           <Title>Whitepaper</Title>
-          <Document
-            file={"whitepaper.pdf"}
-            onLoadSuccess={this.onDocumentLoadSuccess}
-          >
-            <Page pageNumber={pageNumber} />
+          <Document>
+            <Page size="A4" style={styles.page}>
+              <View style={styles.section}>
+                <Text>Section #1</Text>
+              </View>
+              <View style={styles.section}>
+                <Text>Section #2</Text>
+              </View>
+            </Page>
           </Document>
-          <Paragraph>
-            Page {pageNumber} of {numPages}
-          </Paragraph>
         </InnerWrapper>
       </MoonBackground>
     );

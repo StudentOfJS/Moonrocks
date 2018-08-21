@@ -1,1 +1,1 @@
-declare module "simple-react-pdf";
+declare module "@react-pdf/renderer";

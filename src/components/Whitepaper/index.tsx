@@ -1,6 +1,8 @@
 import { Document, Page, StyleSheet, Text, View } from "@react-pdf/renderer";
 import * as React from "react";
 import { Helmet } from "react-helmet";
+import { RouteComponentProps } from "react-router";
+import Navigation from "../Navigation";
 
 // Create styles
 const styles = StyleSheet.create({
@@ -12,7 +14,7 @@ const styles = StyleSheet.create({
   page: {
     backgroundColor: "#E4E4E4",
     flexDirection: "column",
-    marginTop: "30px",
+    paddingTop: "30px",
     width: "100%"
   },
   section: {
@@ -30,10 +32,12 @@ const styles = StyleSheet.create({
   }
 });
 
-export default class Whitepaper extends React.PureComponent {
-  public state = {};
-
+export default class Whitepaper extends React.PureComponent<
+  RouteComponentProps<{}>
+> {
   public render() {
+    // tslint:disable-next-line:no-console
+    console.log(this.props.match.path);
     return (
       <div>
         <Helmet>
@@ -44,6 +48,7 @@ export default class Whitepaper extends React.PureComponent {
           />
           <link rel="canonical" href="https://moonrocks.io/whitepaper" />
         </Helmet>
+        <Navigation path={this.props.match.path} />
         <Document style={styles.document}>
           <Page size="A4" style={styles.page}>
             <View style={styles.section}>

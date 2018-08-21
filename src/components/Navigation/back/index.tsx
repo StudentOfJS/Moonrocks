@@ -5,20 +5,11 @@ import { HandPointLeftIcon } from "../../icons";
 import { Nav } from "../NavWrapper";
 
 const Wrapper = styled(Nav)`
-  @media (min-width: 500px) {
-    display: none;
-  }
-  @media (max-width: 500px) {
-    top: 0;
-    position: absolute;
-    box-sizing: border-box;
-    overflow: hidden;
-    z-index: 200;
-    filter: drop-shadow(1px 1px 1px #4444dd);
-    color: ${props => props.theme.secondaryColor};
-    font-family: ${props => props.theme.fontFamily};
-    background: transparent;
-  }
+  top: 0;
+  padding: 60px;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 2000;
 `;
 
 const animatehand = keyframes`
@@ -57,7 +48,7 @@ const ReturnHome: React.SFC = () => {
   return (
     <Wrapper>
       <Link to="/">
-        <BackHand size="54px" />
+        <BackHand size="54px" color="white" />
       </Link>
     </Wrapper>
   );

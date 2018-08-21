@@ -1,31 +1,12 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import rod from "../../images/rod.jpg";
-import styled, { keyframes } from "../../theme";
+import styled from "../../theme";
 import Div from "../Div";
 import { GithubIcon, TwitterIcon, WhatshotIcon } from "../icons";
-import { MoonBackground } from "../MoonBackground";
 import { MinorTitle, Title } from "../Text";
 
-const slide = keyframes`
-  {
-    0% {
-      transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
-      transform-origin: 0% 50%;
-      filter: blur(40px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0) scaleY(1) scaleX(1);
-      transform-origin: 50% 50%;
-      filter: blur(0);
-      opacity: 1;
-    }
-  }
-`;
-
 const InnerWrapper = styled(Div)`
-  animation: ${slide} 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
   color: ${props => props.theme.primaryColor};
   display: flex;
   width: 100%;
@@ -35,19 +16,13 @@ const InnerWrapper = styled(Div)`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  background-color: rgba(0, 0, 0, 0.85);
-  border-radius: 30px;
-  overflow: hidden;
-  border: 8px dashed yellow;
-  padding: 20px;
-  margin: 80px;
+  margin: 80px 0 0 0;
 `;
 
 const TeamAvatar = styled.img`
   border-radius: 100%;
-  height: 100px;
-  width: 100px;
-  border: 4px solid white;
+  height: 80px;
+  width: 80px;
 `;
 
 const Row = styled.div`
@@ -57,7 +32,6 @@ const Row = styled.div`
   flex-wrap: wrap;
   height: 100px;
   justify-content: flex-start;
-  margin-bottom: 20px;
   width: 100%;
 `;
 
@@ -91,19 +65,16 @@ const A = styled.a`
 
 export default () => {
   return (
-    <MoonBackground>
+    <div>
       <Helmet>
         <title>Moonrock's Team</title>
         <meta name="description" content="Meet the Moonrock team members" />
         <link rel="canonical" href="https://moonrocks.com/team" />
       </Helmet>
       <InnerWrapper>
-        <i />
-        <i />
-        <i />
         <Title>Moon Rockers</Title>
         <Row>
-          <TeamAvatar src={rod} />
+          <TeamAvatar src={rod} alt="Rod lewis - Developer mugshot" />
           <Column>
             <MinorTitle>Rod Lewis</MinorTitle>
             <MinorTitle style={{ color: "yellow" }}>
@@ -126,6 +97,6 @@ export default () => {
           </Column>
         </Row>
       </InnerWrapper>
-    </MoonBackground>
+    </div>
   );
 };

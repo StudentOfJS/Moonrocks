@@ -43,7 +43,6 @@ const InnerWrapper = styled(Div)`
   background-color: rgba(0, 0, 0, 0.85);
   border-radius: 30px;
   overflow: hidden;
-  border: 8px dashed yellow;
   padding: 20px;
 `;
 const TimeWrap = styled(Div)`

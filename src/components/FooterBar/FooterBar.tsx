@@ -60,6 +60,7 @@ const RocketDiv = styled.div`
   bottom: 0;
   color: white;
   display: flex;
+  filter: drop-shadow(2px 2px 2px black);
   justify-content: flex-end;
   position: sticky;
   width: 95%

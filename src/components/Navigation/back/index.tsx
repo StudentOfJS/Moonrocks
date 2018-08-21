@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "../../../theme";
 import { HandPointLeftIcon } from "../../icons";
+import { MinorTitle } from "../../Text";
 import { Nav } from "../NavWrapper";
 
 const Wrapper = styled(Nav)`
@@ -44,12 +45,19 @@ const BackHand = styled(HandPointLeftIcon)`
   }
 `;
 
+const StyledLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+`;
+
 const ReturnHome: React.SFC = () => {
   return (
     <Wrapper>
-      <Link to="/">
-        <BackHand size="54px" color="white" />
-      </Link>
+      <StyledLink to="/">
+        <MinorTitle>
+          <BackHand size="54px" color="white" /> Back
+        </MinorTitle>
+      </StyledLink>
     </Wrapper>
   );
 };

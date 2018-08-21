@@ -86,6 +86,9 @@ export default () => {
           <WrappedElement name="roadmap" className="element">
             <Roadmap />
           </WrappedElement>
+          <WrappedElement name="team" className="element">
+            <Team />
+          </WrappedElement>
           <WrappedElement name="tokensale" className="element">
             <LazyLoad once={true} offset={1} height={"100%"}>
               <Tokenomics />
@@ -99,9 +102,6 @@ export default () => {
           <LazyLoad once={true} offset={1} height={"100%"}>
             <TokenDistribution />
           </LazyLoad>
-          <WrappedElement name="team" className="element">
-            <Team />
-          </WrappedElement>
         </InnerWrapper>
       </MoonBackground>
       <FooterBar />

@@ -48,7 +48,7 @@ class NavBar extends React.Component<any, IState> {
   public state: IState = {
     lock: true,
     options: {
-      duration: 500,
+      duration: 1000,
       offset: 1,
       smooth: true,
       spy: true

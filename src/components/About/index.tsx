@@ -52,7 +52,7 @@ const TimeWrap = styled(Div)`
 
 export default () => {
   return (
-    <React.Fragment>
+    <div>
       <MoonBackground>
         <Helmet>
           <title>About Moonrock's ICO</title>
@@ -98,6 +98,6 @@ export default () => {
         </InnerWrapper>
       </MoonBackground>
       <FooterBar />
-    </React.Fragment>
+    </div>
   );
 };

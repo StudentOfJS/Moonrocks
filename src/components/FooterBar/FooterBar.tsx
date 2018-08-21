@@ -63,7 +63,6 @@ const RocketDiv = styled.div`
   justify-content: flex-end;
   position: sticky;
   width: 95%
-  z-index: 1;
   &:hover {
     animation: ${preLaunch} 0.5s linear infinite both;
     cursor: pointer;

@@ -7,7 +7,7 @@ import { MinorTitle } from "../Text";
 import Logo from "./Logo";
 import NavBarLink from "./NavBarLink";
 import NavButton from "./NavButton";
-import ScrollLink, { ScrollA } from "./ScrollLink";
+import ScrollLink from "./ScrollLink";
 
 const Wrapper = styled.nav`
   display: flex;
@@ -55,7 +55,6 @@ class NavBar extends React.Component<any, IState> {
     }
   };
 
-  // @todo implement to top button
   // @todo implement active styles
   // @todo route based on location
 
@@ -75,11 +74,14 @@ class NavBar extends React.Component<any, IState> {
     return (
       <Wrapper>
         <StartWrapper>
-          <ScrollA onClick={this.scrollTop}>
-            <Logo>
-              {COMPANY} <RocketIcon size={32} title="rocket to the moon" />
-            </Logo>
-          </ScrollA>
+          <NavButton>
+            <NavBarLink to="/">
+              <Logo>
+                <MinorTitle>{COMPANY}</MinorTitle>
+                <RocketIcon size={32} title="rocket to the moon" />
+              </Logo>
+            </NavBarLink>
+          </NavButton>
           <ScrollLink to="tokensale" {...this.state.options}>
             <MinorTitle>token sale</MinorTitle>
           </ScrollLink>

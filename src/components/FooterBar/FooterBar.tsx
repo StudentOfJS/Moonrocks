@@ -70,14 +70,17 @@ const RocketDiv = styled.div`
 `;
 
 export interface IRocketProps {
+  handleClick: () => void;
   launch: boolean;
 }
 
-const Rocket: React.SFC<IRocketProps> = ({ launch }) => (
+const Rocket: React.SFC<IRocketProps> = ({ handleClick, launch }) => (
   <RocketDiv>
-    <MinorTitle>
-      <FatRocketIcon size={32} color={launch ? "tomato" : "white"} /> Top
-    </MinorTitle>
+    <a onClick={handleClick}>
+      <MinorTitle>
+        <FatRocketIcon size={32} color={launch ? "tomato" : "white"} /> Top
+      </MinorTitle>
+    </a>
   </RocketDiv>
 );
 
@@ -105,10 +108,6 @@ export default class FooterBar extends React.Component<{}, IState> {
     setTimeout(() => this.setState({ launch: false }), 1700);
   };
   public render() {
-    return (
-      <a onClick={this.launchRocket}>
-        <Rocket {...this.state} />
-      </a>
-    );
+    return <Rocket {...this.state} handleClick={this.launchRocket} />;
   }
 }

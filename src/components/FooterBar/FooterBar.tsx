@@ -55,12 +55,14 @@ const preLaunch = keyframes`
 `;
 
 const RocketDiv = styled.div`
+  @media (max-width: 500px) {
+    filter: drop-shadow(2px 2px 2px black);
+  }
   align-self: flex-end;
   background: transparent;
   bottom: 0;
   color: white;
   display: flex;
-  filter: drop-shadow(2px 2px 2px black);
   justify-content: flex-end;
   position: sticky;
   width: 95%

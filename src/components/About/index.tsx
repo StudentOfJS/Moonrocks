@@ -50,6 +50,10 @@ const TimeWrap = styled(Div)`
   margin: 30px 0;
 `;
 
+const WrappedElement = styled(Element)`
+  margin: 60px 0 0 0;
+`;
+
 export default () => {
   return (
     <div>
@@ -66,9 +70,9 @@ export default () => {
           <i />
           <i />
           <i />
-          <Element name="about" className="element">
+          <WrappedElement name="about" className="element">
             <AboutText />
-          </Element>
+          </WrappedElement>
           <TimeWrap>
             <MinorTitle>Sign up now for early access</MinorTitle>
             <Signup
@@ -79,14 +83,14 @@ export default () => {
               btnText="Signup"
             />
           </TimeWrap>
-          <Element name="roadmap" className="element">
+          <WrappedElement name="roadmap" className="element">
             <Roadmap />
-          </Element>
-          <Element name="tokensale" className="element">
+          </WrappedElement>
+          <WrappedElement name="tokensale" className="element">
             <LazyLoad once={true} offset={1} height={"100%"}>
               <Tokenomics />
             </LazyLoad>
-          </Element>
+          </WrappedElement>
           <LazyLoad once={true} offset={1} height={"100%"}>
             <TimeWrap>
               <Countdown />
@@ -95,9 +99,9 @@ export default () => {
           <LazyLoad once={true} offset={1} height={"100%"}>
             <TokenDistribution />
           </LazyLoad>
-          <Element name="team" className="element">
+          <WrappedElement name="team" className="element">
             <Team />
-          </Element>
+          </WrappedElement>
         </InnerWrapper>
       </MoonBackground>
       <FooterBar />

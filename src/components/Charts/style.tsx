@@ -10,6 +10,7 @@ export const Column = styled.div`
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  max-width: 800px;
   width: 100%;
 `;
 

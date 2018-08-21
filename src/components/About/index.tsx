@@ -11,6 +11,7 @@ import FooterBar from "../FooterBar/FooterBar";
 import { MoonBackground } from "../MoonBackground";
 import Roadmap from "../Roadmap";
 import Signup from "../Signup";
+import Team from "../Team";
 import { MinorTitle } from "../Text";
 import AboutText from "./AboutText";
 
@@ -95,6 +96,9 @@ export default () => {
           <LazyLoad once={true} offset={1} height={"100%"}>
             <TokenDistribution />
           </LazyLoad>
+          <Element name="team" className="element">
+            <Team />
+          </Element>
         </InnerWrapper>
       </MoonBackground>
       <FooterBar />

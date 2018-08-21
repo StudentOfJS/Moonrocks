@@ -96,8 +96,8 @@ export default () => {
             <Roadmap />
           </LazyLoad>
         </Element>
+        <FooterBar />
       </InnerWrapper>
-      <FooterBar />
     </MoonBackground>
   );
 };

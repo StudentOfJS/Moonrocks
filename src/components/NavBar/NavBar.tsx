@@ -1,5 +1,5 @@
 import * as React from "react";
-import { animateScroll as scroll } from "react-scroll";
+import { animateScroll as scroll, scrollSpy } from "react-scroll";
 import { COMPANY, TOKEN_NAME } from "../../constants";
 import styled from "../../theme";
 import { RocketIcon } from "../icons";
@@ -55,20 +55,12 @@ class NavBar extends React.Component<any, IState> {
     }
   };
 
-  // @todo implement active styles
   // @todo route based on location
 
-  // public componentDidMount = () => {
-  //   Events.scrollEvent.register("begin", function(to, element) {
-  //     console.log("begin", arguments);
-  //   });
+  public componentDidMount = () => {
+    scrollSpy.update();
+  };
 
-  //   Events.scrollEvent.register("end", function(to, element) {
-  //     console.log("end", arguments);
-  //   });
-
-  //   scrollSpy.update();
-  // };
   public scrollTop = () => scroll.scrollToTop();
   public render() {
     return (

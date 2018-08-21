@@ -53,7 +53,7 @@ const BackHand = styled(HandPointLeftIcon)`
   }
 `;
 
-const Back: React.SFC = () => {
+const ReturnHome: React.SFC = () => {
   return (
     <Wrapper>
       <Link to="/">
@@ -63,4 +63,4 @@ const Back: React.SFC = () => {
   );
 };
 
-export default Back;
+export default ReturnHome;

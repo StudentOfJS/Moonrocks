@@ -16,7 +16,7 @@ const InnerWrapper = styled(Div)`
   color: #292a2b;
   border-radius: 30px;
   overflow: hidden;
-  padding: 20px;
+  padding: 10px;
 `;
 
 const OuterWrapper = styled(Div)`
@@ -24,7 +24,7 @@ const OuterWrapper = styled(Div)`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding: 80px 10px 2px 10px;
+  padding: 40px 0;
   justify-content: center;
   width: 100%;
 `;

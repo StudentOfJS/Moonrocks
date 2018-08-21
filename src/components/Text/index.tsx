@@ -43,10 +43,8 @@ const MinorTitle = styled.h3`
   font-size: 1.1em;
   padding: 0 20px;
   text-align: center;
-  animation: ${trackIn} 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   @media only screen and (max-width: 600px) {
     font-size: 0.8em;
-    animation: ${trackIn} 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
 `;
 const Paragraph = styled.p`

@@ -52,52 +52,52 @@ const TimeWrap = styled(Div)`
 
 export default () => {
   return (
-    <MoonBackground>
-      <Helmet>
-        <title>About Moonrock's ICO</title>
-        <meta
-          name="description"
-          content="Find out more about Moonrock's token sale"
-        />
-        <link rel="canonical" href="https://moonrocks.com/about" />
-      </Helmet>
-      <InnerWrapper>
-        <i />
-        <i />
-        <i />
-        <Element name="about" className="element">
-          <AboutText />
-        </Element>
-        <TimeWrap>
-          <Element name="tokensale" className="element">
-            <MinorTitle>Sign up now for early access</MinorTitle>
-          </Element>
-          <Signup
-            placeholder="Enter your email..."
-            type="email"
-            // tslint:disable-next-line:jsx-no-lambda
-            submit={v => null}
-            btnText="Signup"
+    <React.Fragment>
+      <MoonBackground>
+        <Helmet>
+          <title>About Moonrock's ICO</title>
+          <meta
+            name="description"
+            content="Find out more about Moonrock's token sale"
           />
-        </TimeWrap>
-        <LazyLoad once={true} offset={1} height={"100%"}>
-          <Tokenomics />
-        </LazyLoad>
-        <LazyLoad once={true} offset={1} height={"100%"}>
+          <link rel="canonical" href="https://moonrocks.com/about" />
+        </Helmet>
+        <InnerWrapper>
+          <i />
+          <i />
+          <i />
+          <Element name="about" className="element">
+            <AboutText />
+          </Element>
           <TimeWrap>
-            <Countdown />
+            <MinorTitle>Sign up now for early access</MinorTitle>
+            <Signup
+              placeholder="Enter your email..."
+              type="email"
+              // tslint:disable-next-line:jsx-no-lambda
+              submit={v => null}
+              btnText="Signup"
+            />
           </TimeWrap>
-        </LazyLoad>
-        <LazyLoad once={true} offset={1} height={"100%"}>
-          <TokenDistribution />
-        </LazyLoad>
-        <Element name="roadmap" className="element">
-          <LazyLoad once={true} offset={1} height={"100%"}>
+          <Element name="roadmap" className="element">
             <Roadmap />
+          </Element>
+          <Element name="tokensale" className="element">
+            <LazyLoad once={true} offset={1} height={"100%"}>
+              <Tokenomics />
+            </LazyLoad>
+          </Element>
+          <LazyLoad once={true} offset={1} height={"100%"}>
+            <TimeWrap>
+              <Countdown />
+            </TimeWrap>
           </LazyLoad>
-        </Element>
-        <FooterBar />
-      </InnerWrapper>
-    </MoonBackground>
+          <LazyLoad once={true} offset={1} height={"100%"}>
+            <TokenDistribution />
+          </LazyLoad>
+        </InnerWrapper>
+      </MoonBackground>
+      <FooterBar />
+    </React.Fragment>
   );
 };

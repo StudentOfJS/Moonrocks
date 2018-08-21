@@ -2,6 +2,7 @@ import * as React from "react";
 import { Helmet } from "react-helmet";
 import astronaut from "../../images/astronaut.png";
 import About from "../About";
+import FooterBar from "../FooterBar/FooterBar";
 import HeroFilter from "./HeroFilter";
 import HeroImage from "./HeroImage";
 import HeroImageDiv from "./HeroImageDiv";
@@ -23,6 +24,7 @@ export default () => {
         <HeroText />
       </HeroWrapper>
       <About />
+      <FooterBar />
     </HeroFilter>
   );
 };

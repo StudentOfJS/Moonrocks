@@ -102,7 +102,7 @@ export default class FooterBar extends React.Component<{}, IState> {
   public launchRocket = () => {
     this.setState({ launch: true });
     scroll.scrollToTop({
-      delay: 700,
+      delay: 100,
       duration: 1000,
       smooth: true
     });

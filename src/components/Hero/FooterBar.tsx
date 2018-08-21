@@ -122,13 +122,19 @@ const RocketLaunchDiv = styled.div`
   animation: ${liftOff} 0.7s ease-in both;
 `;
 
+const BarItem = styled.div`
+  align-self: flex-end;
+  bottom: 1rem;
+  padding-top: 100vh;
+  position: sticky;
+`;
+
 const Bar = styled(Div)`
-  align-items: center;
+  align-items: flex-start;
   background: transparent;
   display: flex;
-  height: 80px;
-  justify-content: flex-end;
-  position: sticky;
+  height: 100%;
+  justify-content: space-around;
   top: 0;
   width: 100%;
   z-index: 200;
@@ -136,30 +142,29 @@ const Bar = styled(Div)`
 
 export interface IRocketProps {
   launch: boolean;
-  top: boolean;
 }
 
-const Rocket: React.SFC<IRocketProps> = ({ launch, top }) => {
-  if (top) {
-    return <div />;
-  }
+const Rocket: React.SFC<IRocketProps> = ({ launch }) => {
   if (launch) {
     return (
-      <RocketLaunchDiv>
-        <RocketIcon />
-      </RocketLaunchDiv>
+      <BarItem>
+        <RocketLaunchDiv>
+          <RocketIcon size={32} color="#0892D0" />
+        </RocketLaunchDiv>
+      </BarItem>
     );
   }
   return (
+    <BarItem>
     <RocketDiv>
-      <RocketIcon />
+      <RocketIcon size={32} color="white" />
     </RocketDiv>
+  </BarItem>
   );
 };
 
 export interface IState {
   launch: boolean;
-  top: boolean;
 }
 
 export interface IScrollProps {
@@ -168,18 +173,14 @@ export interface IScrollProps {
   smooth: boolean;
 }
 
-export interface IFooterBarProps {
-  // scrollToTop: (options: IScrollProps) => void;
-  top: boolean;
-}
+
 
 export default class FooterBar extends React.Component<
-  IFooterBarProps,
+  {},
   IState
 > {
   public state = {
-    launch: false,
-    top: this.props.top
+    launch: false
   };
   public launchRocket = () => {
     this.setState({ launch: true });

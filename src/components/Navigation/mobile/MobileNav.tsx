@@ -13,7 +13,7 @@ const Wrapper = styled(Nav)`
     position: absolute;
     box-sizing: border-box;
     overflow: hidden;
-    z-index: 200;
+    z-index: 2000;
     filter: drop-shadow(1px 1px 1px #4444dd);
     color: ${props => props.theme.secondaryColor};
     font-family: ${props => props.theme.fontFamily};

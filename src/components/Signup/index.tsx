@@ -64,11 +64,28 @@ const SubmitButton = styled(NonStyledBtn)`
   }
 `;
 
-const ErrorMessage = styled.label`
-  color: palevioletred;
-  font-size: 1em;
+const Message = styled.label`
+  background-color: white;
+  border-radius: 8px;
+  font-size: 1.5em;
   font-family: ${props => props.theme.fontFamily};
-  text-align: center;
+  margin-top: 5px;
+  padding: 2px 10px;
+`;
+
+const ErrorMessage = styled(Message)`
+  color: darkred;
+`;
+
+const SuccessMessage = styled(Message)`
+  color: darkgrey;
+`;
+
+const SignupDiv = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 interface ISignupProps {
@@ -80,6 +97,7 @@ interface ISignupProps {
 interface IState {
   error: string;
   schema: StringSchema;
+  success: boolean;
   touched: boolean;
   value: string;
 }
@@ -90,6 +108,7 @@ export default class Signup extends React.Component<ISignupProps, IState> {
     schema: string()
       .email()
       .required(),
+    success: false,
     touched: false,
     value: ""
   };
@@ -104,28 +123,38 @@ export default class Signup extends React.Component<ISignupProps, IState> {
     this.props.submit(this.state.value);
     this.setState(prevProps => ({
       error: "",
+      success: true,
       touched: false,
       value: ""
     }));
+    this.resetSuccess();
   };
+
+  public resetSuccess = () => {
+    setTimeout(() => this.setState({ success: false }), 4000);
+  };
+
   public render() {
-    const { error, touched } = this.state;
+    const { error, success, touched } = this.state;
     return (
-      <StyledInputSpan>
-        <StyledInput
-          placeholder={this.props.placeholder}
-          type={this.props.type}
-          onChange={this.handleChange}
-          value={this.state.value}
-        />
+      <SignupDiv>
+        <StyledInputSpan>
+          <StyledInput
+            placeholder={this.props.placeholder}
+            type={this.props.type}
+            onChange={this.handleChange}
+            value={this.state.value}
+          />
+          <SubmitButton
+            onClick={this.handleSubmit}
+            disabled={!touched || !!error}
+          >
+            {this.props.btnText}
+          </SubmitButton>
+        </StyledInputSpan>
         {touched && error && <ErrorMessage>{error}</ErrorMessage>}
-        <SubmitButton
-          onClick={this.handleSubmit}
-          disabled={!touched || !!error}
-        >
-          {this.props.btnText}
-        </SubmitButton>
-      </StyledInputSpan>
+        {success && <SuccessMessage>Thanks for signing up</SuccessMessage>}
+      </SignupDiv>
     );
   }
 }

@@ -6,17 +6,26 @@ import Div from "../Div";
 import { GithubIcon, TwitterIcon, WhatshotIcon } from "../icons";
 import { MinorTitle, Title } from "../Text";
 
-const InnerWrapper = styled(Div)`
+const OuterDiv = styled(Div)`
   color: ${props => props.theme.primaryColor};
   display: flex;
   width: 100%;
-  height: 60vh;
-  max-width: 800px;
-  flex-wrap: wrap;
+  height: 100vh;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   margin: 80px 0 0 0;
+`;
+
+const InnerDiv = styled(Div)`
+  color: ${props => props.theme.primaryColor};
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
 `;
 
 const TeamAvatar = styled.img`
@@ -32,7 +41,8 @@ const Row = styled.div`
   flex-wrap: wrap;
   height: 100px;
   justify-content: flex-start;
-  width: 100%;
+  padding: 40px;
+  width: 320px;
 `;
 
 const Column = styled.div`
@@ -65,14 +75,14 @@ const A = styled.a`
 
 export default () => {
   return (
-    <div>
+    <OuterDiv>
       <Helmet>
         <title>Moonrock's Team</title>
         <meta name="description" content="Meet the Moonrock team members" />
         <link rel="canonical" href="https://moonrocks.com/team" />
       </Helmet>
-      <InnerWrapper>
-        <Title>Moon Rockers</Title>
+      <Title>Moon Rockers</Title>
+      <InnerDiv>
         <Row>
           <TeamAvatar src={rod} alt="Rod lewis - Developer mugshot" />
           <Column>
@@ -96,7 +106,67 @@ export default () => {
             </Inline>
           </Column>
         </Row>
-      </InnerWrapper>
-    </div>
+        <Row>
+          <TeamAvatar src={rod} alt="Rod lewis - Developer mugshot" />
+          <Column>
+            <MinorTitle>Oliver Hartnack</MinorTitle>
+            <MinorTitle style={{ color: "yellow" }}>
+              Blockchain Engineer
+            </MinorTitle>
+            <Inline>
+              <A href="" target="_blank">
+                <GithubIcon size={iconSize} />
+              </A>
+              <A href="" target="_blank">
+                <TwitterIcon size={iconSize} />
+              </A>
+              <A href="" target="_blank">
+                <WhatshotIcon size={iconSize} />
+              </A>
+            </Inline>
+          </Column>
+        </Row>
+        <Row>
+          <TeamAvatar src={rod} alt="Rod lewis - Developer mugshot" />
+          <Column>
+            <MinorTitle>Simone Hartnack</MinorTitle>
+            <MinorTitle style={{ color: "yellow" }}>
+              Chief Community Officer
+            </MinorTitle>
+            <Inline>
+              <A href="" target="_blank">
+                <GithubIcon size={iconSize} />
+              </A>
+              <A href="" target="_blank">
+                <TwitterIcon size={iconSize} />
+              </A>
+              <A href="" target="_blank">
+                <WhatshotIcon size={iconSize} />
+              </A>
+            </Inline>
+          </Column>
+        </Row>
+        <Row>
+          <TeamAvatar src={rod} alt="Rod lewis - Developer mugshot" />
+          <Column>
+            <MinorTitle>Oliver Hartnack</MinorTitle>
+            <MinorTitle style={{ color: "yellow" }}>
+              Blockchain Engineer
+            </MinorTitle>
+            <Inline>
+              <A href="" target="_blank">
+                <GithubIcon size={iconSize} />
+              </A>
+              <A href="" target="_blank">
+                <TwitterIcon size={iconSize} />
+              </A>
+              <A href="" target="_blank">
+                <WhatshotIcon size={iconSize} />
+              </A>
+            </Inline>
+          </Column>
+        </Row>
+      </InnerDiv>
+    </OuterDiv>
   );
 };

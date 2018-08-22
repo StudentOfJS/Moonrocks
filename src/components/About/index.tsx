@@ -90,16 +90,24 @@ export default () => {
             <Team />
           </WrappedElement>
           <WrappedElement name="tokensale" className="element">
-            <LazyLoad once={true} offset={1} height={"100%"}>
-              <Tokenomics />
-            </LazyLoad>
-          </WrappedElement>
-          <LazyLoad once={true} offset={1} height={"100%"}>
             <TimeWrap>
-              <Countdown />
+              <MinorTitle>Sign up now for early access</MinorTitle>
+              <Signup
+                placeholder="Enter your email..."
+                type="email"
+                // tslint:disable-next-line:jsx-no-lambda
+                submit={v => null}
+                btnText="Signup"
+              />
             </TimeWrap>
+          </WrappedElement>
+          <LazyLoad once={true} offset={1} height={"700px"}>
+            <Tokenomics />
           </LazyLoad>
-          <LazyLoad once={true} offset={1} height={"100%"}>
+          <TimeWrap>
+            <Countdown />
+          </TimeWrap>
+          <LazyLoad once={true} offset={1} height={"700px"}>
             <TokenDistribution />
           </LazyLoad>
         </InnerWrapper>

@@ -12,6 +12,7 @@
     "ramda": "^0.25.0",
     "react": "^16.4.0",
     "react-chartjs-2": "^2.7.4",
+    "react-cookie": "^3.0.4",
     "react-dom": "^16.4.0",
     "react-helmet": "^5.2.0",
     "react-lazyload": "^2.3.0",

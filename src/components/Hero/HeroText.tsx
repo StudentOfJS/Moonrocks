@@ -34,8 +34,6 @@ export default () => {
         <Signup
           placeholder="Enter your email..."
           type="email"
-          // tslint:disable-next-line:jsx-no-lambda
-          submit={v => null}
           btnText="Signup"
         />
       </HeroGroup>

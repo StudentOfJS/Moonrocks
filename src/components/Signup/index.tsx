@@ -91,7 +91,6 @@ const SignupDiv = styled.div`
 interface ISignupProps {
   btnText: string;
   placeholder: string;
-  submit: (value: string) => void;
   type: string;
 }
 interface IState {
@@ -119,8 +118,8 @@ export default class Signup extends React.Component<ISignupProps, IState> {
       : this.setState({ error: "invalid email", value, touched: true });
   };
 
-  public handleSubmit = () => {
-    this.props.submit(this.state.value);
+  public handleSubmit = async () => {
+    await fetch();
     this.setState(prevProps => ({
       error: "",
       success: true,

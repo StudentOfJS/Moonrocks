@@ -1,5 +1,4 @@
 // import { debounce } from "lodash";
-import axios from "axios";
 import * as React from "react";
 import { string, StringSchema } from "yup";
 import styled from "../../theme";
@@ -92,6 +91,7 @@ const SignupDiv = styled.div`
 interface ISignupProps {
   btnText: string;
   placeholder: string;
+  submit: (value: string) => void;
   type: string;
 }
 interface IState {
@@ -119,25 +119,15 @@ export default class Signup extends React.Component<ISignupProps, IState> {
       : this.setState({ error: "invalid email", value, touched: true });
   };
 
-  public handleSubmit = async () => {
-    axios({
-      data: {
-        email: this.state.value,
-        lastName: "Flintstone"
-      },
-      method: "put",
-      url: "http://localhost:8080/tgenews"
-    })
-      .then(res => {
-        this.setState(prevProps => ({
-          error: "",
-          success: true,
-          touched: false,
-          value: ""
-        }));
-        this.resetSuccess();
-      })
-      .catch(error => this.setState({ error }));
+  public handleSubmit = () => {
+    this.props.submit(this.state.value);
+    this.setState(prevProps => ({
+      error: "",
+      success: true,
+      touched: false,
+      value: ""
+    }));
+    this.resetSuccess();
   };
 
   public resetSuccess = () => {

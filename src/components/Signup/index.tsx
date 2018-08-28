@@ -1,4 +1,5 @@
 // import { debounce } from "lodash";
+import axios from "axios";
 import * as React from "react";
 import { string, StringSchema } from "yup";
 import styled from "../../theme";
@@ -119,14 +120,24 @@ export default class Signup extends React.Component<ISignupProps, IState> {
   };
 
   public handleSubmit = async () => {
-    await fetch();
-    this.setState(prevProps => ({
-      error: "",
-      success: true,
-      touched: false,
-      value: ""
-    }));
-    this.resetSuccess();
+    axios({
+      data: {
+        email: this.state.value,
+        lastName: "Flintstone"
+      },
+      method: "put",
+      url: "http://localhost:8080/tgenews"
+    })
+      .then(res => {
+        this.setState(prevProps => ({
+          error: "",
+          success: true,
+          touched: false,
+          value: ""
+        }));
+        this.resetSuccess();
+      })
+      .catch(error => this.setState({ error }));
   };
 
   public resetSuccess = () => {

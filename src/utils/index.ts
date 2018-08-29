@@ -1,3 +1,5 @@
+import { API_URL } from "../constants";
+
 // request the token
 // subscribe to this event and use the returned json to save your token to state or session storage
 export const requestAccessToken = (data: string) => {

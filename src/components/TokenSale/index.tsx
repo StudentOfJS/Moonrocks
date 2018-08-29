@@ -89,8 +89,6 @@ const TokenSale: React.SFC<ITokenSaleProps> = props => {
         <Signup
           placeholder="Enter your email..."
           type="email"
-          // tslint:disable-next-line:jsx-no-lambda
-          submit={v => null}
           btnText="Signup"
         />
       </Item4>

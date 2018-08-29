@@ -9,3 +9,5 @@ export const MOBILE_MENU_OPEN: string = "MOBILE_MENU_OPEN";
 
 // interest form
 export const SEND_FORM: string = "SEND_FORM";
+
+export const API_URL: string = "http://localhost:8080";

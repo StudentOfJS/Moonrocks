@@ -6,15 +6,7 @@ import Button from "../Button";
 
 let wrapped: ShallowWrapper;
 beforeEach(() => {
-  wrapped = shallow(
-    <Signup
-      placeholder="test"
-      type="text"
-      // tslint:disable-next-line:jsx-no-lambda
-      submit={v => null}
-      btnText="test"
-    />
-  );
+  wrapped = shallow(<Signup placeholder="test" type="text" btnText="test" />);
 });
 
 describe("input component", () => {

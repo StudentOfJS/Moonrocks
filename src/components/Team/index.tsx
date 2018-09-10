@@ -34,7 +34,11 @@ const InnerDiv = styled(Div)`
 const members = [
   {
     name: "Rod Lewis",
-    profile: { bio: "lorem ispum dollar bill ja", image: rod, page: "/" },
+    profile: {
+      bio: "lorem ispum dollar bill ja",
+      image: rod,
+      page: "/"
+    },
     social: {
       exercism: "StudentOfJS",
       github: "StudentOfJS",

@@ -53,7 +53,6 @@ const Paragraph = styled.p`
   padding: 0 20px;
   text-align: left;
   &:first-letter {
-    font-weight: bold;
     text-transform: capitalize;
   }
 `;

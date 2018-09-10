@@ -1,18 +1,27 @@
-import { Progress } from "antd";
 import * as React from "react";
+import CircularProgressbar from "react-circular-progressbar";
 import styled from "../../theme";
 
+import "react-circular-progressbar/dist/styles.css";
+
 const Skill = styled.div`
-  align-items: flex-start;
+  align-items: center;
   display: flex;
   flex-direction: column;
   flex-wrap: no-wrap;
   justify-content: center;
+  padding: 20px;
+`;
+
+const SkillsWrap = styled.div`
+  display: inline-flex;
+  flex-direction: row;
 `;
 
 const SkillLabel = styled.p`
+  color: ${props => props.color};
   font-family: "Roboto", sans-serif;
-  font-size: 0.6em;
+  font-size: 1em;
 `;
 
 export interface ISkill {
@@ -26,22 +35,29 @@ interface ISkillsProps {
 }
 
 const Skills: React.SFC<ISkillsProps> = ({ skills }) => (
-  <div>
+  <SkillsWrap>
     {skills.map(skill => (
       <Skill>
-        <SkillLabel>{skill.label}</SkillLabel>
-        <Progress
-          type="circle"
-          strokeColor={skill.color}
-          percent={skill.percent}
-          width={60}
+        <SkillLabel color={skill.color}>{skill.label}</SkillLabel>
+        <CircularProgressbar
+          percentage={skill.percent}
+          text={`${skill.percent}%`}
+          styles={{
+            path: { stroke: skill.color },
+            root: {
+              height: 100,
+              width: 100
+            },
+            text: {
+              fill: skill.color,
+              fontFamily: '"Roboto", sans-serif',
+              fontSize: "30px"
+            }
+          }}
         />
       </Skill>
     ))}
-
-    <Progress type="circle" percent={70} width={80} status="exception" />
-    <Progress type="circle" percent={100} width={80} />
-  </div>
+  </SkillsWrap>
 );
 
 export default Skills;

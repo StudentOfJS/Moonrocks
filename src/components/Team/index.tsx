@@ -8,24 +8,22 @@ import TeamMember from "./TeamMember";
 
 const OuterDiv = styled(Div)`
   color: ${props => props.theme.primaryColor};
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin: 80px 0 0 0;
+  width: 100wh;
+  height: 100%;
 `;
 
-const InnerDiv = styled(Div)`
+const MemberDiv = styled(Div)`
   color: ${props => props.theme.primaryColor};
   display: flex;
-  width: 100%;
-  height: 100vh;
   flex-wrap: wrap;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  width: 100wh;
+  height: 100%;
+`;
+
+const TitleDiv = styled(Title)`
+  color: ${props => props.theme.primaryColor};
+  margin-top: 40px;
+  width: 100%;
 `;
 
 // @todo: create GET endpoint for team info. Pull from there and then iterate over for this section.
@@ -154,8 +152,8 @@ export default () => {
         <meta name="description" content="Meet the Moonrock team members" />
         <link rel="canonical" href="https://moonrocks.com/team" />
       </Helmet>
-      <Title>Moon Rockers</Title>
-      <InnerDiv>
+      <TitleDiv>Moon Rockers</TitleDiv>
+      <MemberDiv>
         {members.map(member => (
           <TeamMember
             name={member.name}
@@ -165,7 +163,7 @@ export default () => {
             title={member.title}
           />
         ))}
-      </InnerDiv>
+      </MemberDiv>
     </OuterDiv>
   );
 };

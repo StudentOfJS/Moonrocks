@@ -11,23 +11,13 @@ const TeamAvatar = styled.img`
   width: 80px;
 `;
 
-const Row = styled.div`
-  align-items: space-between;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: 100px;
-  justify-content: flex-start;
-  padding: 40px;
-  width: 320px;
-`;
-
 const Column = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  padding: 40px 0;
+  width: 100%;
 `;
 
 interface IProfile {
@@ -51,19 +41,19 @@ const TeamMember: React.SFC<ITeamMemberProps> = ({
   social: { exercism, github, twitter },
   skills
 }) => (
-  <Row>
-    <TeamAvatar src={image} alt={`${name} - ${title} mugshot`} />
-    <Column>
-      <MinorTitle>{name}</MinorTitle>
-      <MinorTitle style={{ color: "yellow" }}>{title}</MinorTitle>
-      <Paragraph>
-        {bio}
-        <Link to={page}>...read more</Link>
-      </Paragraph>
-      <Skills skills={skills} />
-      <TeamSocial exercism={exercism} github={github} twitter={twitter} />
-    </Column>
-  </Row>
+  <Column>
+    <MinorTitle>{name}</MinorTitle>
+    <MinorTitle style={{ color: "yellow" }}>
+      <TeamAvatar src={image} alt={`${name} - ${title} mugshot`} />
+      {title}
+    </MinorTitle>
+    <Paragraph>
+      {bio}
+      <Link to={page}>...read more</Link>
+    </Paragraph>
+    <Skills skills={skills} />
+    <TeamSocial exercism={exercism} github={github} twitter={twitter} />
+  </Column>
 );
 
 export default TeamMember;

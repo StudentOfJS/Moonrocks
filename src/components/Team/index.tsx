@@ -33,7 +33,8 @@ const members = [
   {
     name: "Rod Lewis",
     profile: {
-      bio: "lorem ispum dollar bill ja",
+      bio:
+        "Versatile Front-end Developer with 2+ years of experience designing, developing and managing complex web applications. Specializes in React and responsive design.",
       image: rod,
       page: "/"
     },
@@ -63,7 +64,12 @@ const members = [
   },
   {
     name: "Rod Lewis",
-    profile: { bio: "lorem ispum dollar bill ja", image: rod, page: "/" },
+    profile: {
+      bio:
+        "Backend developer with a wealth of experience building Graphql and RESTful APIs",
+      image: rod,
+      page: "/"
+    },
     skills: [
       {
         color: "#366DE9",
@@ -90,7 +96,11 @@ const members = [
   },
   {
     name: "Rod Lewis",
-    profile: { bio: "lorem ispum dollar bill ja", image: rod, page: "/" },
+    profile: {
+      bio: "Enthusiast of blockchain since 2010",
+      image: rod,
+      page: "/"
+    },
     skills: [
       {
         color: "#366DE9",
@@ -117,7 +127,12 @@ const members = [
   },
   {
     name: "Rod Lewis",
-    profile: { bio: "lorem ispum dollar bill ja", image: rod, page: "/" },
+    profile: {
+      bio:
+        "Decades of sys ops expereience, designing, deploying and mainting enterpise level systems and networks",
+      image: rod,
+      page: "/"
+    },
     skills: [
       {
         color: "#366DE9",

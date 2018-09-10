@@ -20,6 +20,20 @@ const Column = styled.div`
   width: 100%;
 `;
 
+const MemberDiv = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const MemberDetails = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+`;
+
 interface IProfile {
   bio: string;
   image: string;
@@ -42,11 +56,13 @@ const TeamMember: React.SFC<ITeamMemberProps> = ({
   skills
 }) => (
   <Column>
-    <MinorTitle>{name}</MinorTitle>
-    <MinorTitle style={{ color: "yellow" }}>
+    <MemberDiv>
       <TeamAvatar src={image} alt={`${name} - ${title} mugshot`} />
-      {title}
-    </MinorTitle>
+      <MemberDetails>
+        <MinorTitle>{name}</MinorTitle>
+        <MinorTitle style={{ color: "yellow" }}>{title}</MinorTitle>
+      </MemberDetails>
+    </MemberDiv>
     <Paragraph>
       {bio}
       <Link to={page}>...read more</Link>

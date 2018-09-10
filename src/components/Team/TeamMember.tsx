@@ -11,10 +11,11 @@ const TeamAvatar = styled.img`
   width: 80px;
 `;
 
-const Column = styled.div`
+const Row = styled.div`
   align-items: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 40px 0;
   width: 100%;
@@ -55,11 +56,12 @@ const TeamMember: React.SFC<ITeamMemberProps> = ({
   social: { exercism, github, twitter },
   skills
 }) => (
-  <Column>
+  <Row>
     <MemberDiv>
       <TeamAvatar src={image} alt={`${name} - ${title} mugshot`} />
       <MemberDetails>
         <MinorTitle>{name}</MinorTitle>
+        <TeamSocial exercism={exercism} github={github} twitter={twitter} />
         <MinorTitle style={{ color: "yellow" }}>{title}</MinorTitle>
       </MemberDetails>
     </MemberDiv>
@@ -68,8 +70,7 @@ const TeamMember: React.SFC<ITeamMemberProps> = ({
       <Link to={page}>...read more</Link>
     </Paragraph>
     <Skills skills={skills} />
-    <TeamSocial exercism={exercism} github={github} twitter={twitter} />
-  </Column>
+  </Row>
 );
 
 export default TeamMember;

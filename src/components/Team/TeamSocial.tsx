@@ -11,7 +11,6 @@ const Inline = styled.div`
   flex-wrap: no-wrap;
   height: 34px;
   justify-content: space-evenly;
-  margin-top: 20px;
   width: 160px;
 `;
 

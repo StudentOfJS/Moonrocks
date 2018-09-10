@@ -10,7 +10,10 @@ const Skill = styled.div`
   justify-content: center;
 `;
 
-const SkillLabel = styled.p``;
+const SkillLabel = styled.p`
+  font-family: "Roboto", sans-serif;
+  font-size: 0.6em;
+`;
 
 interface ISkill {
   color: string;
@@ -26,6 +29,7 @@ const Skills: React.SFC<ISkillsProps> = ({ skills }) => (
   <div>
     {skills.map(skill => (
       <Skill>
+        <SkillLabel>{skill.label}</SkillLabel>
         <Progress
           type="circle"
           strokeColor={skill.color}

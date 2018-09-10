@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import styled from "../../theme";
 import { MinorTitle, Paragraph } from "../Text";
+import Skills, { ISkill } from "./Skills";
 import TeamSocial, { ITeamSocialProps } from "./TeamSocial";
 
 const TeamAvatar = styled.img`
@@ -39,6 +40,7 @@ interface ITeamMemberProps {
   profile: IProfile;
   name: string;
   social: ITeamSocialProps;
+  skills: ISkill[];
   title: string;
 }
 
@@ -46,7 +48,8 @@ const TeamMember: React.SFC<ITeamMemberProps> = ({
   name,
   title,
   profile: { bio, image, page },
-  social: { exercism, github, twitter }
+  social: { exercism, github, twitter },
+  skills
 }) => (
   <Row>
     <TeamAvatar src={image} alt={`${name} - ${title} mugshot`} />
@@ -57,6 +60,7 @@ const TeamMember: React.SFC<ITeamMemberProps> = ({
         {bio}
         <Link to={page}>...read more</Link>
       </Paragraph>
+      <Skills skills={skills} />
       <TeamSocial exercism={exercism} github={github} twitter={twitter} />
     </Column>
   </Row>

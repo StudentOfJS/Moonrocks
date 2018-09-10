@@ -39,6 +39,23 @@ const members = [
       image: rod,
       page: "/"
     },
+    skills: [
+      {
+        color: "#366DE9",
+        label: "HTML /CSS",
+        percent: 90
+      },
+      {
+        color: "#1FEE40",
+        label: "React",
+        percent: 90
+      },
+      {
+        color: "#EE1F2B",
+        label: "JS",
+        percent: 98
+      }
+    ],
     social: {
       exercism: "StudentOfJS",
       github: "StudentOfJS",
@@ -49,6 +66,50 @@ const members = [
   {
     name: "Rod Lewis",
     profile: { bio: "lorem ispum dollar bill ja", image: rod, page: "/" },
+    skills: [
+      {
+        color: "#366DE9",
+        label: "rest API",
+        percent: 80
+      },
+      {
+        color: "#1FEE40",
+        label: "graphql API",
+        percent: 95
+      },
+      {
+        color: "#EE1F2B",
+        label: "auth",
+        percent: 70
+      }
+    ],
+    social: {
+      exercism: "StudentOfJS",
+      github: "StudentOfJS",
+      twitter: "StudentOfJS"
+    },
+    title: "Backend Developer"
+  },
+  {
+    name: "Rod Lewis",
+    profile: { bio: "lorem ispum dollar bill ja", image: rod, page: "/" },
+    skills: [
+      {
+        color: "#366DE9",
+        label: "Solidity",
+        percent: 50
+      },
+      {
+        color: "#1FEE40",
+        label: "Go",
+        percent: 70
+      },
+      {
+        color: "#EE1F2B",
+        label: "c++",
+        percent: 0
+      }
+    ],
     social: {
       exercism: "StudentOfJS",
       github: "StudentOfJS",
@@ -59,22 +120,29 @@ const members = [
   {
     name: "Rod Lewis",
     profile: { bio: "lorem ispum dollar bill ja", image: rod, page: "/" },
+    skills: [
+      {
+        color: "#366DE9",
+        label: "Networks",
+        percent: 80
+      },
+      {
+        color: "#1FEE40",
+        label: "Aws",
+        percent: 60
+      },
+      {
+        color: "#EE1F2B",
+        label: "CI",
+        percent: 30
+      }
+    ],
     social: {
       exercism: "StudentOfJS",
       github: "StudentOfJS",
       twitter: "StudentOfJS"
     },
-    title: "Backend Go Devil"
-  },
-  {
-    name: "Rod Lewis",
-    profile: { bio: "lorem ispum dollar bill ja", image: rod, page: "/" },
-    social: {
-      exercism: "StudentOfJS",
-      github: "StudentOfJS",
-      twitter: "StudentOfJS"
-    },
-    title: "React Ninja"
+    title: "Sys Ops/ Dev Ops"
   }
 ];
 
@@ -92,6 +160,7 @@ export default () => {
           <TeamMember
             name={member.name}
             profile={member.profile}
+            skills={member.skills}
             social={member.social}
             title={member.title}
           />

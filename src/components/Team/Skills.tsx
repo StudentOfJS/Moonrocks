@@ -15,7 +15,7 @@ const SkillLabel = styled.p`
   font-size: 0.6em;
 `;
 
-interface ISkill {
+export interface ISkill {
   color: string;
   label: string;
   percent: number;

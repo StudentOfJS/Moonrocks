@@ -14,7 +14,7 @@ const WhitepaperDiv = styled.div`
   flex-direction: column;
   height: 100%;
   max-width: 800px;
-  width: 100wh;
+  width: 100vw;
   @media print {
     display: none;
   }
@@ -25,7 +25,7 @@ const OuterDiv = styled.div`
   display: flex;
   justify-content: center;
   padding: 80px 0 40px 0;
-  width: 100wh;
+  width: 100vw;
 `;
 
 const WhitepaperPrint = styled.div`

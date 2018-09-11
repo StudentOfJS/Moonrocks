@@ -14,7 +14,8 @@ injectGlobal`{
     margin: 0; 
     padding: 0;
     background-color: black;
-    max-width: 100vw;
+    width: 100vw;
+    height: 100vh;
     overflow-x: hidden;
   }
 

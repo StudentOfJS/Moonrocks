@@ -119,7 +119,7 @@ const wiggleRight = keyframes`
 export const ArrowLeftIcon: StyledIcon = ArrowLeft.extend`
   color: ${props =>
     props.theme.iconColor ? props.theme.iconColor : props.theme.secondaryColor};
-  margin-right: 20px;
+  margin-right: 22px;
   &:hover {
     animation: ${wiggleLeft} 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
     cursor: pointer;
@@ -129,7 +129,7 @@ export const ArrowLeftIcon: StyledIcon = ArrowLeft.extend`
 export const ArrowRightIcon: StyledIcon = ArrowRight.extend`
   color: ${props =>
     props.theme.iconColor ? props.theme.iconColor : props.theme.secondaryColor};
-  margin-left: 20px;
+  margin-left: 22px;
   &:hover {
     animation: ${wiggleRight} 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
     cursor: pointer;

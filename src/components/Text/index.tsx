@@ -1,21 +1,4 @@
-import styled, { keyframes } from "../../theme";
-
-const trackIn = keyframes`
-  {
-    0% {
-      letter-spacing: 1em;
-      transform: translateZ(400px);
-      opacity: 0;
-    }
-    40% {
-      opacity: 0.6;
-    }
-    100% {
-      transform: translateZ(0);
-      opacity: 1;
-    }
-  }
-`;
+import styled from "../../theme";
 
 const Title = styled.h1`
   text-align: center;
@@ -24,7 +7,6 @@ const Title = styled.h1`
   margin: 0;
   @media only screen and (max-width: 600px) {
     font-size: 3em;
-    animation: ${trackIn} 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
   @media only screen and (min-width: 600px) {
     font-size: 5em;
@@ -36,7 +18,6 @@ const SubTitle = styled.h2`
   text-align: center;
   font-weight: 300;
   font-style: oblique;
-  animation: ${trackIn} 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 `;
 const MinorTitle = styled.h3`
   font-family: "Roboto", sans-serif;

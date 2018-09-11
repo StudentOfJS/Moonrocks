@@ -11,6 +11,9 @@ const Wrapper = styled(Nav)`
   position: absolute;
   box-sizing: border-box;
   z-index: 2000;
+  @media print {
+    display: none;
+  }
 `;
 
 const animatehand = keyframes`

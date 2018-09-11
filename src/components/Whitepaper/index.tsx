@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { Document, Page } from "react-pdf/dist/entry.webpack";
 import { RouteComponentProps } from "react-router";
 import styled from "../../theme";
+import Button from "../Button";
 import { ArrowLeftIcon, ArrowRightIcon } from "../icons";
 import Navigation from "../Navigation";
 
@@ -14,6 +15,9 @@ const WhitepaperDiv = styled.div`
   height: 100%;
   max-width: 800px;
   width: 100wh;
+  @media print {
+    display: none;
+  }
 `;
 
 const OuterDiv = styled.div`
@@ -22,6 +26,12 @@ const OuterDiv = styled.div`
   justify-content: center;
   padding: 80px 0 40px 0;
   width: 100wh;
+`;
+
+const WhitepaperPrint = styled.div`
+  @media screen {
+    display: none;
+  }
 `;
 
 interface IState {
@@ -45,6 +55,8 @@ export default class Whitepaper extends React.Component<
     this.setState(prevState => ({ pageNumber: prevState.pageNumber - 1 }));
   public onInc = () =>
     this.setState(prevState => ({ pageNumber: prevState.pageNumber + 1 }));
+
+  public onPrint = () => window.print();
   public render() {
     const { pageNumber, numPages } = this.state;
     return (
@@ -58,6 +70,16 @@ export default class Whitepaper extends React.Component<
           <link rel="canonical" href="https://moonrocks.io/whitepaper" />
         </Helmet>
         <OuterDiv>
+          <Button onClick={this.onPrint}>print</Button>
+          <WhitepaperPrint>
+            <Document
+              file="FrontendCV.pdf"
+              onLoadSuccess={this.onDocumentLoadSuccess}
+            >
+              <Page pageNumber={1} />
+              <Page pageNumber={2} />
+            </Document>
+          </WhitepaperPrint>
           <WhitepaperDiv>
             <Document
               file="FrontendCV.pdf"

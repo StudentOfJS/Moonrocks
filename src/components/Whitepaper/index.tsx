@@ -34,6 +34,15 @@ const WhitepaperPrint = styled.div`
   }
 `;
 
+const PrintButton = styled(Button)`
+  top: 0;
+  right: 0;
+  margin: 80px;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 2000;
+`;
+
 interface IState {
   numPages: number;
   pageNumber: number;
@@ -70,7 +79,6 @@ export default class Whitepaper extends React.Component<
           <link rel="canonical" href="https://moonrocks.io/whitepaper" />
         </Helmet>
         <OuterDiv>
-          <Button onClick={this.onPrint}>print</Button>
           <WhitepaperPrint>
             <Document
               file="FrontendCV.pdf"
@@ -99,6 +107,7 @@ export default class Whitepaper extends React.Component<
           </WhitepaperDiv>
         </OuterDiv>
         <Navigation path={this.props.match.path} />
+        <PrintButton onClick={this.onPrint}>print</PrintButton>
       </div>
     );
   }

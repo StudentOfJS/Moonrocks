@@ -56,7 +56,8 @@ export default class Whitepaper extends React.Component<
               <Page pageNumber={pageNumber} />
             </Document>
             <p>
-              <ArrowLeftIcon size={20} /> Page {pageNumber} of {numPages}{" "}
+              <ArrowLeftIcon size={20} />
+              Page {pageNumber} of {numPages}
               <ArrowRightIcon size={20} />
             </p>
           </WhitepaperDiv>

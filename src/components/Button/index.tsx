@@ -31,6 +31,9 @@ export default styled(NonStyledBtn)`
   outline: none;
   padding: 10px 20px;
   transition: transform 800ms ease-in-out;
+  @media print {
+    display: none;
+  }
   &:hover {
     transition: transform 800ms ease-in-out;
     cursor: pointer;

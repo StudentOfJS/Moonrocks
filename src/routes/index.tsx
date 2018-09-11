@@ -4,7 +4,6 @@ import About from "../components/About";
 import Hero from "../components/Hero";
 import Roadmap from "../components/Roadmap";
 import Team from "../components/Team";
-import TokenSale from "../components/TokenSale";
 import Whitepaper from "../components/Whitepaper";
 
 const Routes = () => {
@@ -14,7 +13,6 @@ const Routes = () => {
       <Route path="/roadmap" component={Roadmap} />
       <Route path="/team" component={Team} />
       <Route path="/whitepaper" component={Whitepaper} />
-      <Route path="/tokensale" component={TokenSale} />
       <Route exact={true} path="/" component={Hero} />
     </Switch>
   );

@@ -24,17 +24,27 @@ const OuterDiv = styled.div`
   width: 100wh;
 `;
 
+interface IState {
+  numPages: number;
+  pageNumber: number;
+}
+
 export default class Whitepaper extends React.Component<
-  RouteComponentProps<{}>
+  RouteComponentProps<{}>,
+  IState
 > {
   public state = {
-    numPages: null,
+    numPages: 0,
     pageNumber: 1
   };
 
   public onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     this.setState({ numPages });
   };
+  public onDec = () =>
+    this.setState(prevState => ({ pageNumber: prevState.pageNumber - 1 }));
+  public onInc = () =>
+    this.setState(prevState => ({ pageNumber: prevState.pageNumber + 1 }));
   public render() {
     const { pageNumber, numPages } = this.state;
     return (
@@ -56,9 +66,13 @@ export default class Whitepaper extends React.Component<
               <Page pageNumber={pageNumber} />
             </Document>
             <p>
-              <ArrowLeftIcon size={20} />
+              {pageNumber > 1 && (
+                <ArrowLeftIcon size={20} onClick={this.onDec} />
+              )}
               Page {pageNumber} of {numPages}
-              <ArrowRightIcon size={20} />
+              {pageNumber < numPages && (
+                <ArrowRightIcon size={20} onClick={this.onInc} />
+              )}
             </p>
           </WhitepaperDiv>
         </OuterDiv>

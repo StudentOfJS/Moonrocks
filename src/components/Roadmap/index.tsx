@@ -12,21 +12,20 @@ const InnerWrapper = styled(Div)`
   max-width: 800px;
   flex-direction: column;
   align-items: center;
-  background-color: white;
   color: #292a2b;
-  border-radius: 30px;
-  overflow: hidden;
   padding: 10px;
 `;
 
 const OuterWrapper = styled(Div)`
   align-items: center;
+  background-color: white;
+  border-radius: ${props => props.theme.radius};
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   padding: 40px 0;
   justify-content: center;
-  width: 100%;
+  width: 100wh;
 `;
 
 export default () => {

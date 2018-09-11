@@ -8,6 +8,9 @@ import TeamMember from "./TeamMember";
 
 const OuterDiv = styled(Div)`
   color: ${props => props.theme.primaryColor};
+
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: ${props => props.theme.radius};
   width: 100wh;
   height: 100%;
 `;
@@ -169,8 +172,9 @@ export default () => {
       </Helmet>
       <TitleDiv>Moon Rockers</TitleDiv>
       <MemberDiv>
-        {members.map(member => (
+        {members.map((member, i) => (
           <TeamMember
+            key={`${member.title}${i}`}
             name={member.name}
             profile={member.profile}
             skills={member.skills}

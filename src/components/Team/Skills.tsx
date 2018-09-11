@@ -37,7 +37,7 @@ interface ISkillsProps {
 const Skills: React.SFC<ISkillsProps> = ({ skills }) => (
   <SkillsWrap>
     {skills.map(skill => (
-      <Skill>
+      <Skill key={skill.label}>
         <SkillLabel color={skill.color}>{skill.label}</SkillLabel>
         <CircularProgressbar
           percentage={skill.percent}

@@ -1,4 +1,4 @@
-import * as styledComponents from "styled-components"
+import * as styledComponents from "styled-components";
 
 const {
   default: styled,
@@ -7,18 +7,19 @@ const {
   keyframes,
   ThemeProvider
 } = styledComponents as styledComponents.ThemedStyledComponentsModule<
-IThemeInterface
->
+  IThemeInterface
+>;
 
 export interface IThemeInterface {
-  fontFamily: string
-  gradient?: string
-  logo?: string
-  primaryColor: string
-  secondaryColor: string
-  accent?: string
-  transparent?: boolean
-  heroImage?: string
+  fontFamily: string;
+  gradient?: string;
+  logo?: string;
+  primaryColor: string;
+  secondaryColor: string;
+  accent?: string;
+  transparent?: boolean;
+  heroImage?: string;
+  radius?: string;
 }
 
 export const theme = {
@@ -28,9 +29,10 @@ export const theme = {
   heroImage: `url("../images/astronaut.png")`,
   logo: `url("http://source.unsplash.com/random/50x50")`,
   primaryColor: "white",
+  radius: "30px",
   secondaryColor: "dark-gray",
   transparent: false
-}
+};
 
-export default styled
-export { css, injectGlobal, keyframes, ThemeProvider }
+export default styled;
+export { css, injectGlobal, keyframes, ThemeProvider };

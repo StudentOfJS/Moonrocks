@@ -16,6 +16,7 @@ const Row = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  height: 80vh;
   justify-content: center;
   padding: 40px 0;
   width: 100%;
@@ -24,7 +25,8 @@ const Row = styled.div`
 const MemberDiv = styled.div`
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  width: 100%;
 `;
 
 const MemberDetails = styled.div`
@@ -32,6 +34,8 @@ const MemberDetails = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 400px;
+  min-width: 200px;
   width: 100%;
 `;
 
@@ -58,17 +62,19 @@ const TeamMember: React.SFC<ITeamMemberProps> = ({
 }) => (
   <Row>
     <MemberDiv>
-      <TeamAvatar src={image} alt={`${name} - ${title} mugshot`} />
       <MemberDetails>
+        <TeamAvatar src={image} alt={`${name} - ${title} mugshot`} />
         <MinorTitle>{name}</MinorTitle>
-        <TeamSocial exercism={exercism} github={github} twitter={twitter} />
         <MinorTitle style={{ color: "yellow" }}>{title}</MinorTitle>
+        <TeamSocial exercism={exercism} github={github} twitter={twitter} />
+      </MemberDetails>
+      <MemberDetails>
+        <Paragraph>
+          {bio}
+          <Link to={page}>...read more</Link>
+        </Paragraph>
       </MemberDetails>
     </MemberDiv>
-    <Paragraph>
-      {bio}
-      <Link to={page}>...read more</Link>
-    </Paragraph>
     <Skills skills={skills} />
   </Row>
 );

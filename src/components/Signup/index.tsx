@@ -1,4 +1,3 @@
-// import { debounce } from "lodash";
 import * as React from "react";
 import { string, StringSchema } from "yup";
 import styled from "../../theme";
@@ -119,13 +118,35 @@ export default class Signup extends React.Component<ISignupProps, IState> {
   };
 
   public handleSubmit = () => {
-    this.setState(prevProps => ({
-      error: "",
-      success: true,
-      touched: false,
-      value: ""
-    }));
-    this.resetSuccess();
+    const data = {
+      email: this.state.value
+    };
+    fetch("http://localhost:4000/api/tgenews", {
+      body: JSON.stringify(data),
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+      .then(res => res.json())
+      .then(response => {
+        this.setState(prevProps => ({
+          error: "",
+          success: true,
+          touched: false,
+          value: ""
+        }));
+        this.resetSuccess();
+      })
+      .catch(err => {
+        this.setState(prevProps => ({
+          error: err.status,
+          success: false,
+          touched: false,
+          value: ""
+        }));
+      });
   };
 
   public resetSuccess = () => {
